@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<body class="text-center">
+  <h2 class= "text-center"> <%= @bartender.name %> </h2>
+
+  <h4 class= "text-center"> Location <%= @bartender.location %> </h4>
+
+  <h4 class= "text-center">
+    Languages:
+    <%= @bartender.loc %>
+
+
+
+
+  </h4>
+
+  <p class= "text-center"> <%= @bartender.bio %> </p>
+
+  <p class="text-center"> </p>
+
+
+
+
+  <% @cocktail.doses.each do |dose| %>
+  <ul class ="text-center">
+    <%= dose.description %> - <%= dose.ingredient.name %>
+    <br>
+    <%= cl_image_tag @cocktail.photo, height: 150, width: 150, crop: :fill, radius: "25:0" %>
+    <%= link_to "Delete the dose", dose_path(dose), method: :delete %>
+  </ul>
+  <% end %>
+
+
+
+  <%= link_to 'Add a new dose', new_cocktail_dose_path(@cocktail), class: "btn btn-success" %>
+  <%= link_to 'Back', cocktails_path, class: "btn btn-danger" %>
+
+  <body>
