@@ -3,6 +3,6 @@ class PagesController < ApplicationController
   end
 
   def home
-    # @bartenders = Bartender.find(:all, order: "rating desc", limit: 3)
+    @bartenders = Bartender.find(:all, order: "rating desc", limit: 3)
   end
 end
