@@ -6,7 +6,6 @@
   text-align: center;
   font: normal 15px sans-serif;
   padding-top: 20px;
-  margin-top: 20px;
 }
 
 .logo-footer {
@@ -112,19 +111,9 @@
 }
 
 
-html {
-    position: relative;
-    min-height: 100%;
-}
 
-body {
-   min-height: 400px;
-   margin-bottom: 100px;
-   clear: both;
-}
 
 footer {
-    position: absolute;
     left: 0;
     bottom: 0;
     width: 100%;
