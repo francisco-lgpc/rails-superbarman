@@ -1,0 +1,77 @@
+$btn-height: 50px;
+$btn-vertical-padding: 10px;
+
+.btn-facebook {
+  background-color: $facebook-blue;
+  height: $btn-height;
+  padding: $btn-vertical-padding 10px;
+  line-height: calc(#{$btn-height} - #{$btn-vertical-padding * 2});
+  color: white;
+  display: block;
+  width: 100%;
+  border-radius: 5px;
+  i {
+    padding: 0 60px 0 20px;
+  }
+
+}
+
+.btn-login {
+  background-color: black;
+  height: $btn-height;
+  padding: $btn-vertical-padding 10px;
+  line-height: calc(#{$btn-height} - #{$btn-vertical-padding * 2});
+  color: white;
+  display: block;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.btn-register {
+  background-color: grey;
+  height: $btn-height;
+  padding: $btn-vertical-padding 10px;
+  line-height: calc(#{$btn-height} - #{$btn-vertical-padding * 2});
+  color: white;
+  display: block;
+  width: 30%;
+  border-radius: 5px;
+  border: none;
+}
+
+.form-group.password {
+  margin: 0;
+}
+
+
+.or-separator {
+  background: none;
+  height: 34px;
+  position: relative;
+  text-align: center;
+  hr {
+    margin-top: -25px;
+  }
+}
+
+.or-separator-text {
+  background-color: #fff;
+  display: inline-block;
+  padding: 8px;
+}
+
+.form-under {
+  margin: 8px 2px;
+
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  .forget-password {
+    margin-top: 10px;
+  }
+}
+
+.new-account {
+  display: flex;
+  justify-content: space-between;
+}
