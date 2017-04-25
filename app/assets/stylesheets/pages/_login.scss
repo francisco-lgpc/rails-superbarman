@@ -1,5 +1,27 @@
 $btn-height: 50px;
 $btn-vertical-padding: 10px;
+.wrapper-login {
+  button {
+    transition: 0.3s ease;
+    &:hover {
+      opacity: 0.8;
+      color: white;
+    }
+  }
+
+  a {
+
+    transition: 0.3s ease;
+    &:hover {
+      opacity: 0.9;
+      color: white;
+    }
+  }
+
+  hr {
+    border: 2px solid $grey;
+  }
+}
 
 .btn-facebook {
   background-color: $facebook-blue;
@@ -13,7 +35,6 @@ $btn-vertical-padding: 10px;
   i {
     padding: 0 60px 0 20px;
   }
-
 }
 
 .btn-login {
@@ -28,15 +49,20 @@ $btn-vertical-padding: 10px;
 }
 
 .btn-register {
-  background-color: grey;
+  background-color: white;
   height: $btn-height;
   padding: $btn-vertical-padding 10px;
   line-height: calc(#{$btn-height} - #{$btn-vertical-padding * 2});
-  color: white;
+  color: $grey;
   display: block;
   width: 30%;
   border-radius: 5px;
-  border: none;
+  border: 2px solid $grey;
+  font-weight: bold;
+  &:hover {
+    color: black !important;
+    border: 2px solid black;
+  }
 }
 
 .form-group.password {
@@ -51,6 +77,7 @@ $btn-vertical-padding: 10px;
   text-align: center;
   hr {
     margin-top: -25px;
+    border: 2px solid $grey;
   }
 }
 
@@ -69,6 +96,11 @@ $btn-vertical-padding: 10px;
   .forget-password {
     margin-top: 10px;
   }
+  a:hover {
+    color: $blue !important;
+    opacity: 0.6;
+  }
+
 }
 
 .new-account {
