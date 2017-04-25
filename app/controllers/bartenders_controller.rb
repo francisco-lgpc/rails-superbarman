@@ -1,5 +1,5 @@
 class BartendersController < ApplicationController
-
+before_action :set_bartender, only: [:show]
 
   def index
     @bartenders = Bartender.all
