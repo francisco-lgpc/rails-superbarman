@@ -1,4 +1,5 @@
 class BartendersController < ApplicationController
+skip_before_action :authenticate_user!
 before_action :set_bartender, only: [:show]
 
   def index
@@ -6,6 +7,11 @@ before_action :set_bartender, only: [:show]
   end
 
   def show
+  end
+
+  def search
+    @bartenders = Bartender.where("location ILIKE ?", "%#{params[:location_query]}%")
+    render :index
   end
 
 
