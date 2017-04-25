@@ -1,8 +1,8 @@
-class BartenderController < ApplicationController
+class BartendersController < ApplicationController
 
 
   def index
-    @bartender = Bartender.all
+    @bartenders = Bartender.all
   end
 
   def show
