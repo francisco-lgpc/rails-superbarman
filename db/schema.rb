@@ -15,6 +15,26 @@ ActiveRecord::Schema.define(version: 20170425103522) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "bartenders", force: :cascade do |t|
+    t.string   "name"
+    t.string   "phone_number"
+    t.string   "email"
+    t.text     "bio"
+    t.integer  "rating"
+    t.string   "location"
+    t.string   "language_1"
+    t.string   "language_2"
+    t.string   "language_3"
+    t.string   "language_4"
+    t.string   "language_5"
+    t.string   "speciality_1"
+    t.string   "speciality_2"
+    t.string   "speciality_3"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "title"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
