@@ -1,0 +1,29 @@
+
+<p id="notice"><%= notice %></p>
+
+<body class="text-center">
+  <h2 class= "text-center"> <%= @bartender.title %> </h2>
+
+   <h4 class= "text-center"> <%= @bartender.name %> </h4>
+  <h4 class= "text-center"> Location: <%= @bartender.location %> </h4>
+
+  <p class= "text-center"> Languages:
+    <% 1.upto(5) do |i|  %>
+    <%= @bartender.read_attribute("language_#{i}") %>
+    <% end %>
+  </p>
+
+  <p class= "text-center"> Specialities:
+    <% 1.upto(3) do |i|  %>
+    <%= image_tag @bartender.read_attribute("speciality_#{i}") %>
+    <% end %>
+  </p>
+
+  <p class= "text-center"> <%= @bartender.bio %> </p>
+
+  <p>Average Rating:
+    <% @bartender.rating.times do %>
+    <i class="fa fa-glass" aria-hidden="true"></i>
+    <% end %>
+  </p>
+

@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.3.3'
 
+
 gem 'devise'
 gem 'rails', '5.0.2'
 gem 'puma'
@@ -16,6 +17,7 @@ gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
+gem 'omniauth-facebook' # Facebook connect
 
 group :development, :test do
   gem 'binding_of_caller'
@@ -26,6 +28,7 @@ group :development, :test do
   gem 'spring'
   gem 'listen', '~> 3.0.5'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'faker'
 end
 
 
