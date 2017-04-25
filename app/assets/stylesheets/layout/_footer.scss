@@ -1,5 +1,5 @@
 .footer-basic-centered{
-  background-color: #292c2f;
+  background-color: #272424;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
   box-sizing: border-box;
   width: 100%;
@@ -65,7 +65,8 @@
 }
 
 .footer-links a:hover{
-  color: #F8362C;
+  color: #A99267;
+  transition: color .3s ease-out;
 }
 
 .payment-options{
@@ -88,7 +89,7 @@
     box-sizing: border-box;
     letter-spacing: .22917vw;
     padding-left: 2vw;
-    color: grey;
+    color: #A99267;
 }
 
 .contact {
@@ -102,10 +103,11 @@
 }
 
 .contact:hover{
-  color: #F8362C;
+  color: #A99267;
+  transition: color .3s ease-out;
 }
 .copyright-notice {
-  background-color: black;
+  background-color: #1B1B1B;
   padding: 1.31944vw 0 .90278vw;
 }
 

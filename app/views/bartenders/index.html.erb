@@ -2,19 +2,71 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-xs-12">
-      <% @bartenders.each do |bartender| %>
-        <h3><%= bartender.title %></h3>
-        <h5><%= bartender.name %></h5>
-
-        <p>
-          <% bartender.rating.times do %>
-          <i class="fa fa-glass" aria-hidden="true"></i>
-          <% end %>
-        </p>
-      <% end %>
+    <% @bartenders.each do |bartender| %>
+    <div class="col-xs-12 col-sm-6 col-lg-4">
+      <div class="card">
+        <div class="card-category">
+          <%= bartender.title %>
+        </div>
+        <div class="card-description">
+          <p>
+            <%= bartender.name %> <br>
+            <% bartender.rating.times do %>
+            <i class="fa fa-glass" aria-hidden="true"></i>
+            <% end %>
+          </p>
+        </div>
+      </div>
     </div>
+    <% end %>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="container">
+  <div class="row"> < @cocktails.each do |cocktail| %>
+    < next unless cocktail.photo? || cocktail.picture %>
+    < if cocktail.photo? %>
+    < picture_path = "http://res.cloudinary.com/dkf3v0a5c/image/upload/" + cocktail.photo.path %>
+    < else %>
+    < picture_path = cocktail.picture %>
+    < end %>
+    <div class="col-xs-12 col-sm-6 col-lg-4">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url( <= picture_path %> );">
+        <div class="card-category"> <= cocktail.name %> </div>
+        <div class="card-description"> <p> <= cocktail.ingredients.map(&:name).join(', ') %> </p> </div>
+        <div class="card-user"></div>
+      </div>
+      <= link_to (cocktail) do %>
+      <div class="card-link"></div>
+      < end %>
+    </div>
+    < end %>
+    < if @cocktails.empty? %>
+    <div class="text-center">
+      <h2>Unfortunately we did not find your cocktail.</h2>
+      <h2>Please try again.</h2>
+      <br>
+      <= render "/shared/search" %>
+    </div>
+    < end %>
+  </div>
+</div> -->
+
+
+
+
+
+
 
 
