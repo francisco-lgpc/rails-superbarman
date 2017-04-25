@@ -7,9 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 LANGUAGES = %w(English Spanish Italian Portuguese German Polish Norwegian Danish)
+TITLE_ADJ = %w(Sexy Cool Amazing Laidback Partyguru)
 
 
 args[:name]        = Faker::GameOfThrones.character
+args[:title]       = "#{TITLE_ADJ.sample} #{Faker::Pokemon.name}"
 args[:phone_numer] = Faker::PhoneNumber.cell_phone
 args[:email]       = Faker::Internet.safe_email(name)
 args[:bio]         = Faker::Hipster.paragraph
