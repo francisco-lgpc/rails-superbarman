@@ -1,1 +1,20 @@
-<h1>Landing</h1>
+<div class="wrapper">
+  <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.4) 0%, rgba(0,36,61,0.4) 50%), url(<%= image_path 'bar1.jpg',crop: :fill %>);">
+  <div class="banner-content">
+    <br class="visible-xs"><br class="visible-xs">
+      <h1 class="text-center title">Super Barman</h1>
+      <br></br>
+      <div class="header-text">
+        <p>With maturity comes character.</p>
+        <p>Please verify your age to continue on our site.</p>
+      </div>
+      <br><br>
+
+      <div class="wrapper-btn-large text-center">
+        <%= link_to 'I am older than 18', home_path , class: 'btn-large' %>
+      </div>
+      <br><br><br>
+    </div>
+  </div>
+</div>
+
