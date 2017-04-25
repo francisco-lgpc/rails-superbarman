@@ -1,0 +1,15 @@
+form {
+  .form-group {
+    position: relative;
+    .form-control {
+      height: 50px;
+    }
+    i {
+      color: grey;
+      position: absolute;
+      right: 14px;
+      top: 17px;
+      z-index: 1;
+    }
+  }
+}
