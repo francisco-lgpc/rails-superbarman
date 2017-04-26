@@ -1,8 +1,7 @@
 
 <div class="container">
-
   <div class="row">
-    <form action="/bartenders/search" class="form-inline">
+    <form action="/bartenders/search" class="form-inline" id="form-index">
       <input type="text" placeholder="Location" name="location_query" class="form-control input">
 
       <select name="type-of-party" id="type-of-party" class="form-control">
@@ -15,12 +14,11 @@
       </select>
 
       <select name="number-of-guests" id="number-of-guests" class="form-control">
-        <option value="1">81-100</option>
-        <option value="2">61-80</option>
-        <option value="3">41-60</option>
-        <option value="4">21-40</option>
-        <option value="5">5-20</option>
+        <option value="1">5-29</option>
+        <option value="2">30-59</option>
+        <option value="3">60-90</option>
       </select>
+
 
       <button type="submit" class="form-control btn-search">
         <i class="fa fa-search"></i>
@@ -29,9 +27,11 @@
   </div>
 
   <div class="row">
-    <% @bartenders.each do |bartender| %>
+
+    <% @bartenders.each_with_index do |bartender, i| %>
+    <%= link_to(bartender) do %>
     <div class="col-xs-12 col-sm-6 col-lg-4">
-      <div class="card">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path i+1 %>);">
         <div class="card-category">
           <%= bartender.title %>
         </div>
@@ -46,8 +46,12 @@
       </div>
     </div>
     <% end %>
+    <% end %>
   </div>
 </div>
+
+
+
 
 
 
