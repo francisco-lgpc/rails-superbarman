@@ -33,7 +33,10 @@
 /* Navbar logo */
 .navbar-wagon-brand img {
   width: 50px;
+
 }
+
+
 
 /* Navbar right section (with form, links, button) */
 .navbar-wagon-right {
@@ -55,9 +58,18 @@
   font-size: 14px;
 }
 .navbar-wagon-link:hover {
-  color: #da552f;
+  color: #A99267;
   text-decoration: none;
 }
+
+/* Navbar how it works*/
+.how-it-works{
+  flex: 0 0 auto;
+  padding: 0 20px;
+}
+
+
+
 
 /* Navbar right button */
 .navbar-wagon-button {
@@ -98,6 +110,7 @@
   flex: 0 1 300px;
   transition: all 0.15s ease;
   line-height: 40px;
+  width: 170px;
   font-weight: lighter;
   color: #666666;
   border: 1px solid #E6E6E6;
