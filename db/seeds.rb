@@ -14,7 +14,7 @@ TITLE_ADJ = %w(Sexy Cool Amazing Laidback Partyguru)
 RANDOM_COCKTAIL_URL = "http://www.thecocktaildb.com/api/json/v1/1/random.php"
 
 Bartender.destroy_all
-50.times do
+12.times do
 
   args = {}
   args[:name]        = Faker::GameOfThrones.character
