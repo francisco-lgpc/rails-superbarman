@@ -30,7 +30,9 @@
       <p class= ""> <%= @bartender.bio %> </p>
       <br>
       <br>
-      <div class="btn button-home"> BOOK ME! </div>
+      <%= link_to new_user_session_path do %>
+        <div class="btn button-home"> BOOK ME! </div>
+      <% end %>
     </div>
 
   </div>
