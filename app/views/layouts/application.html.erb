@@ -13,6 +13,7 @@
   <body>
     <%= render 'shared/navbar' unless controller_name == "pages" %>
     <%= yield %>
+    <%= render 'shared/footer' %>
     <%= javascript_include_tag 'application' %>
     <%= render 'shared/footer' %>
 
