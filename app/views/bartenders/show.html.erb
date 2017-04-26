@@ -6,57 +6,75 @@
 
 
 
-<div class="wrapper-show">
-  <div class="container">
+<div class="container">
+ <div class="wrapper-show">
 
-    <br><br><br><br>
 
-    <div class="row">
-      <div class="col-xs-4 profile-details">
-        <%= image_tag 'http://placehold.it/400x400', class: 'avatar-largest' %>
-        <br><br>
-        <p>Rating:
-          <% @bartender.rating.times do %>
-          <i class="fa fa-glass" aria-hidden="true"></i>
-          <% end %>
-        </p>
-        <h4 class= ""> Location: <%= @bartender.location %> </h4>
-        <p class= ""> Languages: </p>
-        <br>
-        <p> <%= languages.join(', ') %> </p>
-      </div>
-
-      <div class="col-xs-4 profile-basics">
-        <h2 class= ""> <%= @bartender.name %> </h2>
-        <h4 class= ""> <%= @bartender.title %> </h4>
-        <p class= ""> <%= @bartender.bio %> </p>
-      </div>
-
-      <div class="col-xs-4 form-show">
-        <h2 class= ""> <%= @bartender.name %> </h2>
-        <h4 class= ""> <%= @bartender.title %> </h4>
-        <p class= ""> <%= @bartender.bio %> </p>
-      </div>
-
+  <div class="row">
+    <div class="col-xs-4 profile-details">
+      <%= image_tag 'AvatarTom.png', class: 'avatar-largest' %>
+      <br><br>
+      <p>Rating:
+        <% @bartender.rating.times do %>
+        <i class="fa fa-glass" aria-hidden="true"></i>
+        <% end %>
+      </p>
+      <h4 class= ""> Location: <%= @bartender.location %> </h4>
+      <p class= ""> Languages: </p>
+      <p> <%= languages.join(', ') %> </p>
     </div>
 
-    <br>
-    <br>
-    <br>
+    <div class="col-xs-4 profile-basics">
+      <h2 class= ""> <%= @bartender.name %> </h2>
+      <h4 class= ""> <%= @bartender.title %> </h4>
+      <p class= ""> <%= @bartender.bio %> </p>
+    </div>
 
-    <div class="row">
-      <div class="specialities text-center">
-        <div class= "header">
-          <h1> Check out my favorites</h1>
-        </div>
-        <br><br><br>
-        <div class= "content">
-          <% 1.upto(3) do |i|  %>
-            <%= image_tag @bartender.read_attribute("speciality_#{i}"), class: 'avatar-largest' %>
-          <% end %>
-        </div>
-      </div>
+    <div class="col-xs-4 form-show">
+      <form action="/bartenders/search" class="form-inline" id="form-index">
+        <input type="text" placeholder="Location" name="location_query" class="form-control input">
+
+        <select name="type-of-party" id="type-of-party" class="form-control">
+          <option value="1">Party</option>
+          <option value="2">Birthday</option>
+          <option value="3">Hen/Stag do</option>
+          <option value="4">Leaving do</option>
+          <option value="5">House Warming</option>
+          <option value="6">Wedding</option>
+        </select>
+
+        <select name="number-of-guests" id="number-of-guests" class="form-control">
+          <option value="1">5-29</option>
+          <option value="2">30-59</option>
+          <option value="3">60-90</option>
+        </select>
+
+
+        <button type="submit" class="form-control btn-search">
+          <i class="fa fa-search"></i>
+        </button>
+      </form>
     </div>
 
   </div>
+
+  <br>
+  <br>
+  <br>
+
+  <div class="row">
+    <div class="specialities text-center">
+      <div class= "header">
+        <h1> Check out my favorites</h1>
+      </div>
+      <br><br><br>
+      <div class= "content">
+        <% 1.upto(3) do |i|  %>
+          <%= image_tag @bartender.read_attribute("speciality_#{i}"), class: 'avatar-largest' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
+</div>
+
