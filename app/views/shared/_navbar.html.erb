@@ -1,19 +1,29 @@
-  <div class="navbar-wagon <%= yield(:navbar_class) %>">
+<div class="navbar-wagon <%= yield(:navbar_class) %>">
   <!-- Logo -->
     <%= link_to root_path, class: "navbar-wagon-brand" do %>
-      <%= image_tag "logo.png" %>
+      <%= image_tag "sbml.png" %>
     <% end %>
+    <p class="copyright-notice-text">SUPER BARMAN </p>
+
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
+
+
     <!-- Search form -->
     <form action="" class="navbar-wagon-search">
-      <input type="text" class="navbar-wagon-search-input" placeholder="Search something">
+      <input type="text" class="navbar-wagon-search-input" placeholder="Search for a Bartender">
       <button type="submit" class="navbar-wagon-search-btn">
         <i class="fa fa-search"></i>
       </button>
     </form>
+
+    <!-- how it works -->
+    <%= link_to 'How it Works', "#", class: 'navbar-wagon_item navbar-wagon-link how-it-works' %>
+
+    <%= link_to 'Parties', "#", class: 'navbar-wagon_item navbar-wagon-link parties' %>
+
 
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
@@ -70,9 +80,9 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
+        <li><a href="users/sign_in">Login</a></li>
+        <li><a href="#">Messages</a></li>
+        <li><a href="bartenders/search">Search bartenders</a></li>
       </ul>
     </div>
   </div>
