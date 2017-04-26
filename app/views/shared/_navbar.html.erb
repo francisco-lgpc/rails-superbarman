@@ -3,14 +3,13 @@
     <%= link_to root_path, class: "navbar-wagon-brand" do %>
       <%= image_tag "sbml.png" %>
     <% end %>
-
+    <p class="copyright-notice-text">SUPER BARMAN </p>
 
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-    <!-- how it works -->
-    <%= link_to 'How it Works', "#", class: 'navbar-wagon_item navbar-wagon-link how-it-works' %>
+
 
     <!-- Search form -->
     <form action="" class="navbar-wagon-search">
@@ -19,6 +18,12 @@
         <i class="fa fa-search"></i>
       </button>
     </form>
+
+    <!-- how it works -->
+    <%= link_to 'How it Works', "#", class: 'navbar-wagon_item navbar-wagon-link how-it-works' %>
+
+    <%= link_to 'Parties', "#", class: 'navbar-wagon_item navbar-wagon-link parties' %>
+
 
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
