@@ -9,7 +9,7 @@
     <% @bartenders.each_with_index do |bartender, i| %>
     <%= link_to(bartender) do %>
     <div class="col-xs-12 col-sm-6 col-lg-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= asset_path("#{i+1}.jpg") %>);">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path (bartender.picture) %>);">
         <div class="card-category">
           <%= bartender.title %>
         </div>
