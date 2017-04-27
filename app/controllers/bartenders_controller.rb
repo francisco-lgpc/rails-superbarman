@@ -8,6 +8,7 @@ before_action :set_bartender, only: [:show]
   end
 
   def show
+
   end
 
   def search

@@ -1,29 +1,59 @@
+<% languages = [] %>
+<% 1.upto(5) do |i|  %>
+  <% languages << @bartender.read_attribute("language_#{i}") if @bartender.read_attribute("language_#{i}") %>
+<% end %>
 
-<p id="notice"><%= notice %></p>
 
-<body class="text-center">
-  <h2 class= "text-center"> <%= @bartender.title %> </h2>
 
-   <h4 class= "text-center"> <%= @bartender.name %> </h4>
-  <h4 class= "text-center"> Location: <%= @bartender.location %> </h4>
 
-  <p class= "text-center"> Languages:
-    <% 1.upto(5) do |i|  %>
-    <%= @bartender.read_attribute("language_#{i}") %>
-    <% end %>
-  </p>
+<div class="container">
+ <div class="wrapper-show">
 
-  <p class= "text-center"> Specialities:
-    <% 1.upto(3) do |i|  %>
-    <%= image_tag @bartender.read_attribute("speciality_#{i}") %>
-    <% end %>
-  </p>
 
-  <p class= "text-center"> <%= @bartender.bio %> </p>
+  <div class="row">
+    <div class="col-xs-4 profile-details">
+      <%= image_tag 'AvatarTom.png', class: 'avatar-largest' %>
+      <br><br>
+      <p>Rating:
+        <% @bartender.rating.times do %>
+        <i class="fa fa-glass" aria-hidden="true"></i>
+        <% end %>
+      </p>
+      <h4 class= ""> Location: <%= @bartender.location %> </h4>
+      <p class= ""> Languages: </p>
+      <p> <%= languages.join(', ') %> </p>
+    </div>
 
-  <p>Average Rating:
-    <% @bartender.rating.times do %>
-    <i class="fa fa-glass" aria-hidden="true"></i>
-    <% end %>
-  </p>
+    <div class="col-xs-8 profile-basics">
+      <h2 class= ""> <%= @bartender.name %> </h2>
+      <h4 class= ""> <%= @bartender.title %> </h4>
+      <p class= ""> <%= @bartender.bio %> </p>
+      <br>
+      <br>
+      <%= link_to new_user_session_path do %>
+        <div class="btn button-home"> BOOK ME! </div>
+      <% end %>
+    </div>
+
+  </div>
+
+  <br>
+  <br>
+  <br>
+
+  <div class="row">
+    <div class="specialities text-center">
+      <div class= "header">
+        <h1> Check out my favorites</h1>
+      </div>
+      <br><br><br>
+      <div class= "content">
+        <% 1.upto(3) do |i|  %>
+          <%= image_tag @bartender.read_attribute("speciality_#{i}"), class: 'avatar-largest' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
 

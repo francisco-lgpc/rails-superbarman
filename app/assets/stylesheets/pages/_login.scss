@@ -22,6 +22,22 @@ $btn-vertical-padding: 10px;
     border: 2px solid $grey;
   }
 }
+form {
+  .form-group {
+    position: relative;
+    .form-control {
+      height: 50px;
+    }
+    i {
+      color: grey;
+      position: absolute;
+      right: 14px;
+      top: 17px;
+      z-index: 1;
+    }
+  }
+}
+
 
 .btn-facebook {
   background-color: $facebook-blue;
