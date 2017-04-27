@@ -8,8 +8,8 @@ require 'open-uri'
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
-LANGUAGES = %w(English Spanish Italian Portuguese German Polish Norwegian Danish)
+CITIES = %w(Berlin Amsterdam London Paris Lisbon Barcalona)
+LANGUAGES = %w(English Spanish Portuguese German Dutch)
 TITLE_ADJ = %w(Sexy Cool Amazing Laidback Partyguru)
 RANDOM_COCKTAIL_URL = "http://www.thecocktaildb.com/api/json/v1/1/random.php"
 
@@ -20,13 +20,13 @@ User.destroy_all
 12.times do
 
   args = {}
-  args[:name]        = Faker::GameOfThrones.character
+  args[:name]        = "#{Faker::Name.first_name} #{Faker::Name.last_name}"
   args[:title]       = "#{TITLE_ADJ.sample} #{Faker::Pokemon.name}"
   args[:phone_number] = Faker::PhoneNumber.cell_phone
   args[:email]       = Faker::Internet.safe_email(args[:name])
   args[:bio]         = Faker::Hipster.paragraph
   args[:rating]      = rand(1..5)
-  args[:location]    = Faker::GameOfThrones.city
+  args[:location]    = "#{CITIES.sample}"
 
   languages   = LANGUAGES.sample(5)
   1.upto(rand(1..5)) do |i|
