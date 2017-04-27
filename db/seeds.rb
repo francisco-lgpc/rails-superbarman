@@ -13,6 +13,7 @@ LANGUAGES = %w(English Spanish Portuguese German Dutch)
 TITLE_ADJ = %w(Sexy Cool Amazing Laidback Partyguru)
 RANDOM_COCKTAIL_URL = "http://www.thecocktaildb.com/api/json/v1/1/random.php"
 
+
 Bartender.destroy_all
 Party.destroy_all
 User.destroy_all
@@ -46,7 +47,9 @@ User.destroy_all
 
 end
 
-Bartender.all.each do |bartender|
+Bartender.all.each_with_index do |bartender, i|
+  bartender.picture = "#{(i + 1).to_s}.jpg"
+  bartender.save!
   rand(1..3).times do
     party             = Party.new(theme: 'Party')
     bartender.parties << party
