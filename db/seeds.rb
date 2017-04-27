@@ -48,7 +48,7 @@ end
 
 Bartender.all.each do |bartender|
   rand(1..3).times do
-    party             = Party.new(type: 'Party')
+    party             = Party.new(theme: 'Party')
     bartender.parties << party
     n                 = Faker::GameOfThrones.character
     user              = User.new(first_name: n, email: Faker::Internet.safe_email(n), password: 'youknownothing', password_confirmation: 'youknownothing')
