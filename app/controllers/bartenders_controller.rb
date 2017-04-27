@@ -4,6 +4,7 @@ before_action :set_bartender, only: [:show]
 
   def index
     @bartenders = Bartender.all
+    @party      = Party.new
   end
 
   def show
@@ -11,7 +12,9 @@ before_action :set_bartender, only: [:show]
   end
 
   def search
-    @bartenders = Bartender.where("location ILIKE ?", "%#{params[:location_query]}%")
+    byebug
+    @bartenders = Bartender.where("location ILIKE ?", "%#{params[:party][:address]}%")
+    @party      = Party.new
     render :index
   end
 
