@@ -19,6 +19,10 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'omniauth-facebook' # Facebook connect
 
+gem 'simple-form-datepicker'
+gem 'jquery-ui-rails'
+
+
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'
