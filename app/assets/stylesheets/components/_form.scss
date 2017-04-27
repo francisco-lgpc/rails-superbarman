@@ -1,34 +1,85 @@
 #home-form {
-  background-color:rgba(255,255,255,.8);
+  background-color: rgba(255,255,255,0);
   padding-top: 15%;
   padding-bottom: 15%;
   // padding-right: 2%;
   // padding-left: 2%;
   border-radius: 10px;
 
-  select {
-    margin-top: 20px;
-    width: 200px;
-    color: black;
-  }
-  input {
+  .form-control {
     // margin-top: 20px;
-    width: 200px;
     padding: 15px;
+    margin-top: 20px;
+    width: 60%;
+    color: black;
+    margin: auto;
+    opacity: 0.9;
+    border: none;
+  }
+
+  .btn-search{
+    background-color: $brown;
+    color: white;
+    width: 60%;
+    border-radius: 6px;
+    border: none;
+    margin: 10px;
+    font-size: 25px;
+  }
+
+  .btn-search:hover{
+    color: $gold;
   }
 }
 
 .button-home:hover {
-  color: #A99267
+  color: $gold;
 }
 
 .button-home {
-  background-color: #272424;
-  // height: $btn-height;
-  // padding: $btn-vertical-padding 10px;
-  // line-height: calc(#{$btn-height} - #{$btn-vertical-padding * 2});
+  background-color: $brown;
   color: white;
   width: 100%;
   border-radius: 10px;
   border: none;
+  margin: 10px;
+}
+
+.button-add-event{
+  background-color: $brown;
+  color: white;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  margin: 10px;
+}
+
+.button-add-event:hover {
+  color: $gold;
+}
+
+.button-message{
+  background-color: $brown;
+  color: white;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  margin: 10px;
+}
+
+.button-message:hover {
+  color: $gold;
+}
+
+.button-favorites{
+  background-color: $brown;
+  color: white;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  margin: 10px;
+}
+
+.button-favorites:hover {
+  color: $gold;
 }
