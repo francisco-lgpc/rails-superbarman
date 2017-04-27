@@ -13,8 +13,12 @@ before_action :set_bartender, only: [:show]
   end
 
   def search
-    @bartenders = Bartender.where("location ILIKE ?", "%#{params[:party][:address]}%")
-    @party      = Party.new
+    location_query = params[:party][:address].split(',').map(&:squish)
+    @bartenders = []
+    location_query.each do |word|
+      @bartenders += Bartender.where("location ILIKE ?", "%#{word}%")
+    end
+    @party = Party.new
     render :index
   end
 

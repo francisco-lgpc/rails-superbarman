@@ -12,7 +12,7 @@
 
   <div class="row">
     <div class="col-xs-4 profile-details">
-      <%= image_tag 'AvatarTom.png', class: 'avatar-largest' %>
+      <%= image_tag @bartender.picture, class: 'avatar-largest', id: "cropped_avatar"%>
       <br><br>
       <p>Rating:
         <% @bartender.rating.times do %>
