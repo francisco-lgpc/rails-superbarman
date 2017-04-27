@@ -12,7 +12,6 @@ before_action :set_bartender, only: [:show]
   end
 
   def search
-    byebug
     @bartenders = Bartender.where("location ILIKE ?", "%#{params[:party][:address]}%")
     @party      = Party.new
     render :index
