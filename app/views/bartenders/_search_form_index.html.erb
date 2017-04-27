@@ -2,12 +2,11 @@
   <%= f.input :address, label: false, placeholder: 'Location', wrapper_html: { class: '' }, input_html: { class: "input form-input-index" } %>
 
   <div class="">
-    <%= f.input :theme, collection: Party::TYPES, input_html: { class: "input form-input-index" } %>
-    <%= f.select :theme, collection: Party::TYPES, input_html: { class: "input form-input-index" } %>
+    <%= f.input :theme, collection: Party::TYPES, label: false, input_html: { class: "input form-input-index" } %>
   </div>
 
   <div class="">
-    <%= f.input :size, collection: ['5-29', '30-59', '60-90'], input_html: { class: "input form-input-index" } %>
+    <%= f.input :size, collection: ['5-29', '30-59', '60-90'], label: false, prompt: 0, input_html: { class: "input form-input-index" } %>
   </div>
 
   <div class="">
