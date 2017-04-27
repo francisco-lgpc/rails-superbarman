@@ -1,9 +1,9 @@
 <%= simple_form_for @party, url: "/bartenders/search" do |f| %>
-
   <%= f.input :address, label: false, placeholder: 'Location', wrapper_html: { class: '' }, input_html: { class: "input form-input-index" } %>
 
   <div class="">
-    <%= f.input :type, collection: Party::TYPES, input_html: { class: "input form-input-index" } %>
+    <%= f.input :theme, collection: Party::TYPES, input_html: { class: "input form-input-index" } %>
+    <%= f.select :theme, collection: Party::TYPES, input_html: { class: "input form-input-index" } %>
   </div>
 
   <div class="">
