@@ -1,15 +1,15 @@
 <%= simple_form_for @party, url: "/bartenders", method: :get, html: { id: 'home-form' } do |f| %>
-  <div class="">
-    <%= f.input :theme, collection: Party::TYPES, label: false, prompt: 0, input_html: { class: "input form-input-index" } %>
+  <div class="home-form">
+    <%= f.input :theme, collection: Party::TYPES, label: false, prompt: "Type of Party", input_html: { class: "input form-input-index" } %>
   </div>
 
   <div class="">
-    <%= f.input :size, collection: ['5-29', '30-59', '60-90'], label: false, prompt: 0, input_html: { class: "input form-input-index" } %>
+    <%= f.input :size, collection: ['5-29', '30-59', '60-90'], label: false, prompt: "Amount of Guests", input_html: { class: "input form-input-index" } %>
   </div>
 
   <div class="">
     <%= button_tag type: :submit, class: "btn-search" do %>
-      <i class="fa fa-search"></i>
+      hello
     <% end %>
   </div>
 <% end %>

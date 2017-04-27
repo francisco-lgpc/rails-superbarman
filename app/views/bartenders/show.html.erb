@@ -24,14 +24,23 @@
       <p> <%= languages.join(', ') %> </p>
     </div>
 
-    <div class="col-xs-8 profile-basics">
+    <div class="col-xs-4 profile-basics">
       <h2 class= ""> <%= @bartender.name %> </h2>
       <h4 class= ""> <%= @bartender.title %> </h4>
       <p class= ""> <%= @bartender.bio %> </p>
       <br>
       <br>
+
+    </div>
+    <div class="col-xs-4 booking-basics">
+      <h2 class= ""> yo yo</h2>
+      <div class="btn button-add-event">Add To My Event</div>
+      <div class="btn button-message">Send a Message</div>
+      <div class="btn button-favorites">Add to Favorites</div>
+      <br>
+
       <%= link_to new_user_session_path do %>
-        <div class="btn button-home"> BOOK ME! </div>
+       <div class="btn button-home"> BOOK ME! </div>
       <% end %>
     </div>
 
@@ -54,6 +63,33 @@
       </div>
     </div>
   </div>
+
+  <div class="row">
+    <div class="col-md-9 rating-basics">
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="col-md-3"></th>
+            <th class="col-md-9"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <h4>(username)</h4>
+              <p>(date of submission)</p>
+            </td>
+            <td>
+              (add div or rating system)
+              <p>loved the food</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
 </div>
 </div>
 

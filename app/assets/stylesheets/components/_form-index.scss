@@ -4,23 +4,24 @@
   width: 65%;
   padding: 0 15px;
   margin: 50px 0 200px 0;
+  color: $white;
   .form-input-index {
 
   }
 
   #party_size {
     height: 50px !important;
-    background-color: #8d9093;
+    background-color: $brown;
   }
   #party_theme {
     height: 50px !important;
-    background-color: #8d9093;
+    background-color: $brown;
   }
 
   #btn-search-index {
     height: 50px !important;
     width: 50px;
-    background-color: #8d9093;
+    background-color: $brown;
   }
 
   #party_date {
@@ -28,5 +29,6 @@
 
     display: block;
     width: 200px;
+    background-color: $white;
   }
 }
