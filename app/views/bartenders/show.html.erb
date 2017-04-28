@@ -60,11 +60,11 @@
 
   <div class="row">
     <div class="reviews text-center">
-      <h3>Reviews:</h3>
       <ul class="no-bullets">
     <% @bartender.reviews.each do |review| %>
       <li>
       <% unless review.rating.nil? %>
+      <h3>Reviews:</h3>
         <ul class="list-inline no-bullets">
           <% review.rating.times do %>
             <li> <i class="fa fa-glass golder" aria-hidden=true> </i></li>
