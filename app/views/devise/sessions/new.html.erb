@@ -1,24 +1,38 @@
 
 <br><br><br>
 
-<div class="container">
-  <div class="row">
-    <div class="col-xs-4 col-xs-offset-4 wrapper-login">
+<div class="modal hide fade in" id="login">
 
-      <%= render 'login_social_media' %>
+  <div class="modal-header">
 
-      <%= render 'login_form' %>
+    <button class="close" data-dismiss="modal">x</button>
 
-      <hr>
+  </div>
 
-      <div class="new-account">
-        <h5>New Account?</h5>
+  <div class="modal-body">
 
-        <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-          <%= link_to "Register", new_registration_path(resource_name), class: 'btn-register text-center' %>
-        <% end -%>
-      </div>
+    <%= render 'login_social_media' %>
 
+    <%= render 'login_form' %>
+
+    <hr>
+
+  </div>
+
+  <div class="modal-footer">
+    <div class="new-account">
+      <h5>New Account?</h5>
+
+      <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+      <%= link_to "Register", new_registration_path(resource_name), class: 'btn-register text-center' %>
+      <% end -%>
     </div>
   </div>
+
 </div>
+</div>
+</div>
+
+
+
+

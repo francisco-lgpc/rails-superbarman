@@ -10,6 +10,9 @@
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <script src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;key=AIzaSyAykvEu0LmFaVZkIUlw84fgMSxh_QFpcn8"></script>
+    <script type="text/javascript"> $(function ()
+
+    { $("#myModal").modal({show:false }); </script>
   </head>
   <body>
     <%= render 'shared/navbar' unless controller_name == "pages" %>
