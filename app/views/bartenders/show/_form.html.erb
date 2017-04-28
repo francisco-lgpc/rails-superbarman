@@ -1,0 +1,13 @@
+<%= simple_form_for @party, url: new_user_session_path, method: :post, html: { id: 'home-form' } do |f| %>
+  <%= f.input :address, label: false, placeholder: 'Location', wrapper_html: { class: '' }, input_html: { class: "input form-input-index" } %>
+
+  <div class="">
+    <%= f.input :date, as: :datepicker, label: false %>
+  </div>
+
+  <div class="">
+    <%= button_tag type: :submit, class: "btn-search" do %>
+      Book
+    <% end %>
+  </div>
+<% end %>

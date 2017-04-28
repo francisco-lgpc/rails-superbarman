@@ -28,3 +28,4 @@ $("input.datepicker").each(function(input) {
 $(document).on("page:load ready", function(){
     $("input.datepicker").datepicker();
 });
+
