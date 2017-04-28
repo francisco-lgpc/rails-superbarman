@@ -1,9 +1,13 @@
 a{
-  text-decoration: none;
+  text-decoration: none !important;
   font-family: $base-font;
   &:hover{
     text-decoration:none;
     color: $gold;
+  }
+  &:visited{
+    color:$white;
+    text-decoration: none;
   }
 }
 

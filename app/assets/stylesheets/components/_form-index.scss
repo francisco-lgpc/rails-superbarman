@@ -1,9 +1,9 @@
 #new_party {
   display: flex;
   justify-content: space-between;
-  width: 65%;
+  width: 86%;
   padding: 0 15px;
-  margin: 50px 0 200px 0;
+  margin: 45px 0 20px 60px;
   color: $white;
   .form-input-index {
 
@@ -19,11 +19,11 @@
 
   #party_size {
     height: 50px;
-    width: 130px;
+    width: 150px;
     background-color: $brown;
     color: $white;
     border:none;
-    border-radius: px
+    border-radius: 6px
   }
   #party_theme {
     height: 50px;
@@ -37,7 +37,7 @@
 
   #btn-search-index {
     height: 50px ;
-    width: 130px;
+    width: 120px;
     background-color: $brown;
     border:none;
     border-radius: 6px
@@ -47,18 +47,20 @@
     height: 50px;
     display: block;
     width: 150px;
-    background-color: white;
-    color: $grey;
+    background-color: $brown;
+    color: $white;
     border:none;
-    border-radius: 6px
+    border-radius: 6px;
+    padding-left: 10px;
   }
   #party_address{
     height: 50px;
     display: block;
     width: 200px;
-    background-color: white;
-    color: $grey;
+    background-color: $brown;
+    color: $white;
     border:none;
-    border-radius: 6px
+    border-radius: 6px;
+
   }
 }
