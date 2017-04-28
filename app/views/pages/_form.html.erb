@@ -1,10 +1,10 @@
 <%= simple_form_for @party, url: "/bartenders", method: :get, html: { id: 'home-form' } do |f| %>
   <div class="home-form">
-    <%= f.input :theme, collection: Party::TYPES, label: false, prompt: "Type of Party", input_html: { class: "input form-input-index" } %>
+    <%= f.input :theme, collection: Party::TYPES, label: false, prompt: "What Type of Party?", input_html: { class: "input form-input-index" } %>
   </div>
 
   <div class="">
-    <%= f.input :size, collection: ['5-29', '30-59', '60-90'], label: false, prompt: "Amount of Guests", input_html: { class: "input form-input-index" } %>
+    <%= f.input :size, collection: ['5-29', '30-59', '60-90'], label: false, prompt: "How Many Guests?", input_html: { class: "input form-input-index" } %>
   </div>
 
   <div class="">
