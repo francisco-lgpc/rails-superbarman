@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   post '/bartenders/search', to: 'bartenders#search'
   resources :bartenders, only: [:index, :show]
+  resources :parties, only: [:show]
 end
