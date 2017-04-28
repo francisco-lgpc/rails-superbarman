@@ -31,8 +31,9 @@ User.destroy_all
 
   languages = LANGUAGES.sample(4)
   languages << 'English'
-  1.upto(rand(1..5)) do |i|
+  1.upto(rand(2..5)) do |i|
     args["language_#{i}".to_sym] = languages[i]
+
   end
 
 
