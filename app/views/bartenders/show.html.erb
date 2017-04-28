@@ -36,6 +36,10 @@
       <h2 class= ""> Book Your Bartender</h2>
       <%= render 'bartenders/show/form' %>
 
+      <%= link_to new_user_session_path do %>
+      <div class="btn button-home"> BOOK ME! </div>
+      <% end %>
+
     </div>
 
   </div>
@@ -60,9 +64,13 @@
 
   <div class="row">
     <div class="reviews text-center">
+<<<<<<< HEAD
 
 
     <% unless @bartender.reviews.map(&:content).all?(&:nil?)  %>
+=======
+      <% unless @bartender.reviews.map(&:content).all?(&:nil?)  %>
+>>>>>>> 167562ac27e360c38f2b5a75d9785302ace2fc00
       <h3>Reviews:</h3>
       <ul class="no-bullets">
         <% @bartender.reviews.each do |review| %>
@@ -84,7 +92,14 @@
       </ul>
       <% end %>
 
+      <br><br>
+      <div class="row">
+        <div class="reviews text-center">
+          <%= render 'reviews/new' %>
+        </div>
+      </div>
 
+<<<<<<< HEAD
     <div class="row">
       <div class="reviews text-center">
         <%= render 'reviews/new' %>
@@ -93,6 +108,10 @@
 
   </div>
 </div>
+=======
+    </div>
+  </div>
+>>>>>>> 167562ac27e360c38f2b5a75d9785302ace2fc00
 
 
 </div>
