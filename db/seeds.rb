@@ -9,8 +9,8 @@ require 'open-uri'
 #   Character.create(name: 'Luke', movie: movies.first)
 
 CITIES = %w(Berlin Amsterdam London Paris Lisbon Barcelona)
-LANGUAGES = %w(English Spanish Portuguese German Dutch)
-TITLE_ADJ = %w(Sexy Cool Amazing Laidback Partyguru)
+LANGUAGES = %w(Spanish Portuguese German Dutch)
+TITLE_ADJ = %w(Sexy Cool Amazing Laidback Partyguru Awesome Dank)
 RANDOM_COCKTAIL_URL = "http://www.thecocktaildb.com/api/json/v1/1/random.php"
 
 
@@ -31,8 +31,9 @@ User.destroy_all
 
   languages = LANGUAGES.sample(4)
   languages << 'English'
-  1.upto(rand(1..5)) do |i|
+  1.upto(rand(2..5)) do |i|
     args["language_#{i}".to_sym] = languages[i]
+
   end
 
 
@@ -62,7 +63,7 @@ Bartender.all.each_with_index do |bartender, i|
 
   bartender.parties.each do |party|
     party.address = bartender.location
-    party.date = Date.new(2017, rand(1..12), rand(1..28)).to_s
+    party.date = Date.new(2017, rand(1..12), rand(1..28))
     party.size = 30
     party.save!
   end

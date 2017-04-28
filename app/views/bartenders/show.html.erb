@@ -33,15 +33,13 @@
 
     </div>
     <div class="col-xs-4 booking-basics">
-      <h2 class= ""> yo yo</h2>
-      <div class="btn button-add-event">Add To My Event</div>
-      <div class="btn button-message">Send a Message</div>
-      <div class="btn button-favorites">Add to Favorites</div>
-      <br>
+      <h2 class= ""> Book Your Bartender</h2>
+      <%= render 'bartenders/show/form' %>
 
       <%= link_to new_user_session_path do %>
       <div class="btn button-home"> BOOK ME! </div>
       <% end %>
+
     </div>
 
   </div>
@@ -53,7 +51,7 @@
   <div class="row">
     <div class="specialities text-center">
       <div class= "header">
-        <h1> Check out my favorites</h1>
+        <h1> My Specialities</h1>
       </div>
       <br><br><br>
       <div class= "content">
@@ -102,3 +100,25 @@
 </div>
 </div>
 
+
+<script>
+  $("input.datepicker").each(function(input) {
+    $(this).datepicker({
+      dateFormat: "yy-mm-dd",
+      altField: $(this).next()
+    })
+
+    // If you use i18n-js you can set the locale like that
+    $(this).datepicker("option", $.datepicker.regional[I18n.currentLocale()]);
+  })
+
+  $(document).on("page:load ready", function(){
+      $("input.datepicker").datepicker();
+  });
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+  document.getElementById('party_date').placeholder = "Date";
+  })
+</script>

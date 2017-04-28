@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="party-show-title">
+     <h2> Congratulations! You have just booked your bartender!</h2>
+     <h4>Your booking number is: #<%= @party.bartender_id  %><%= @party.id %><%= @party.user_id%></h4>
+  </div>
+  <div class="background-div">
+    <div class="text-center">
+      <%= image_tag @party.bartender.picture, id:"bt-party-show"%>
+      <h2><%= @party.bartender.name %></h2>
+    </div>
+  </div>
+  <div class="summary-show">
+    <h2><strong><%= @party.bartender.name %></strong> will be in: </h2>
+    <h3><%= @party.address %></h3>
+    <h4>On <strong><%= @party.date %></strong> </h4>
+    <h4>For your <%= (@party.theme).downcase %> with <%= @party.size %> guests! </h4>
+
+  </div>
+  <br>
+  <br>
+  <%= link_to '#'  do %>
+  <div class="add-friends-button text-center">
+    <h5><i class="fa fa-facebook-square" aria-hidden="true"></i> INVITE YOUR FRIENDS ON FACEBOOK!</h5>
+  </div>
+  <% end %>
+
+</div>

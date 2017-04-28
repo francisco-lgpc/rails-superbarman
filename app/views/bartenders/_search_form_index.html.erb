@@ -1,8 +1,8 @@
-<%= simple_form_for @party, url: "/bartenders/search" do |f| %>
+<%= simple_form_for @party, url: "/bartenders/search", method: :get do |f| %>
   <%= f.input :address, label: false, placeholder: 'Location', wrapper_html: { class: '' }, input_html: { class: "input form-input-index" } %>
 
   <div class="">
-    <%= f.input :theme, collection: Party::TYPES, label: false, placeholder: 'Party Type', input_html: { class: "input form-input-index" } %>
+    <%= f.input :theme, collection: Party::TYPES, label: false, prompt: "Type of Party", input_html: { class: "input form-input-index" } %>
   </div>
 
   <div class="">
@@ -10,7 +10,7 @@
   </div>
 
   <div class="">
-    <%= f.input :date, as: :datepicker, label: false %>
+    <%= f.input :date, as: :datepicker, label: false, placeholder: 'Please select date', input_html: {class: "datep"} %>
   </div>
 
   <div class="">
@@ -20,7 +20,9 @@
   </div>
 <% end %>
 
+
 <script type="text/javascript">
+
   function initialize() {
 
   var input = document.getElementById('party_address');
@@ -29,6 +31,7 @@
 
   google.maps.event.addDomListener(window, 'load', initialize);
 </script>
+
 
 
 
