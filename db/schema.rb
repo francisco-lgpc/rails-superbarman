@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170427143140) do
+ActiveRecord::Schema.define(version: 20170428090215) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20170427143140) do
     t.integer  "user_id"
     t.integer  "bartender_id"
     t.string   "theme"
-    t.integer  "size"
+    t.string   "size"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.index ["bartender_id"], name: "index_parties_on_bartender_id", using: :btree
