@@ -4,12 +4,12 @@ before_action :set_bartender, only: [:show]
 
   def index
     @bartenders = Bartender.all
-
     @party      = Party.new(party_params)
   end
 
   def show
-
+    @new_review = @bartender.reviews.build
+    @review = Review.new
   end
 
   def search
