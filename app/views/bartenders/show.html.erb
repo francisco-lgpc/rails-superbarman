@@ -65,6 +65,43 @@
   </div>
 
   <div class="row">
+    <div class="reviews text-center">
+      <h3>Reviews:</h3>
+      <ul>
+    <% @bartender.reviews.each do |review| %>
+      <li>
+      <% unless review.rating.nil? %>
+        <ul class="list-inline">
+          <% review.rating.times do %>
+            <li> <i class="fa fa-glass golder" aria-hidden=true> </i></li>
+          <% end %>
+          <% (5 - review.rating).times do %>
+            <li> <i class="fa fa-glass blacker" aria-hidden=true> </i></li>
+          <% end %>
+        </ul>
+      </li>
+      <li> <%= review.content %> </li>
+      <br><hr><br>
+      <% end %>
+    <% end %>
+  </ul>
+</p>
+
+
+<div class="row">
+    <div class="reviews text-center">
+    <%= render 'reviews/new' %>
+  </div>
+</div>
+
+</div>
+ </div>
+
+
+
+
+<!--
+  <div class="row">
     <div class="col-md-9 rating-basics">
       <table class="table">
         <thead>
@@ -87,7 +124,7 @@
         </tbody>
       </table>
     </div>
-  </div>
+  </div> -->
 
 
 </div>
