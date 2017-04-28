@@ -9,7 +9,7 @@ gem 'pg'
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'redis'
-
+gem 'turbolinks', '~> 5.0.0'
 gem 'sass-rails'
 gem 'jquery-rails'
 gem 'uglifier'
