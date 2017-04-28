@@ -1,7 +1,7 @@
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="form-inputs">
           <%= f.input :email, label: false  do %>
-            <%= f.input_field :email, placeholder: 'Email Adress', class: 'form-control' %>
+            <%= f.input_field :email, placeholder: 'Email Address', class: 'form-control' %>
             <i class="fa fa-envelope"></i>
           <% end %>
           <%= f.input :password, label: false  do %>
