@@ -1,8 +1,8 @@
-<%= simple_form_for @party, url: new_user_session_path, method: :post, html: { id: 'home-form' } do |f| %>
-  <%= f.input :address, label: false, placeholder: 'Location', wrapper_html: { class: '' }, input_html: { class: "input form-input-index" } %>
+<%= simple_form_for @party, url: new_user_session_path, method: :post, html: { id: 'home-form-show' } do |f| %>
+  <%= f.input :address, label: false, placeholder: 'Location', wrapper_html: { class: '' }, input_html: { class: "input form-input-index", id: "location-show" } %>
 
   <div class="">
-    <%= f.input :date, as: :datepicker, label: false %>
+    <%= f.input :date, as: :datepicker, input_html: {class: 'date-show'}, label: false %>
   </div>
 
   <div class="">
@@ -11,3 +11,6 @@
     <% end %>
   </div>
 <% end %>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js">
+</script>
