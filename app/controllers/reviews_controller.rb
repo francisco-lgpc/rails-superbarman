@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
 before_action :set_bartender
-
+skip_before_action :authenticate_user!
   def new
     @review = @bartender.reviews.build
   end

@@ -61,11 +61,11 @@
   <div class="row">
     <div class="reviews text-center">
       <h3>Reviews:</h3>
-      <ul>
+      <ul class="no-bullets">
     <% @bartender.reviews.each do |review| %>
       <li>
       <% unless review.rating.nil? %>
-        <ul class="list-inline">
+        <ul class="list-inline no-bullets">
           <% review.rating.times do %>
             <li> <i class="fa fa-glass golder" aria-hidden=true> </i></li>
           <% end %>
@@ -92,37 +92,25 @@
  </div>
 
 
-
-
-<!--
-  <div class="row">
-    <div class="col-md-9 rating-basics">
-      <table class="table">
-        <thead>
-          <tr>
-            <th class="col-md-3"></th>
-            <th class="col-md-9"></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              <h4>(username)</h4>
-              <p>(date of submission)</p>
-            </td>
-            <td>
-              (add div or rating system)
-              <p>loved the food</p>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div> -->
-
-
 </div>
 </div>
+
+
+<script>
+  $("input.datepicker").each(function(input) {
+    $(this).datepicker({
+      dateFormat: "yy-mm-dd",
+      altField: $(this).next()
+    })
+
+    // If you use i18n-js you can set the locale like that
+    $(this).datepicker("option", $.datepicker.regional[I18n.currentLocale()]);
+  })
+
+  $(document).on("page:load ready", function(){
+      $("input.datepicker").datepicker();
+  });
+</script>
 
 <script type="text/javascript">
   $(document).ready(function() {
