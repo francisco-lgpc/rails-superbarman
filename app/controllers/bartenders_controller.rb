@@ -4,12 +4,16 @@ before_action :set_bartender, only: [:show]
 
   def index
     @bartenders = Bartender.all
-
     @party      = Party.new(party_params)
   end
 
   def show
 
+    attributes = Rack::Utils.parse_nested_query(params[:party])
+    attributes["date"] = attributes["date"].to_date
+    @party     = Party.new(attributes)
+    @new_review = @bartender.reviews.build
+    @review = Review.new
   end
 
   def search
@@ -31,7 +35,7 @@ before_action :set_bartender, only: [:show]
   end
 
   def party_params
-    params.require(:party).permit(:theme, :size)
+    params.require(:party).permit(:address, :date, :theme, :size)
   end
 
 end

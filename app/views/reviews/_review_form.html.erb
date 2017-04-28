@@ -1,0 +1,7 @@
+<%= simple_form_for [@bartender, @review] do |f| %>
+<%= f.input :content, label: "How was your experience?", placeholder: "Awesome!" %>
+<br><br>
+<%= f.input :rating, collection: 0..5, prompt: "Rate it!", selected: 5 %>
+<br><br>
+<%= f.button :submit %>
+<% end %>

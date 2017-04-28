@@ -7,7 +7,7 @@
   <div class="row">
 
     <% @bartenders.each_with_index do |bartender, i| %>
-    <%= link_to(bartender) do %>
+    <%= link_to bartender_path(bartender, party: params[:party]) do %>
     <div class="col-xs-12 col-sm-6 col-lg-4">
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path (bartender.picture) %>);">
         <div class="card-category">
@@ -28,9 +28,11 @@
   </div>
 </div>
 
-
-
-
+<script type="text/javascript">
+  $(document).ready(function() {
+  document.getElementById('party_date').placeholder = "date";
+  })
+</script>
 
 
 

@@ -62,7 +62,7 @@ Bartender.all.each_with_index do |bartender, i|
 
   bartender.parties.each do |party|
     party.address = bartender.location
-    party.date = Date.new(2017, rand(1..12), rand(1..28)).to_s
+    party.date = Date.new(2017, rand(1..12), rand(1..28))
     party.size = 30
     party.save!
   end
