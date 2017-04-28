@@ -5,8 +5,11 @@ Rails.application.routes.draw do
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root to: 'pages#home'
+  post '/bartenders/search', to: 'bartenders#search'
+  resources :parties, only: [:show]
   get '/bartenders/search', to: 'bartenders#search'
   resources :bartenders, only: [:index, :show] do
     resources :reviews, only: [:new, :create, :update]
   end
+
 end
