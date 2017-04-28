@@ -10,12 +10,13 @@
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <script src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;key=AIzaSyAykvEu0LmFaVZkIUlw84fgMSxh_QFpcn8"></script>
+    <%= javascript_include_tag 'application' %>
+
   </head>
   <body>
     <%= render 'shared/navbar' unless controller_name == "pages" %>
     <%= yield %>
 
-    <%= javascript_include_tag 'application' %>
 
 
     <%= render 'shared/footer' if params[:action] != "home" %>
