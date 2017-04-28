@@ -33,7 +33,7 @@
 
     </div>
     <div class="col-xs-4 booking-basics">
-      <h2 class= ""> yo yo</h2>
+      <h2 class= ""> Book Your Bartender</h2>
       <%= render 'bartenders/show/form' %>
 
     </div>
@@ -112,3 +112,8 @@
   });
 </script>
 
+<script type="text/javascript">
+  $(document).ready(function() {
+  document.getElementById('party_date').placeholder = "Date";
+  })
+</script>
