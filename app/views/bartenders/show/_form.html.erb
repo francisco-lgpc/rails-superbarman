@@ -1,5 +1,7 @@
-<%= simple_form_for @party, url: new_user_session_path, method: :post, html: { id: 'home-form-show' } do |f| %>
+
+<%= simple_form_for [@bartender, @party], html: { id: 'home-form-show' } do |f| %>
   <%= f.input :address, label: false, placeholder: 'Location', wrapper_html: { class: '' }, input_html: { class: "input form-input-index", id: "location-show" } %>
+
 
   <div class="">
     <%= f.input :date, as: :datepicker, input_html: {class: 'date-show'}, label: false %>
@@ -10,6 +12,17 @@
       Book
     <% end %>
   </div>
+
+  <div class="hidden">
+    <%= f.input :theme, collection: Party::TYPES, label: false, prompt: "Type of Party", input_html: { class: "input form-input-index" } %>
+  </div>
+
+  <div class="hidden">
+    <%= f.input :size, collection: ['5-29', '30-59', '60-90'], label: false, prompt: 0, input_html: { class: "input form-input-index" } %>
+  </div>
+
+
+
 <% end %>
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js">

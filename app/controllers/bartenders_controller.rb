@@ -8,7 +8,6 @@ before_action :set_bartender, only: [:show]
   end
 
   def show
-
     attributes = Rack::Utils.parse_nested_query(params[:party])
     attributes["date"] = attributes["date"].to_date if attributes["date"]
     @party     = Party.new(attributes)
