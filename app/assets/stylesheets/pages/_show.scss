@@ -14,3 +14,43 @@ margin-top: 45px;
 #cropped_avatar {
  object-fit: cover;
 }
+
+.booking-basics{
+  padding-left: 54px;
+
+
+
+  #location-show{
+    height: 50px;
+    display: block;
+    width: 200px;
+    background-color: $brown;
+    color: $white;
+    border:none;
+    border-radius: 6px;
+  }
+
+  .date-show{
+    height: 50px;
+    display: block;
+    width: 200px;
+    background-color: $brown;
+    color: $white;
+    border:none;
+    border-radius: 6px;
+    padding-left: 10px;
+  }
+  .btn-search{
+    background-color: $brown;
+    color: white;
+    width: 79%;
+    border-radius: 6px;
+    border: none;
+    font-size: 15px;
+    height: 50px;
+  }
+    .btn-search:hover{
+    color: $gold;
+  }
+}
+
