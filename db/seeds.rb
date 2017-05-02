@@ -23,7 +23,7 @@ User.destroy_all
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
-  args[:languages]    = "English German Portuguese"
+  args[:languages]    = "en pt de"
   args[:picture]      = "12.jpg"
 
   cocktails = (1..5).map do |i|
@@ -47,7 +47,7 @@ User.destroy_all
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
-  args[:languages]    = "English German Portuguese"
+  args[:languages]    = "en pt de"
   args[:picture]      = "12.jpg"
 
   cocktails = (1..5).map do |i|
@@ -71,7 +71,7 @@ User.destroy_all
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
-  args[:languages]    = "English German Portuguese"
+  args[:languages]    = "en pt de"
   args[:picture]      = "12.jpg"
 
   cocktails = (1..5).map do |i|
@@ -95,7 +95,7 @@ User.destroy_all
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
-  args[:languages]    = "English German Portuguese"
+  args[:languages]    = "en pt de"
   args[:picture]      = "12.jpg"
 
   cocktails = (1..5).map do |i|
@@ -119,7 +119,7 @@ User.destroy_all
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
-  args[:languages]    = "English German Portuguese"
+  args[:languages]    = "en pt de"
   args[:picture]      = "12.jpg"
 
   cocktails = (1..5).map do |i|
@@ -143,7 +143,7 @@ User.destroy_all
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
-  args[:languages]    = "English German Portuguese"
+  args[:languages]    = "en pt de"
   args[:picture]      = "12.jpg"
 
   cocktails = (1..5).map do |i|
@@ -167,7 +167,7 @@ User.destroy_all
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
-  args[:languages]    = "English German Portuguese"
+  args[:languages]    = "en pt de"
   args[:picture]      = "12.jpg"
 
   cocktails = (1..5).map do |i|
@@ -191,7 +191,7 @@ User.destroy_all
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
-  args[:languages]    = "English German Portuguese"
+  args[:languages]    = "en pt de"
   args[:picture]      = "12.jpg"
 
   cocktails = (1..5).map do |i|
@@ -215,7 +215,7 @@ User.destroy_all
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
-  args[:languages]    = "English German Portuguese"
+  args[:languages]    = "en pt de"
   args[:picture]      = "12.jpg"
 
   cocktails = (1..5).map do |i|
@@ -239,7 +239,7 @@ User.destroy_all
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
-  args[:languages]    = "English German Portuguese"
+  args[:languages]    = "en pt de"
   args[:picture]      = "12.jpg"
 
   cocktails = (1..5).map do |i|
@@ -263,7 +263,7 @@ User.destroy_all
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
-  args[:languages]    = "English German Portuguese"
+  args[:languages]    = "en pt de"
   args[:picture]      = "12.jpg"
 
   cocktails = (1..5).map do |i|
@@ -287,7 +287,7 @@ User.destroy_all
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
-  args[:languages]    = "English German Portuguese"
+  args[:languages]    = "en pt de"
   args[:picture]      = "12.jpg"
 
   cocktails = (1..5).map do |i|
@@ -311,7 +311,7 @@ User.destroy_all
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
-  args[:languages]    = "English German Portuguese"
+  args[:languages]    = "en pt de"
   args[:picture]      = "12.jpg"
 
   cocktails = (1..5).map do |i|
@@ -335,7 +335,7 @@ User.destroy_all
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
-  args[:languages]    = "English German Portuguese"
+  args[:languages]    = "en pt de"
   args[:picture]      = "12.jpg"
 
   cocktails = (1..5).map do |i|
@@ -359,7 +359,7 @@ User.destroy_all
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
-  args[:languages]    = "English German Portuguese"
+  args[:languages]    = "en pt de"
   args[:picture]      = "12.jpg"
 
   cocktails = (1..5).map do |i|
@@ -383,7 +383,7 @@ User.destroy_all
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
-  args[:languages]    = "English German Portuguese"
+  args[:languages]    = "en pt de"
   args[:picture]      = "12.jpg"
 
   cocktails = (1..5).map do |i|
@@ -407,7 +407,7 @@ User.destroy_all
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
-  args[:languages]    = "English German Portuguese"
+  args[:languages]    = "en pt de"
   args[:picture]      = "12.jpg"
 
   cocktails = (1..5).map do |i|
@@ -431,7 +431,7 @@ User.destroy_all
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
-  args[:languages]    = "English German Portuguese"
+  args[:languages]    = "en pt de"
   args[:picture]      = "12.jpg"
 
   cocktails = (1..5).map do |i|
@@ -455,7 +455,7 @@ User.destroy_all
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
-  args[:languages]    = "English German Portuguese"
+  args[:languages]    = "en pt de"
   args[:picture]      = "12.jpg"
 
   cocktails = (1..5).map do |i|
@@ -479,7 +479,7 @@ User.destroy_all
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
-  args[:languages]    = "English German Portuguese"
+  args[:languages]    = "en pt de"
   args[:picture]      = "12.jpg"
 
   cocktails = (1..5).map do |i|
@@ -503,7 +503,7 @@ User.destroy_all
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Amsterdam"
-  args[:languages]    = "English German Portuguese"
+  args[:languages]    = "en pt de"
   args[:picture]      = "12.jpg"
 
   cocktails = (1..5).map do |i|
@@ -527,7 +527,7 @@ User.destroy_all
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Amsterdam"
-  args[:languages]    = "English German Portuguese"
+  args[:languages]    = "en pt de"
   args[:picture]      = "12.jpg"
 
   cocktails = (1..5).map do |i|
@@ -551,7 +551,7 @@ User.destroy_all
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Amsterdam"
-  args[:languages]    = "English German Portuguese"
+  args[:languages]    = "en pt de"
   args[:picture]      = "12.jpg"
 
   cocktails = (1..5).map do |i|
@@ -575,7 +575,7 @@ User.destroy_all
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Amsterdam"
-  args[:languages]    = "English German Portuguese"
+  args[:languages]    = "en pt de"
   args[:picture]      = "12.jpg"
 
   cocktails = (1..5).map do |i|
@@ -599,7 +599,7 @@ User.destroy_all
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Amsterdam"
-  args[:languages]    = "English German Portuguese"
+  args[:languages]    = "en pt de"
   args[:picture]      = "12.jpg"
 
   cocktails = (1..5).map do |i|
@@ -623,7 +623,7 @@ User.destroy_all
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Amsterdam"
-  args[:languages]    = "English German Portuguese"
+  args[:languages]    = "en pt de"
   args[:picture]      = "12.jpg"
 
   cocktails = (1..5).map do |i|
@@ -647,7 +647,7 @@ User.destroy_all
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Amsterdam"
-  args[:languages]    = "English German Portuguese"
+  args[:languages]    = "en pt de"
   args[:picture]      = "12.jpg"
 
   cocktails = (1..5).map do |i|
@@ -671,7 +671,7 @@ User.destroy_all
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Amsterdam"
-  args[:languages]    = "English German Portuguese"
+  args[:languages]    = "en pt de"
   args[:picture]      = "12.jpg"
 
   cocktails = (1..5).map do |i|
@@ -695,7 +695,7 @@ User.destroy_all
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Amsterdam"
-  args[:languages]    = "English German Portuguese"
+  args[:languages]    = "en pt de"
   args[:picture]      = "12.jpg"
 
   cocktails = (1..5).map do |i|
@@ -719,7 +719,7 @@ User.destroy_all
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Amsterdam"
-  args[:languages]    = "English German Portuguese"
+  args[:languages]    = "en pt de"
   args[:picture]      = "12.jpg"
 
   cocktails = (1..5).map do |i|
