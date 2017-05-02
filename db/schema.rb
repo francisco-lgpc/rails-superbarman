@@ -22,18 +22,20 @@ ActiveRecord::Schema.define(version: 20170502103713) do
     t.text     "bio"
     t.integer  "rating"
     t.string   "location"
-    t.string   "language_1"
-    t.string   "language_2"
-    t.string   "language_3"
-    t.string   "language_4"
-    t.string   "language_5"
-    t.string   "speciality_1"
-    t.string   "speciality_2"
-    t.string   "speciality_3"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.string   "title"
     t.string   "picture"
+    t.string   "languages"
+  end
+
+  create_table "cocktails", force: :cascade do |t|
+    t.string   "name"
+    t.string   "picture"
+    t.integer  "bartender_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["bartender_id"], name: "index_cocktails_on_bartender_id", using: :btree
   end
 
   create_table "parties", force: :cascade do |t|
@@ -89,6 +91,7 @@ ActiveRecord::Schema.define(version: 20170502103713) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "cocktails", "bartenders"
   add_foreign_key "parties", "bartenders"
   add_foreign_key "parties", "users"
   add_foreign_key "reviews", "parties"
