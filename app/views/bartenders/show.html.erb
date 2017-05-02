@@ -50,8 +50,11 @@
       </div>
       <br><br><br>
       <div class= "content">
-        <% 1.upto(3) do |i|  %>
-        <%= image_tag @bartender.read_attribute("speciality_#{i}"), class: 'avatar-largest' %>
+        <% @bartender.cocktails.each do |cocktail|  %>
+          <div>
+            <%= cocktail.name %>
+            <%= image_tag cocktail.picture, class: 'avatar-largest' %>
+          </div>
         <% end %>
       </div>
     </div>
