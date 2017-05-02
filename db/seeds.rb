@@ -19,7 +19,6 @@ Party.destroy_all
 User.destroy_all
 
 12.times do
-
   args = {}
   args[:name]         = "#{Faker::Name.first_name} #{Faker::Name.last_name}"
   args[:title]        = "#{TITLE_ADJ.sample} #{Faker::Pokemon.name}"
@@ -36,17 +35,16 @@ User.destroy_all
 
   end
 
-
-  1.upto(3) do |i|
+  cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
     cocktail_parsed = JSON.parse(cocktail_json)
     cocktail_data = cocktail_parsed["drinks"].first
-    args["speciality_#{i}".to_sym] = cocktail_data["strDrinkThumb"]
+    Cocktail.create(picture: cocktail_data["strDrinkThumb"], name: cocktail_data["strDrink"])
   end
 
   b = Bartender.new(args)
+  b.cocktails = cocktails
   p b.errors.full_messages unless b.save
-
 end
 
 Bartender.all.each_with_index do |bartender, i|
