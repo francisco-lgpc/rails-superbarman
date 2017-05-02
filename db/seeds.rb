@@ -9,7 +9,7 @@ require 'open-uri'
 #   Character.create(name: 'Luke', movie: movies.first)
 
 CITIES = %w(Berlin Amsterdam London Paris Lisbon Barcelona)
-LANGUAGES = %w(en pt de nl)
+LANGUAGES = %w(es pt de nl)
 TITLE_ADJ = %w(Sexy Cool Amazing Laidback Partyguru Awesome Dank)
 RANDOM_COCKTAIL_URL = "http://www.thecocktaildb.com/api/json/v1/1/random.php"
 
@@ -28,12 +28,7 @@ User.destroy_all
   args[:rating]       = rand(1..5)
   args[:location]     = "#{CITIES.sample}"
 
-  languages = LANGUAGES.sample(4)
-  languages << 'en'
-  1.upto(rand(2..5)) do |i|
-    args["language_#{i}".to_sym] = languages[i]
-
-  end
+  args[:languages] = LANGUAGES.sample(rand(1..4)).join(' ') + ' en'
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read

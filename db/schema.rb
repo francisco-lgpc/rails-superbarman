@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170502094326) do
+ActiveRecord::Schema.define(version: 20170502100706) do
+
 
 
   # These are extensions that must be enabled in order to support this database
@@ -23,15 +24,11 @@ ActiveRecord::Schema.define(version: 20170502094326) do
     t.text     "bio"
     t.integer  "rating"
     t.string   "location"
-    t.string   "language_1"
-    t.string   "language_2"
-    t.string   "language_3"
-    t.string   "language_4"
-    t.string   "language_5"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.string   "title"
     t.string   "picture"
+    t.string   "languages"
   end
 
   create_table "cocktails", force: :cascade do |t|
