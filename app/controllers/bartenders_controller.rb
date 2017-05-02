@@ -4,7 +4,13 @@ before_action :set_bartender, only: [:show]
 
   def index
     @bartenders = Bartender.all
-    @party      = Party.new(party_params)
+
+    if params[:party]
+      @party          = Party.new(party_params)
+      session[:party] = party_params
+    else
+      @party = Party.new(session[:party])
+    end
   end
 
   def show
@@ -13,6 +19,7 @@ before_action :set_bartender, only: [:show]
     @party     = Party.new(attributes)
     @new_review = @bartender.reviews.build
     @review = Review.new
+    p params
   end
 
   def search
@@ -26,8 +33,15 @@ before_action :set_bartender, only: [:show]
     non_available_ids = Bartender.joins(:parties).where("parties.date = ?", Date.parse(params[:party][:date])).pluck(:id)
     unless non_available_ids.empty?
       @bartenders = @bartenders.where("id NOT IN (?)", non_available_ids)
+
     end
-    @party = Party.new
+    if params[:party]
+      @party          = Party.new(party_params)
+      session[:party] = party_params
+    else
+      @party = Party.new(session[:party])
+    end
+
     render :index
   end
 

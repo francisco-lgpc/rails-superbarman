@@ -3,11 +3,21 @@ class PartiesController < ApplicationController
 
   def create
     @party = Party.new(party_params)
+    @party.theme = "Party" if @party.theme == ""
     @bartender = Bartender.find(params[:bartender_id])
     @party.bartender = @bartender
     @party.user = User.first
     @party.save!
     redirect_to bartender_party_path(@bartender, @party)
+  end
+
+  def new
+    if params[:party]
+      @party          = Party.new(party_params)
+      session[:party] = party_params
+    else
+      @party = Party.new(session[:party])
+    end
   end
 
   def show
