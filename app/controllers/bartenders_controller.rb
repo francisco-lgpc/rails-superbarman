@@ -16,10 +16,16 @@ before_action :set_bartender, only: [:show]
   end
 
   def search
+    @bartenders = Bartender.all
+    #Filter by Address
     location_query = params[:party][:address].split(',').map(&:squish)
-    @bartenders = []
     location_query.each do |word|
-      @bartenders += Bartender.where("location ILIKE ?", "%#{word}%")
+      @bartenders = @bartenders.where("location ILIKE ?", "%#{word}%")
+    end
+    #Filter by Date Availability
+    non_available_ids = Bartender.joins(:parties).where("parties.date = ?", Date.parse(params[:party][:date])).pluck(:id)
+    unless non_available_ids.empty?
+      @bartenders = @bartenders.where("id NOT IN (?)", non_available_ids)
     end
     @party = Party.new
     render :index
