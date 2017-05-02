@@ -1,12 +1,12 @@
 #new_party {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   width: 86%;
   padding: 0 15px;
   margin: 45px 0 20px 60px;
   color: $white;
-  .form-input-index {
-
+  .form-group, .btn-search {
+    margin: 0 5px 15px;
   }
 
   #btn-search-index{
