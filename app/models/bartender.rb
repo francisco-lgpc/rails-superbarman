@@ -10,6 +10,7 @@ class Bartender < ApplicationRecord
 
   has_many :parties
   has_many :users, through: :parties
+
   has_many :reviews
   has_many :cocktails, dependent: :destroy
 end
