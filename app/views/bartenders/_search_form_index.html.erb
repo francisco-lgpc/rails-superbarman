@@ -1,10 +1,6 @@
 <%= simple_form_for @party, url: "/bartenders/search", method: :get do |f| %>
   <%= f.input :address, label: false, placeholder: 'Location', wrapper_html: { class: '' }, input_html: { class: "input form-input-index" } %>
 
-  <div class="">
-    <%= f.input :theme, collection: Party::TYPES, label: false, prompt: "Type of Party", input_html: { class: "input form-input-index" } %>
-  </div>
-
   <%= f.input :date, as: :string, input_html: { class: "datepicker" } %>
 
   <div class="">
