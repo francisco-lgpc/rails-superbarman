@@ -42,7 +42,7 @@ User.destroy_all
 
 #Bartender_2
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
   args[:email]        = "izabeldosantos2@superbarman.com"
@@ -68,7 +68,7 @@ User.destroy_all
 
 #Bartender_3
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
   args[:email]        = "izabeldosantos3@superbarman.com"
@@ -94,7 +94,7 @@ User.destroy_all
 
 #Bartender_4
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
   args[:email]        = "izabeldosantos4@superbarman.com"
@@ -120,7 +120,7 @@ User.destroy_all
 
 #Bartender_5
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
   args[:email]        = "izabeldosantos5@superbarman.com"
@@ -146,7 +146,7 @@ User.destroy_all
 
 #Bartender_6
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
   args[:email]        = "izabeldosantos6@superbarman.com"
@@ -172,7 +172,7 @@ User.destroy_all
 
 #Bartender_7
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
   args[:email]        = "izabeldosantos7@superbarman.com"
@@ -198,7 +198,7 @@ User.destroy_all
 
 #Bartender_8
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
   args[:email]        = "izabeldosantos8@superbarman.com"
@@ -224,7 +224,7 @@ User.destroy_all
 
 #Bartender_9
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
   args[:email]        = "izabeldosantos9@superbarman.com"
@@ -250,7 +250,7 @@ User.destroy_all
 
 #Bartender_10
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
   args[:email]        = "izabeldosantos10@superbarman.com"
@@ -276,7 +276,7 @@ User.destroy_all
 
 #Bartender_11
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
   args[:email]        = "izabeldosantos11@superbarman.com"
@@ -302,7 +302,7 @@ User.destroy_all
 
 #Bartender_12
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
   args[:email]        = "izabeldosantos12@superbarman.com"
@@ -328,7 +328,7 @@ User.destroy_all
 
 #Bartender_13
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
   args[:email]        = "izabeldosantos13@superbarman.com"
@@ -354,7 +354,7 @@ User.destroy_all
 
 #Bartender_14
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
   args[:email]        = "izabeldosantos14@superbarman.com"
@@ -380,7 +380,7 @@ User.destroy_all
 
 #Bartender_15
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
   args[:email]        = "izabeldosantos15@superbarman.com"
@@ -406,7 +406,7 @@ User.destroy_all
 
 #Bartender_16
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
   args[:email]        = "izabeldosantos16@superbarman.com"
@@ -432,7 +432,7 @@ User.destroy_all
 
 #Bartender_17
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
   args[:email]        = "izabeldosantos17@superbarman.com"
@@ -458,7 +458,7 @@ User.destroy_all
 
 #Bartender_18
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
   args[:email]        = "izabeldosantos18@superbarman.com"
@@ -484,7 +484,7 @@ User.destroy_all
 
 #Bartender_19
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
   args[:email]        = "izabeldosantos19@superbarman.com"
@@ -510,7 +510,7 @@ User.destroy_all
 
 #Bartender_20
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
   args[:email]        = "izabeldosantos20@superbarman.com"
@@ -536,7 +536,7 @@ User.destroy_all
 
 #Bartender_21
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
   args[:email]        = "izabeldosantos21@superbarman.com"
@@ -562,7 +562,7 @@ User.destroy_all
 
 #Bartender_22
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
   args[:email]        = "izabeldosantos22@superbarman.com"
@@ -588,7 +588,7 @@ User.destroy_all
 
 #Bartender_23
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
   args[:email]        = "izabeldosantos23@superbarman.com"
@@ -614,7 +614,7 @@ User.destroy_all
 
 #Bartender_24
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
   args[:email]        = "izabeldosantos24@superbarman.com"
@@ -640,7 +640,7 @@ User.destroy_all
 
 #Bartender_25
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
   args[:email]        = "izabeldosantos25@superbarman.com"
@@ -666,7 +666,7 @@ User.destroy_all
 
 #Bartender_26
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
   args[:email]        = "izabeldosantos26@superbarman.com"
@@ -692,7 +692,7 @@ User.destroy_all
 
 #Bartender_27
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
   args[:email]        = "izabeldosantos27@superbarman.com"
@@ -718,7 +718,7 @@ User.destroy_all
 
 #Bartender_28
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
   args[:email]        = "izabeldosantos28@superbarman.com"
@@ -744,7 +744,7 @@ User.destroy_all
 
 #Bartender_29
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
   args[:email]        = "izabeldosantos29@superbarman.com"
@@ -770,7 +770,7 @@ User.destroy_all
 
 #Bartender_30
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
   args[:email]        = "izabeldosantos30@superbarman.com"
