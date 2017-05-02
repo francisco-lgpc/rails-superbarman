@@ -35,7 +35,6 @@
     <div class="col-xs-4 booking-basics">
       <h2 class= ""> Book Your Bartender</h2>
       <%= render 'bartenders/show/form' %>
-
     </div>
 
   </div>
@@ -52,7 +51,7 @@
       <br><br><br>
       <div class= "content">
         <% 1.upto(3) do |i|  %>
-          <%= image_tag @bartender.read_attribute("speciality_#{i}"), class: 'avatar-largest' %>
+        <%= image_tag @bartender.read_attribute("speciality_#{i}"), class: 'avatar-largest' %>
         <% end %>
       </div>
     </div>
@@ -60,36 +59,40 @@
 
   <div class="row">
     <div class="reviews text-center">
-    <h3>Reviews:</h3>
+
+
+
+    <% unless @bartender.reviews.map(&:content).all?(&:nil?)  %>
+
+      <h3>Reviews:</h3>
       <ul class="no-bullets">
-    <% @bartender.reviews.each do |review| %>
-      <li>
-      <% unless review.rating.nil? %>
-        <ul class="list-inline no-bullets">
-          <% review.rating.times do %>
+        <% @bartender.reviews.each do |review| %>
+        <li>
+          <% unless review.rating.nil? %>
+          <ul class="list-inline no-bullets">
+            <% review.rating.times do %>
             <li> <i class="fa fa-glass golder" aria-hidden=true> </i></li>
-          <% end %>
-          <% (5 - review.rating).times do %>
+            <% end %>
+            <% (5 - review.rating).times do %>
             <li> <i class="fa fa-glass blacker" aria-hidden=true> </i></li>
-          <% end %>
-        </ul>
-      </li>
-      <li> <%= review.content %> </li>
-      <br><hr><br>
+            <% end %>
+          </ul>
+        </li>
+        <li> <%= review.content %> </li>
+        <br><hr><br>
+        <% end %>
+        <% end %>
+      </ul>
       <% end %>
-    <% end %>
-  </ul>
-</p>
+
+      <br><br>
+      <div class="row">
+        <div class="reviews text-center">
+          <%= render 'reviews/new' %>
+        </div>
+      </div>
 
 
-<div class="row">
-    <div class="reviews text-center">
-    <%= render 'reviews/new' %>
-  </div>
-</div>
-
-</div>
- </div>
 
 
 </div>
@@ -108,12 +111,12 @@
   })
 
   $(document).on("page:load ready", function(){
-      $("input.datepicker").datepicker();
+    $("input.datepicker").datepicker();
   });
 </script>
 
 <script type="text/javascript">
   $(document).ready(function() {
-  document.getElementById('party_date').placeholder = "Date";
+    document.getElementById('party_date').placeholder = "Date";
   })
 </script>
