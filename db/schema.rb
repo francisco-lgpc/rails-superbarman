@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170502102416) do
+ActiveRecord::Schema.define(version: 20170502130548) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,18 +22,20 @@ ActiveRecord::Schema.define(version: 20170502102416) do
     t.text     "bio"
     t.integer  "rating"
     t.string   "location"
-    t.string   "language_1"
-    t.string   "language_2"
-    t.string   "language_3"
-    t.string   "language_4"
-    t.string   "language_5"
-    t.string   "speciality_1"
-    t.string   "speciality_2"
-    t.string   "speciality_3"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.string   "title"
     t.string   "picture"
+    t.string   "languages"
+  end
+
+  create_table "cocktails", force: :cascade do |t|
+    t.string   "name"
+    t.string   "picture"
+    t.integer  "bartender_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["bartender_id"], name: "index_cocktails_on_bartender_id", using: :btree
   end
 
   create_table "parties", force: :cascade do |t|
@@ -57,10 +59,14 @@ ActiveRecord::Schema.define(version: 20170502102416) do
   create_table "reviews", force: :cascade do |t|
     t.text     "content"
     t.integer  "rating"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.integer  "party_id"
+    t.integer  "user_id"
+    t.integer  "bartender_id"
+    t.index ["bartender_id"], name: "index_reviews_on_bartender_id", using: :btree
     t.index ["party_id"], name: "index_reviews_on_party_id", using: :btree
+    t.index ["user_id"], name: "index_reviews_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -87,7 +93,10 @@ ActiveRecord::Schema.define(version: 20170502102416) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "cocktails", "bartenders"
   add_foreign_key "parties", "bartenders"
   add_foreign_key "parties", "users"
+  add_foreign_key "reviews", "bartenders"
   add_foreign_key "reviews", "parties"
+  add_foreign_key "reviews", "users"
 end
