@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get '/log_in', to: 'pages#sign_in'
   post '/bartenders/search', to: 'bartenders#search'
 
-  get '/bartenders/search', to: 'bartenders#search'
+  get '/bartenders/search', to: 'bartenders#search', as: "search_path"
   resources :bartenders, only: [:index, :show] do
     resources :reviews, only: [:new, :create, :update]
     resources :parties, only: [:show, :create]

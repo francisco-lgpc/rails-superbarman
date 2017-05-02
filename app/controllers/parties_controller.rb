@@ -3,6 +3,7 @@ class PartiesController < ApplicationController
 
   def create
     @party = Party.new(party_params)
+    @party.theme = "Party" if @party.theme == ""
     @bartender = Bartender.find(params[:bartender_id])
     @party.bartender = @bartender
     @party.user = User.first

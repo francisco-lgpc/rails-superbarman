@@ -4,4 +4,5 @@ class Party < ApplicationRecord
   belongs_to :bartender
   has_many :reviews, dependent: :destroy
   validates :theme, inclusion: { in: TYPES }
+
 end
