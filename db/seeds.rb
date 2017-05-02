@@ -9,17 +9,15 @@ require 'open-uri'
 #   Character.create(name: 'Luke', movie: movies.first)
 
 CITIES = %w(Berlin Amsterdam London Paris Lisbon Barcelona)
-LANGUAGES = %w(Spanish Portuguese German Dutch)
+LANGUAGES = %w(es pt de nl)
 TITLE_ADJ = %w(Sexy Cool Amazing Laidback Partyguru Awesome Dank)
 RANDOM_COCKTAIL_URL = "http://www.thecocktaildb.com/api/json/v1/1/random.php"
 
-
-Bartender.destroy_all
 Party.destroy_all
+Bartender.destroy_all
 User.destroy_all
 
 12.times do
-
   args = {}
   args[:name]         = "Izabel do Santos"
   args[:title]        = "Sexy Caipirinha"
@@ -28,20 +26,25 @@ User.destroy_all
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.
   My goal: bring you the flavors of Rio de Janeiro's markets. Lime, chacaca and love! Tchau Tchau! "
   args[:rating]       = rand(1..5)
+
   args[:location]     = "Berlin"
   args[:languages]     = "English German Portuguese"
 
 
   1.upto(3) do |i|
+
+
+  cocktails = (1..5).map do |i|
+
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
     cocktail_parsed = JSON.parse(cocktail_json)
     cocktail_data = cocktail_parsed["drinks"].first
-    args["speciality_#{i}".to_sym] = cocktail_data["strDrinkThumb"]
+    Cocktail.create(picture: cocktail_data["strDrinkThumb"], name: cocktail_data["strDrink"])
   end
 
   b = Bartender.new(args)
+  b.cocktails = cocktails
   p b.errors.full_messages unless b.save
-
 end
 
 Bartender.all.each_with_index do |bartender, i|
