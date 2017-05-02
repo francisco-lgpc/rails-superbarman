@@ -1,5 +1,5 @@
-<% languages = [] %>
-<% @bartender.languages.split.map do |language|  %>
+
+<% languages = @bartender.languages.split.map do |language|  %>
   <% Bartender::LANGUAGES[language] %>
 <% end %>
 

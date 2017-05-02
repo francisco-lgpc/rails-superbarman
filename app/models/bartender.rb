@@ -4,7 +4,8 @@ class Bartender < ApplicationRecord
     'es' => 'Spanish',
     'pt' => 'Portuguese',
     'de' => 'German',
-    'nl' => 'Dutch'
+    'nl' => 'Dutch',
+    'fr' => 'French'
   }
 
   has_many :parties
