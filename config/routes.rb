@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   post '/bartenders/search', to: 'bartenders#search'
 
-  get '/bartenders/search', to: 'bartenders#search'
+  get '/bartenders/search', to: 'bartenders#search', as: "search_path"
   resources :bartenders, only: [:index, :show] do
     resources :reviews, only: [:new, :create, :update]
     resources :parties, only: [:show, :create]

@@ -2,10 +2,8 @@
 <%= simple_form_for [@bartender, @party], html: { id: 'home-form-show' } do |f| %>
   <%= f.input :address, label: false, placeholder: 'Location', wrapper_html: { class: '' }, input_html: { class: "input form-input-index", id: "location-show" } %>
 
+  <%= f.input :date, as: :string, input_html: { class: "datepicker" } %>
 
-  <div class="">
-    <%= f.input :date, as: :datepicker, input_html: {class: 'date-show'}, label: false %>
-  </div>
 
   <div class="">
     <%= button_tag type: :submit, class: "btn-search" do %>
@@ -17,13 +15,22 @@
     <%= f.input :theme, collection: Party::TYPES, label: false, prompt: "Type of Party", input_html: { class: "input form-input-index" } %>
   </div>
 
-  <div class="hidden">
-    <%= f.input :size, collection: ['5-29', '30-59', '60-90'], label: false, prompt: 0, input_html: { class: "input form-input-index" } %>
-  </div>
-
-
 
 <% end %>
 
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js">
+<script type="text/javascript">
+
+  function initialize() {
+
+  var input = document.getElementById('party_address');
+  var autocomplete = new google.maps.places.Autocomplete(input);
+  }
+
+  google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.datepicker').datepicker();
+  });
 </script>
