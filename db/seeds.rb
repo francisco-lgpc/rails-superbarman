@@ -13,9 +13,8 @@ LANGUAGES = %w(es pt de nl)
 TITLE_ADJ = %w(Sexy Cool Amazing Laidback Partyguru Awesome Dank)
 RANDOM_COCKTAIL_URL = "http://www.thecocktaildb.com/api/json/v1/1/random.php"
 
-
-Bartender.destroy_all
 Party.destroy_all
+Bartender.destroy_all
 User.destroy_all
 
 12.times do
