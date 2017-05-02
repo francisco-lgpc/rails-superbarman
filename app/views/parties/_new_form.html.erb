@@ -1,0 +1,41 @@
+<%= simple_form_for [@bartender, @party], url: bartender_parties_path, html: { id: 'home-form-show' } do |f| %>
+  <h3>time: </h3>
+  <%= f.input :start_time, as: :string, label: false, placeholder: '21:00', wrapper_html: { class: '' }, input_html: { class: "input form-input-index"} %>
+
+
+<%= f.input :size, collection: {"5 to 29 guests": "5-29", "30 to 59 guests": "30-59", "60 to 90 guests": "60-90"}  %>
+
+<h3>Date: <%= @party.date %></h3>
+
+
+
+  <h3>Theme: <%= @party.theme %></h3>
+
+  <div class="hidden">
+    <%= f.input :theme, collection: Party::TYPES, label: false, prompt: "Type of Party", input_html: { class: "input form-input-index" } %>
+  </div>
+
+  <div class="">
+    <%= button_tag type: :submit, class: "btn-search" do %>
+      Book
+    <% end %>
+  </div>
+
+<% end %>
+
+<script type="text/javascript">
+
+  function initialize() {
+
+  var input = document.getElementById('party_address');
+  var autocomplete = new google.maps.places.Autocomplete(input);
+  }
+
+  google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.datepicker').datepicker();
+  });
+</script>

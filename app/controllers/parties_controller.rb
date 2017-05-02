@@ -11,6 +11,15 @@ class PartiesController < ApplicationController
     redirect_to bartender_party_path(@bartender, @party)
   end
 
+  def new
+    if params[:party]
+      @party          = Party.new(party_params)
+      session[:party] = party_params
+    else
+      @party = Party.new(session[:party])
+    end
+  end
+
   def show
     @party = Party.find(params[:id])
   end
