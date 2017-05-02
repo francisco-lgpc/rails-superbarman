@@ -21,20 +21,15 @@ User.destroy_all
 12.times do
 
   args = {}
-  args[:name]         = "#{Faker::Name.first_name} #{Faker::Name.last_name}"
-  args[:title]        = "#{TITLE_ADJ.sample} #{Faker::Pokemon.name}"
-  args[:phone_number] = Faker::PhoneNumber.cell_phone
-  args[:email]        = Faker::Internet.safe_email(args[:name])
-  args[:bio]          = Faker::Hipster.paragraph
+  args[:name]         = "Izabel do Santos"
+  args[:title]        = "Sexy Caipirinha"
+  args[:phone_number] = "+49.680.47.64.90"
+  args[:email]        = "izabeldosantos@superbarman.com"
+  args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.
+  My goal: bring you the flavors of Rio de Janeiro's markets. Lime, chacaca and love! Tchau Tchau! "
   args[:rating]       = rand(1..5)
-  args[:location]     = "#{CITIES.sample}"
-
-  languages = LANGUAGES.sample(4)
-  languages << 'English'
-  1.upto(rand(2..5)) do |i|
-    args["language_#{i}".to_sym] = languages[i]
-
-  end
+  args[:location]     = "Berlin"
+  args[:languages]     = "English German Portuguese"
 
 
   1.upto(3) do |i|
