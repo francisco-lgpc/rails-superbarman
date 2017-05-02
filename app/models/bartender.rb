@@ -7,8 +7,8 @@ class Bartender < ApplicationRecord
     'nl' => 'Dutch'
   }
 
-  has_many :parties, dependent: :destroy
+  has_many :parties
   has_many :users, through: :parties
-  has_many :reviews, dependent: :destroy
+  has_many :reviews
   has_many :cocktails, dependent: :destroy
 end
