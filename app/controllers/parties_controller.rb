@@ -1,12 +1,12 @@
 class PartiesController < ApplicationController
-  skip_before_action :authenticate_user!
+  skip_before_action :authenticate_user!, only: []
 
   def create
     @party = Party.new(party_params)
     @party.theme = "Party" if @party.theme == ""
     @bartender = Bartender.find(params[:bartender_id])
     @party.bartender = @bartender
-    @party.user = User.first
+    @party.user = current_user
     @party.save!
     redirect_to bartender_party_path(@bartender, @party)
   end
