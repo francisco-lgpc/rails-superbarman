@@ -1,6 +1,6 @@
 <% languages = [] %>
 <% 1.upto(5) do |i|  %>
-<% languages << @bartender.read_attribute("language_#{i}") if @bartender.read_attribute("language_#{i}") %>
+  <% languages << Bartender::LANGUAGES[@bartender.read_attribute("language_#{i}")] if @bartender.read_attribute("language_#{i}") %>
 <% end %>
 
 
