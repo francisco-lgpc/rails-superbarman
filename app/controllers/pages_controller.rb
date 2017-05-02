@@ -9,4 +9,7 @@ class PagesController < ApplicationController
     @bartenders = Bartender.order(rating: :desc).limit(3)
     @party      = Party.new
   end
+
+  def sign_in
+  end
 end
