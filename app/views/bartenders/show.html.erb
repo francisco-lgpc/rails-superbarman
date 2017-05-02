@@ -1,9 +1,7 @@
-<% languages = [] %>
-<% 1.upto(5) do |i|  %>
-  <% languages << Bartender::LANGUAGES[@bartender.read_attribute("language_#{i}")] if @bartender.read_attribute("language_#{i}") %>
+
+<% languages = @bartender.languages.split.map do |language|  %>
+  <% Bartender::LANGUAGES[language] %>
 <% end %>
-
-
 
 
 <div class="container">
@@ -21,7 +19,15 @@
       </p>
       <h4 class= ""> Location: <%= @bartender.location %> </h4>
       <p class= ""> Languages: </p>
+
+      <%# This is how you would add the flags, after adding the image files to assets %>
+      <% @bartender.languages.split.each do |language| %>
+        <%#= image_tag "#{language}.png" %>
+      <% end %>
+
+      <%# if you remove the following line, don't forget to remove lines 1 to 4 of this file, where language array is created %>
       <p> <%= languages.join(', ') %> </p>
+
     </div>
 
     <div class="col-xs-4 profile-basics">
@@ -50,8 +56,11 @@
       </div>
       <br><br><br>
       <div class= "content">
-        <% 1.upto(3) do |i|  %>
-        <%= image_tag @bartender.read_attribute("speciality_#{i}"), class: 'avatar-largest' %>
+        <% @bartender.cocktails.each do |cocktail|  %>
+          <div>
+            <%= cocktail.name %>
+            <%= image_tag cocktail.picture, class: 'avatar-largest' %>
+          </div>
         <% end %>
       </div>
     </div>
@@ -99,24 +108,3 @@
 </div>
 
 
-<script>
-  $("input.datepicker").each(function(input) {
-    $(this).datepicker({
-      dateFormat: "yy-mm-dd",
-      altField: $(this).next()
-    })
-
-    // If you use i18n-js you can set the locale like that
-    $(this).datepicker("option", $.datepicker.regional[I18n.currentLocale()]);
-  })
-
-  $(document).on("page:load ready", function(){
-    $("input.datepicker").datepicker();
-  });
-</script>
-
-<script type="text/javascript">
-  $(document).ready(function() {
-    document.getElementById('party_date').placeholder = "Date";
-  })
-</script>
