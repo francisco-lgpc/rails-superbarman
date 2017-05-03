@@ -5,18 +5,28 @@
 
 <br><br>
 <ul>
+  <div class='header'>
+    <div class="row">
+      <div class="col-xs-2">Type of Party</div>
+      <div class="col-xs-2">Date</div>
+      <div class="col-xs-2">Number of Guests</div>
+      <div class="col-xs-2">Start Time</div>
+      <div class="col-xs-1">Price</div>
+    </div>
+  </div>
   <% @bartender.parties.each do |party| %>
     <li>
       <div class='list-item-party'>
         <div class="row">
-          <div class="col-xs-1"><%= party.date %></div>
-          <div class="col-xs-1"><%= pretty_size(party.size) %></div>
-          <div class="col-xs-1"><%= pretty_time(party.start_time) %></div>
-          <div class="col-xs-1"><%= party.party_plan %></div>
-          <div class="col-xs-1"><%= party.price %></div>
+          <div class="col-xs-2"><%= party.theme %></div>
+          <div class="col-xs-2"><%= party.date %></div>
+          <div class="col-xs-2"><%= pretty_size(party.size) %></div>
+          <div class="col-xs-2"><%= pretty_time(party.start_time) %></div>
+          <div class="col-xs-1"><%= pretty_price(party.price) %></div>
+
         </div>
-        <br>
         <i class="fa fa-caret-down" aria-hidden="true"></i>
+        <br>
         <div class="party-reviews-wrapper">
           <h5>Reviews</h5>
           <ul>
