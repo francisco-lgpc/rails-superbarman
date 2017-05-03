@@ -5,4 +5,15 @@ module PartiesHelper
     "#{size_parts.first} to #{size_parts.last}"
   end
 
+  def pretty_time(start_time)
+    hour = start_time.hour
+    minute = start_time.min
+    "#{hour} : #{minute}"
+  end
+
+  def pretty_address(address)
+    address_parts = address.split(',')
+    "#{address_parts[0]}, #{address_parts[1]}"
+  end
+
 end

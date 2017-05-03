@@ -20,6 +20,8 @@ class PartiesController < ApplicationController
     end
     @bartender = Bartender.find(params[:bartender_id].to_i)
     @party.bartender = @bartender
+    #@party.address = session[:party][:address]
+    #@party.start_time = @start_time
   end
 
   def show
@@ -29,7 +31,7 @@ class PartiesController < ApplicationController
   private
 
   def party_params
-    params.require(:party).permit(:date, :theme, :size, :address)
+    params.require(:party).permit(:date, :theme, :size, :address, :start_time)
   end
 
   # Use callbacks to share common setup or constraints between actions.
