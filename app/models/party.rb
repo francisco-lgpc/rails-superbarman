@@ -1,5 +1,6 @@
 class Party < ApplicationRecord
   TYPES = ['Party', 'Birthday', 'Hen/Stag do', 'Leaving do', 'House Warming', 'Wedding']
+  SIZES = ['5-29', '30-59', '60-90']
   belongs_to :user
   belongs_to :bartender
   has_many :messages, dependent: :destroy
