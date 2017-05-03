@@ -20,6 +20,7 @@ class PartiesController < ApplicationController
     end
     @bartender = Bartender.find(params[:bartender_id].to_i)
     @party.bartender = @bartender
+    @party.user = current_user
     #@party.address = session[:party][:address]
     #@party.start_time = @start_time
   end

@@ -5,4 +5,5 @@ class Party < ApplicationRecord
   has_many :messages, dependent: :destroy
   has_many :reviews, dependent: :destroy
   validates :theme, inclusion: { in: TYPES }
+  accepts_nested_attributes_for :user
 end
