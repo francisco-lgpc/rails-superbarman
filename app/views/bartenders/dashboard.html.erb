@@ -7,18 +7,26 @@
 <ul>
   <% @bartender.parties.each do |party| %>
     <li>
-      <div>
-        <%= party.date %>
-        <%= party.theme %>
-        <%= party.size %>
-        <%= party.start_time %>
-        <%= party.party_plan %>
-        <%= party.price %>
-        <ul>
-          <% party.reviews.each do |review| %>
-            <li> <%= review.content %> </li>
-          <% end %>
-        </ul>
+      <div class='list-item-party'>
+        <div class="row">
+          <div class="col-xs-1"><%= party.date %></div>
+          <div class="col-xs-1"><%= pretty_size(party.size) %></div>
+          <div class="col-xs-1"><%= pretty_time(party.start_time) %></div>
+          <div class="col-xs-1"><%= party.party_plan %></div>
+          <div class="col-xs-1"><%= party.price %></div>
+        </div>
+        <br>
+        <i class="fa fa-caret-down" aria-hidden="true"></i>
+        <div class="party-reviews-wrapper">
+          <h5>Reviews</h5>
+          <ul>
+            <% party.reviews.each_with_index do |review, i| %>
+              <li class="<%= i.zero? ? 'first' : (i + 1 == party.reviews.size ? 'last' : 'std') %>">
+                <%= review.content %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
       </div>
     </li>
   <% end %>

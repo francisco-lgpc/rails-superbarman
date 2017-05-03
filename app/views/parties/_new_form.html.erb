@@ -1,16 +1,21 @@
 <%= simple_form_for [@bartender, @party], url: bartender_parties_path, html: { id: 'home-form-show' } do |f| %>
-    <h3>time: </h3>
-    <%= f.input :start_time, label: false, placeholder: '21:00', wrapper_html: { class: '' }, input_html: { class: "input form-input-index"} %>
+
+  <% #Details about the user %>
+  <div class="col-xs-12 col-md-4">
+    <h4>1. About you</h4>
+    <%= f.simple_fields_for :user do |u| %>
+      <%= u.input :first_name, label: false, placeholder: 'Daniel', wrapper_html: { class: '' }, input_html: { class: "input form-input-index"} %>
+     <%= u.input :last_name, label: false, placeholder: 'Huertas', wrapper_html: { class: '' }, input_html: { class: "input form-input-index"} %>
+     <%= u.input :email, label: false, disabled: true,  wrapper_html: { class: '' }, input_html: { class: "input form-input-index"} %>
+     <%= u.input :phone_number, label: false, placeholder: '+49.123.456.789', wrapper_html: { class: '' }, input_html: { class: "input form-input-index"} %>
+    <% end %>
 
 
-    <%= f.input :size, collection: {"5 to 29 guests": "5-29", "30 to 59 guests": "30-59", "60 to 90 guests": "60-90"}  %>
 
-    <h3>Date: <%= @party.date %></h3>
-    <h3>name: <%= @party.bartender.name %></h3>
+   <% #Details about the party  %>
+    <h4>2. About your party</h4>
+    <%= f.input :start_time, label: "What time is your party?", placeholder: '21:00', wrapper_html: { class: '' }, input_html: { class: "input form-input-index"} %>
 
-    <h3><%= @party.address%></h3>
-
-    <h3>Theme: <%= @party.theme %></h3>
 
     <%= f.input :address %>
     <%= f.input :zip_code %>
@@ -21,14 +26,46 @@
       <%= f.input :theme, collection: Party::TYPES, label: false, prompt: "Type of Party", input_html: { class: "input form-input-index" } %>
     </div>
     <%= f.input :date, :as => :hidden, label: false, placeholder: '21:00', wrapper_html: { class: '' }, input_html: { class: "input form-input-index"} %>
+
+    <%= f.input :size, collection: {"5 to 30 guests": "5-29", "30 to 60 guests": "30-59", "60 to 90 guests": "60-90"}, prompt: "5-29", label: "How many people are coming?" %>
+
     <%= f.input :message, placeholder: 'I want a special mojito!', label: "Say hello to your bartender and provide more details about your party!" %>
 
+    <% #Insert Address auto-complete form here %>
     <div class="">
       <%= button_tag type: :submit, class: "btn-search" do %>
-        Book
+        Confirm and Pay
       <% end %>
     </div>
-    <% end %>
+  </div>
+
+
+  <% #Fixed form to display as a recap of the booking  %>
+  <div class="col-center summary">
+    <h4> All ready for your <%= @party.theme %> party on the <%= @party.date %> </h4>
+    <p>
+      <ul>
+        <li>
+          Picked bartender: <%= @party.bartender.name %>
+        </li>
+        <li>
+          City: <%= @party.address %>
+        </li>
+        <li>
+          Total: 50€. Includes 5 free welcome cocktails of your choice.
+        </li>
+        <li>
+          Cocktails will be sold at your party for 5€.
+        </li>
+      </ul>
+    </p>
+  </div>
+  <%= f.input :address, :as => :hidden, :input_html => { :value => @party.address } %>
+  <%= f.input :date, :as => :hidden, label: false, placeholder: '21:00', wrapper_html: { class: '' }, input_html: { class: "input form-input-index"} %>
+<% end %>
+
+
+
 
     <script type="text/javascript">
      $(document).ready(function() {
