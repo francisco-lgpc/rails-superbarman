@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :parties
   has_many :reviews
+  has_many :messages
   has_many :bartenders, through: :parties
   devise :omniauthable, omniauth_providers: [:facebook]
   # Include default devise modules. Others available are:

@@ -1,0 +1,6 @@
+<%= simple_form_for(@message, remote: true) do |form| %>
+  <%= form.input :content, placeholder: "Say hello to your bartender and provide more details about your party!" %>
+  <%= hidden_field_tag "user_id", current_user.id %>
+  <%= hidden_field_tag "party_id", @party.id %>
+  <%= form.button :submit, id:"message-btn" %>
+<% end %>

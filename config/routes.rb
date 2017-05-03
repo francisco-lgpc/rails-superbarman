@@ -15,4 +15,7 @@ Rails.application.routes.draw do
     resources :reviews, only: [:new, :create, :update]
     resources :parties, only: [:show, :create, :new]
   end
+
+  resources :messages, only: [:create]
+
 end

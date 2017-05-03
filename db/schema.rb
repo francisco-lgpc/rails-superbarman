@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170502142743) do
+ActiveRecord::Schema.define(version: 20170503132126) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,16 @@ ActiveRecord::Schema.define(version: 20170502142743) do
     t.index ["bartender_id"], name: "index_cocktails_on_bartender_id", using: :btree
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.text     "content"
+    t.integer  "party_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["party_id"], name: "index_messages_on_party_id", using: :btree
+    t.index ["user_id"], name: "index_messages_on_user_id", using: :btree
+  end
+
   create_table "parties", force: :cascade do |t|
     t.string   "address"
     t.date     "date"
@@ -63,6 +73,7 @@ ActiveRecord::Schema.define(version: 20170502142743) do
     t.time     "start_time"
     t.string   "party_plan"
     t.integer  "price"
+    t.text     "message"
     t.index ["bartender_id"], name: "index_parties_on_bartender_id", using: :btree
     t.index ["user_id"], name: "index_parties_on_user_id", using: :btree
   end
@@ -105,6 +116,8 @@ ActiveRecord::Schema.define(version: 20170502142743) do
   end
 
   add_foreign_key "cocktails", "bartenders"
+  add_foreign_key "messages", "parties"
+  add_foreign_key "messages", "users"
   add_foreign_key "parties", "bartenders"
   add_foreign_key "parties", "users"
   add_foreign_key "reviews", "bartenders"
