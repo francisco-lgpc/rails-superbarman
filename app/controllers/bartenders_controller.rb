@@ -24,17 +24,21 @@ before_action :set_bartender, only: [:show]
 
   def search
     @bartenders = Bartender.all
-    #Filter by Address
-    location_query = params[:party][:address].split(',').map(&:squish)
-    location_query.each do |word|
-      @bartenders = @bartenders.where("location ILIKE ?", "%#{word}%")
-    end
-    #Filter by Date Availability
-    non_available_ids = Bartender.joins(:parties).where("parties.date = ?", Date.parse(params[:party][:date])).pluck(:id)
-    unless non_available_ids.empty?
-      @bartenders = @bartenders.where("id NOT IN (?)", non_available_ids)
 
+    #Filter by Address
+    location_query = params[:party][:address].split(',').map(&:squish).first
+    unless location_query.empty?
+      @bartenders = @bartenders.where("location ILIKE ?", "%#{location_query}%")
     end
+
+    #Filter by Date Availability
+    unless params[:party][:date] == ""
+      non_available_ids = Bartender.joins(:parties).where("parties.date = ?", Date.parse(params[:party][:date])).pluck(:id)
+      unless non_available_ids.empty?
+        @bartenders = @bartenders.where("id NOT IN (?)", non_available_ids)
+      end
+    end
+
     if params[:party]
       @party          = Party.new(party_params)
       session[:party] = party_params
@@ -45,6 +49,9 @@ before_action :set_bartender, only: [:show]
     render :index
   end
 
+  def dashboard
+    @bartender = current_bartender
+  end
 
   private
 
