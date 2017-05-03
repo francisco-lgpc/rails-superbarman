@@ -3,12 +3,43 @@ margin-top: 45px;
 }
 
 .specialities {
+  border-top: 1px solid $gold;
+  padding-top: 25px;
+  margin-top: 25px;
   .content {
     display: flex;
     width: 80%;
     margin: auto;
     justify-content: space-around;
+    .specialities-item{
+      text-align: center;
+      margin: 0 5px;
+      width: 20%;
+      .avatar-cocktail {
+        margin-bottom: 10px;
+      }
+    }
   }
+}
+
+.profile-details{
+  display:inline-block;
+}
+
+.profile-block{
+  display: flex;
+  border-bottom: 1px solid $gold;
+  padding-bottom: 25px;
+  margin-bottom: 25px;
+  .header{
+    min-width:200px;
+
+    text-align: left;
+    h2{
+      font-size: 25px;
+    }
+  }
+
 }
 
 #cropped_avatar {
@@ -58,6 +89,8 @@ margin-top: 45px;
   h1 {
   text-decoration: underline;
   padding-bottom: 5px;
+  text-align: left;
+  font-size: 20px;
   }
 }
 
