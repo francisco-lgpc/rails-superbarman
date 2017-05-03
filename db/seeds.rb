@@ -814,7 +814,7 @@ User.destroy_all
 
 Bartender.all.each_with_index do |bartender, i|
   rand(2..4).times do
-    party             = Party.new(address: bartender.location, theme: Party::TYPES.sample, size: rand(15..60).to_s)
+    party             = Party.new(address: bartender.location, theme: Party::TYPES.sample, size: rand(15..60).to_s, price: 50)
     bartender.parties << party
     n                 = Faker::GameOfThrones.character
     user              = User.new
