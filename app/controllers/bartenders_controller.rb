@@ -23,15 +23,12 @@ before_action :set_bartender, only: [:show]
   end
 
   def search
-    @bartenders = []
+    @bartenders = Bartender.all
+
     #Filter by Address
-    location_query = params[:party][:address].split(',').map(&:squish)
-    if location_query.empty?
-      @bartenders = Bartender.all
-    else
-      location_query.each do |word|
-        @bartenders += Bartender.where("location ILIKE ?", "%#{word}%")
-      end
+    location_query = params[:party][:address].split(',').map(&:squish).first
+    unless location_query.nil?
+      @bartenders = @bartenders.where("location ILIKE ?", "%#{location_query}%")
     end
 
     #Filter by Date Availability
@@ -52,6 +49,9 @@ before_action :set_bartender, only: [:show]
     render :index
   end
 
+  def dashboard
+    @bartender = current_bartender
+  end
 
   private
 
