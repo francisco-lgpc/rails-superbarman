@@ -24,6 +24,10 @@ margin-top: 45px;
 
 .profile-details{
   display:inline-block;
+  h1{
+    margin-top: 0px;
+    margin-bottom: 20px;
+  }
 }
 
 .profile-block{
@@ -39,6 +43,9 @@ margin-top: 45px;
       font-size: 25px;
     }
   }
+  .content {
+    flex-grow: 1;
+  }
 
 }
 
@@ -47,8 +54,12 @@ margin-top: 45px;
 }
 
 .booking-basics{
-  padding-left: 54px;
+  padding: 30px;
+  border: 1px solid $gold;
 
+  h2 {
+    margin-top: 0;
+  }
 
 
   #location-show{
@@ -74,7 +85,7 @@ margin-top: 45px;
   .btn-search{
     background-color: $brown;
     color: white;
-    width: 79%;
+    width: 200px;
     border-radius: 6px;
     border: none;
     font-size: 15px;
@@ -96,4 +107,35 @@ margin-top: 45px;
 
 .reviews{
   padding-top: 10px;
+
+  #review_content{
+    height: 80px;
+    width: 100%;
+    background-color: $brown;
+    color: $white;
+    border:none;
+    border-radius: 6px;
+  }
+
+  #review_rating{
+    height: 50px;
+    width: 100px;
+    background-color: $brown;
+    color: $white;
+    border:none;
+    border-radius: 6px;
+  }
+  .button-add-review{
+    background-color: $brown;
+    color: white;
+    width: 62%;
+    border-radius: 6px;
+    border: none;
+    margin: 10px;
+    font-size: 15px;
+    height: 50px;
+  }
+  .button-add-review:hover{
+    color: $gold;
+  }
 }

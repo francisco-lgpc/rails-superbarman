@@ -10,15 +10,19 @@
 
       <!-- PROFILE -->
       <div class="row">
-        <div class="col-xs-6">
+        <div class="col-xs-4">
           <%= image_tag @bartender.picture, class: 'avatar-largest', id: "cropped_avatar"%>
         </div>
         <br>
         <div class="col-xs-6">
-           <h4 class= ""> <%= @bartender.title %> </h4>
+           <h1 class= ""> <%= @bartender.title %> </h1>
           <div class="row">
             <div class="col-xs-6">
-              <h4 class= ""> Location: <%= @bartender.location %> </h4>
+              <p class= ""> Location: <%= @bartender.location %> </p>
+              <p>Languages:</p>
+              <% @bartender.languages.split.each do |language| %>
+                <%= image_tag "#{language}.png", size: "25x25" %>
+              <% end %>
             </div>
             <div class="col-xs-6">
               <p>Rating:
@@ -45,24 +49,6 @@
             <div><%= cocktail.name %></div>
           </div>
           <% end %>
-        </div>
-      </div>
-
-
-
-      <!-- LANGUAGES -->
-      <div class="profile-block languages">
-        <div class= "header">
-          <h2>Languages</h2>
-        </div>
-        <div class= "content">
-          <%# This is how you would add the flags, after adding the image files to assets %>
-          <% @bartender.languages.split.each do |language| %>
-            <%= image_tag "#{language}.png", size: "120x120" %>
-          <% end %>
-
-          <%# if you remove the following line, don't forget to remove lines 1 to 4 of this file, where language array is created %>
-
         </div>
       </div>
 
@@ -108,9 +94,9 @@
           <% end %>
 
 
-          <div class="reviews">
+
             <%= render 'reviews/new' %>
-          </div>
+
         </div>
       </div>
 
@@ -118,7 +104,7 @@
 
     <!-- RIGHT COLUMN -->
     <div class="col-xs-3 booking-basics">
-      <h2 class= ""> Book Your Bartender</h2>
+      <h2> Book Your Bartender</h2>
       <%= render 'bartenders/show/form' %>
     </div>
 
