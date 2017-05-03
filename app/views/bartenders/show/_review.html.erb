@@ -1,0 +1,19 @@
+<% unless review.created_at.nil?  %>
+  <div class="reviews-item">
+    <div> <%= review.created_at.strftime('%D') %> </div>
+    <div>
+      <% unless review.rating.nil? %>
+        <ul class="list-inline no-bullets">
+          <% review.rating.times do %>
+            <li> <i class="fa fa-glass golder" aria-hidden=true> </i></li>
+          <% end %>
+
+          <% (5 - review.rating).times do %>
+            <li> <i class="fa fa-glass blacker" aria-hidden=true> </i></li>
+          <% end %>
+        </ul>
+      <% end %>
+    </div>
+    <div> <%= review.content %> </div>
+  </div>
+<% end %>

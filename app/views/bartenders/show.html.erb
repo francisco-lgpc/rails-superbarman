@@ -1,7 +1,5 @@
+<div class="show-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.2) 0%, rgba(0,36,61,0.3) 50%), url(<%= image_url 'london2.jpg' %>);"></div>
 
-<% languages = @bartender.languages.split.map do |language|  %>
-  <% Bartender::LANGUAGES[language] %>
-<% end %>
 
 
 <div class="container">
@@ -9,102 +7,108 @@
 
 
   <div class="row">
-    <div class="col-xs-4 profile-details">
-      <%= image_tag @bartender.picture, class: 'avatar-largest', id: "cropped_avatar"%>
-      <br><br>
-      <p>Rating:
-        <% @bartender.rating.times do %>
-        <i class="fa fa-glass" aria-hidden="true"></i>
-        <% end %>
-      </p>
-      <h4 class= ""> Location: <%= @bartender.location %> </h4>
-      <p class= ""> Languages: </p>
+    <!-- LEFT COLUMN -->
+    <div class="col-md-8 profile-details">
 
-      <%# This is how you would add the flags, after adding the image files to assets %>
-      <% @bartender.languages.split.each do |language| %>
-        <%#= image_tag "#{language}.png" %>
-      <% end %>
-
-      <%# if you remove the following line, don't forget to remove lines 1 to 4 of this file, where language array is created %>
-      <p> <%= languages.join(', ') %> </p>
-
-    </div>
-
-    <div class="col-xs-4 profile-basics">
-      <h2 class= ""> <%= @bartender.name %> </h2>
-      <h4 class= ""> <%= @bartender.title %> </h4>
-      <p class= ""> <%= @bartender.bio %> </p>
-      <br>
-      <br>
-
-    </div>
-    <div class="col-xs-4 booking-basics">
-      <h2 class= ""> Book Your Bartender</h2>
-      <%= render 'bartenders/show/form' %>
-    </div>
-
-  </div>
-
-  <br>
-  <br>
-  <br>
-
-  <div class="row">
-    <div class="specialities text-center">
-      <div class= "header">
-        <h1> My Specialities</h1>
-      </div>
-      <br><br><br>
-      <div class= "content">
-        <% @bartender.cocktails.each do |cocktail|  %>
-          <div>
-            <%= cocktail.name %>
-            <%= image_tag cocktail.picture, class: 'avatar-largest' %>
-          </div>
-        <% end %>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="reviews text-center">
-
-
-
-    <% unless @bartender.reviews.map(&:content).all?(&:nil?)  %>
-
-      <h3>Reviews:</h3>
-      <ul class="no-bullets">
-        <% @bartender.reviews.each do |review| %>
-        <li>
-          <% unless review.rating.nil? %>
-          <ul class="list-inline no-bullets">
-            <% review.rating.times do %>
-            <li> <i class="fa fa-glass golder" aria-hidden=true> </i></li>
-            <% end %>
-            <% (5 - review.rating).times do %>
-            <li> <i class="fa fa-glass blacker" aria-hidden=true> </i></li>
-            <% end %>
-          </ul>
-        </li>
-        <li> <%= review.content %> </li>
-        <br><hr><br>
-        <% end %>
-        <% end %>
-      </ul>
-      <% end %>
-
-      <br><br>
+      <!-- PROFILE -->
       <div class="row">
-        <div class="reviews text-center">
-          <%= render 'reviews/new' %>
+        <div class="col-xs-4">
+          <%= image_tag @bartender.picture, class: 'avatar-largest', id: "cropped_avatar"%>
+        </div>
+        <div class="col-xs-6">
+           <h1 class= ""> <%= @bartender.title %> </h1>
+          <div class="row">
+            <div class="col-xs-6">
+              <p class= ""> Location: <%= @bartender.location %> </p>
+              <p>Languages:</p>
+              <% @bartender.languages.split.each do |language| %>
+                <%= image_tag "#{language}.png", size: "25x25" %>
+              <% end %>
+            </div>
+            <div class="col-xs-6">
+              <p>Rating:
+                <% @bartender.rating.times do %>
+                <i class="fa fa-glass" aria-hidden="true"></i>
+                <% end %>
+              </p>
+            </div>
+          </div>
+          <br>
+          <br>
+        </div>
+      </div>
+
+      <!-- SPECIALTIES -->
+      <div class=" profile-block specialities">
+        <div class= "header">
+          <h2>Specialities</h2>
+        </div>
+        <div class= "content">
+          <% @bartender.cocktails.each do |cocktail|  %>
+          <div class="specialities-item">
+            <%= image_tag cocktail.picture, class: 'avatar-cocktail' %>
+            <div><%= cocktail.name %></div>
+          </div>
+          <% end %>
         </div>
       </div>
 
 
 
+      <!-- BIO -->
+      <div class="profile-block bio">
+        <div class= "header">
+          <h2>Bio</h2>
+        </div>
+        <div class= "content">
+          <p class= ""> <%= @bartender.bio %> </p>
+        </div>
+      </div>
 
-</div>
+
+
+      <!-- REVIEWS -->
+      <div class="profile-block reviews">
+        <div class= "header">
+          <h2>Reviews</h2>
+        </div>
+        <div class= "content">
+          <% unless @bartender.reviews.map(&:content).all?(&:nil?)  %>
+            <% @bartender.reviews.limit(5).each do |review| %>
+              <%= render partial: 'bartenders/show/review', locals: {review: review} %>
+            <% end %>
+
+            <div class="reviews-expanded-list">
+              <% @bartender.reviews.offset(5).each do |review| %>
+                <%= render partial: 'bartenders/show/review', locals: {review: review} %>
+              <% end %>
+            </div>
+
+            <button class="btn btn-expand" id="btn-expand-reviews"> Show more reviews</button>
+          <% end %>
+
+          <%= render 'reviews/new' %>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="col-md-3 col-md-offset-1">
+      <div class="pricing">
+        <h1>For €50</h1>
+        <h2>+</h2>
+        <h3>€5 per cocktail</h3>
+      </div>
+      <div class="booking-basics">
+        <h2> Book Your Bartender</h2>
+        <%= render 'bartenders/show/form' %>
+      </div>
+    </div>
+  </div>
+
+  </div>
 </div>
 
 
