@@ -1,6 +1,5 @@
 $(document).ready(function() {
-  var flat_address = $('#flat_address').get(0);
-
+  var flat_address = $('#party_address').get(0);
   if (flat_address) {
     var autocomplete = new google.maps.places.Autocomplete(flat_address, { types: ['geocode'] });
     google.maps.event.addListener(autocomplete, 'place_changed', onPlaceChanged);
@@ -16,11 +15,11 @@ function onPlaceChanged() {
   var place = this.getPlace();
   var components = getAddressComponents(place);
 
-  $('#flat_address').trigger('blur').val(components.address);
-  $('#flat_zip_code').val(components.zip_code);
-  $('#flat_city').val(components.city);
+  $('#party_address').trigger('blur').val(components.address);
+  $('#party_zip_code').val(components.zip_code);
+  $('#party_city').val(components.city);
   if (components.country_code) {
-    $('#flat_country').val(components.country_code);
+    $('#party_country').val(components.country_code);
   }
 }
 
