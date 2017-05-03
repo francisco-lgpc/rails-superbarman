@@ -19,12 +19,14 @@ User.destroy_all
   args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
-  args[:email]        = "izabeldosantos@superbarman.com"
+  args[:email]        = "izabeldosantos1@superbarman.com"
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
   args[:languages]    = "en pt de"
-  args[:picture]      = "#{rand(1..10)}.jpg"
+  args[:picture]      = "12.jpg"
+  args[:password]     = "secret"
+  args[:password_confirmation] = "secret"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -40,7 +42,7 @@ User.destroy_all
 
 #Bartender_2
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
   args[:email]        = Faker::Internet.email
@@ -49,6 +51,8 @@ User.destroy_all
   args[:location]     = "Berlin"
   args[:languages]    = "en pt de"
   args[:picture]      = "12.jpg"
+  args[:password]     = "secret"
+  args[:password_confirmation] = "secret"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -73,6 +77,8 @@ User.destroy_all
   args[:location]     = "Berlin"
   args[:languages]    = "en pt de"
   args[:picture]      = "#{rand(1..10)}.jpg"
+  args[:password]     = "secret"
+  args[:password_confirmation] = "secret"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -97,6 +103,9 @@ User.destroy_all
   args[:location]     = "Berlin"
   args[:languages]    = "en pt de"
   args[:picture]      = "#{rand(1..10)}.jpg"
+  args[:picture]      = "12.jpg"
+  args[:password]     = "secret"
+  args[:password_confirmation] = "secret"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -121,6 +130,8 @@ User.destroy_all
   args[:location]     = "Berlin"
   args[:languages]    = "en pt de"
   args[:picture]      = "#{rand(1..10)}.jpg"
+  args[:password]     = "secret"
+  args[:password_confirmation] = "secret"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -145,6 +156,8 @@ User.destroy_all
   args[:location]     = "Berlin"
   args[:languages]    = "en pt de"
   args[:picture]      = "#{rand(1..10)}.jpg"
+  args[:password]     = "secret"
+  args[:password_confirmation] = "secret"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -169,6 +182,9 @@ User.destroy_all
   args[:location]     = "Berlin"
   args[:languages]    = "en pt de"
   args[:picture]      = "#{rand(1..10)}.jpg"
+  args[:password]     = "secret"
+  args[:password_confirmation] = "secret"
+
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -193,6 +209,8 @@ User.destroy_all
   args[:location]     = "Berlin"
   args[:languages]    = "en pt de"
   args[:picture]      = "#{rand(1..10)}.jpg"
+  args[:password]     = "secret"
+  args[:password_confirmation] = "secret"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -217,6 +235,8 @@ User.destroy_all
   args[:location]     = "Berlin"
   args[:languages]    = "en pt de"
   args[:picture]      = "#{rand(1..10)}.jpg"
+  args[:password]     = "secret"
+  args[:password_confirmation] = "secret"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -241,6 +261,9 @@ User.destroy_all
   args[:location]     = "Berlin"
   args[:languages]    = "en pt de"
   args[:picture]      = "#{rand(1..10)}.jpg"
+  args[:password]     = "secret"
+  args[:password_confirmation] = "secret"
+
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -265,6 +288,8 @@ User.destroy_all
   args[:location]     = "Berlin"
   args[:languages]    = "en pt de"
   args[:picture]      = "#{rand(1..10)}.jpg"
+  args[:password]     = "secret"
+  args[:password_confirmation] = "secret"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -289,6 +314,8 @@ User.destroy_all
   args[:location]     = "Berlin"
   args[:languages]    = "en pt de"
   args[:picture]      = "#{rand(1..10)}.jpg"
+  args[:password]     = "secret"
+  args[:password_confirmation] = "secret"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -313,6 +340,8 @@ User.destroy_all
   args[:location]     = "Berlin"
   args[:languages]    = "en pt de"
   args[:picture]      = "#{rand(1..10)}.jpg"
+  args[:password]     = "secret"
+  args[:password_confirmation] = "secret"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -337,6 +366,8 @@ User.destroy_all
   args[:location]     = "Berlin"
   args[:languages]    = "en pt de"
   args[:picture]      = "#{rand(1..10)}.jpg"
+  args[:password]     = "secret"
+  args[:password_confirmation] = "secret"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -361,6 +392,8 @@ User.destroy_all
   args[:location]     = "Berlin"
   args[:languages]    = "en pt de"
   args[:picture]      = "#{rand(1..10)}.jpg"
+  args[:password]     = "secret"
+  args[:password_confirmation] = "secret"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -385,6 +418,8 @@ User.destroy_all
   args[:location]     = "Berlin"
   args[:languages]    = "en pt de"
   args[:picture]      = "#{rand(1..10)}.jpg"
+  args[:password]     = "secret"
+  args[:password_confirmation] = "secret"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -409,6 +444,8 @@ User.destroy_all
   args[:location]     = "Berlin"
   args[:languages]    = "en pt de"
   args[:picture]      = "#{rand(1..10)}.jpg"
+  args[:password]     = "secret"
+  args[:password_confirmation] = "secret"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -433,6 +470,8 @@ User.destroy_all
   args[:location]     = "Berlin"
   args[:languages]    = "en pt de"
   args[:picture]      = "#{rand(1..10)}.jpg"
+  args[:password]     = "secret"
+  args[:password_confirmation] = "secret"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -457,6 +496,8 @@ User.destroy_all
   args[:location]     = "Berlin"
   args[:languages]    = "en pt de"
   args[:picture]      = "#{rand(1..10)}.jpg"
+  args[:password]     = "secret"
+  args[:password_confirmation] = "secret"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -481,6 +522,8 @@ User.destroy_all
   args[:location]     = "Berlin"
   args[:languages]    = "en pt de"
   args[:picture]      = "#{rand(1..10)}.jpg"
+  args[:password]     = "secret"
+  args[:password_confirmation] = "secret"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -505,6 +548,8 @@ User.destroy_all
   args[:location]     = "Amsterdam"
   args[:languages]    = "en pt de"
   args[:picture]      = "#{rand(1..10)}.jpg"
+  args[:password]     = "secret"
+  args[:password_confirmation] = "secret"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -529,6 +574,8 @@ User.destroy_all
   args[:location]     = "Amsterdam"
   args[:languages]    = "en pt de"
   args[:picture]      = "#{rand(1..10)}.jpg"
+  args[:password]     = "secret"
+  args[:password_confirmation] = "secret"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -553,6 +600,8 @@ User.destroy_all
   args[:location]     = "Amsterdam"
   args[:languages]    = "en pt de"
   args[:picture]      = "#{rand(1..10)}.jpg"
+  args[:password]     = "secret"
+  args[:password_confirmation] = "secret"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -577,6 +626,8 @@ User.destroy_all
   args[:location]     = "Amsterdam"
   args[:languages]    = "en pt de"
   args[:picture]      = "#{rand(1..10)}.jpg"
+  args[:password]     = "secret"
+  args[:password_confirmation] = "secret"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -601,6 +652,8 @@ User.destroy_all
   args[:location]     = "Amsterdam"
   args[:languages]    = "en pt de"
   args[:picture]      = "#{rand(1..10)}.jpg"
+  args[:password]     = "secret"
+  args[:password_confirmation] = "secret"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -625,6 +678,9 @@ User.destroy_all
   args[:location]     = "Amsterdam"
   args[:languages]    = "en pt de"
   args[:picture]      = "#{rand(1..10)}.jpg"
+  args[:password]     = "secret"
+  args[:password_confirmation] = "secret"
+
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -649,6 +705,8 @@ User.destroy_all
   args[:location]     = "Amsterdam"
   args[:languages]    = "en pt de"
   args[:picture]      = "#{rand(1..10)}.jpg"
+  args[:password]     = "secret"
+  args[:password_confirmation] = "secret"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -673,6 +731,8 @@ User.destroy_all
   args[:location]     = "Amsterdam"
   args[:languages]    = "en pt de"
   args[:picture]      = "#{rand(1..10)}.jpg"
+  args[:password]     = "secret"
+  args[:password_confirmation] = "secret"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -697,6 +757,8 @@ User.destroy_all
   args[:location]     = "Amsterdam"
   args[:languages]    = "en pt de"
   args[:picture]      = "#{rand(1..10)}.jpg"
+  args[:password]     = "secret"
+  args[:password_confirmation] = "secret"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -721,6 +783,8 @@ User.destroy_all
   args[:location]     = "Amsterdam"
   args[:languages]    = "en pt de"
   args[:picture]      = "#{rand(1..10)}.jpg"
+  args[:password]     = "secret"
+  args[:password_confirmation] = "secret"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read

@@ -13,7 +13,7 @@
     <h2><strong><%= @party.bartender.name %></strong> will be in: </h2>
     <h3><%= @party.address %></h3>
     <h4>On <strong><%= @party.date %></strong> </h4>
-    <h4>For your <%= (@party.theme).downcase %> with <%= @party.size %> guests! </h4>
+    <h4>For your <%= (@party.theme).downcase %> with <%= pretty_size(@party.size) %> guests! </h4>
 
   </div>
   <br>

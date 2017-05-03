@@ -4,7 +4,13 @@ before_action :set_bartender, only: [:show]
 
   def index
     @bartenders = Bartender.all
-    @party      = Party.new(party_params)
+
+    if params[:party]
+      @party          = Party.new(party_params)
+      session[:party] = party_params
+    else
+      @party = Party.new(session[:party])
+    end
   end
 
   def show
@@ -13,15 +19,29 @@ before_action :set_bartender, only: [:show]
     @party     = Party.new(attributes)
     @new_review = @bartender.reviews.build
     @review = Review.new
+    p params
   end
 
   def search
+    @bartenders = Bartender.all
+    #Filter by Address
     location_query = params[:party][:address].split(',').map(&:squish)
-    @bartenders = []
     location_query.each do |word|
-      @bartenders += Bartender.where("location ILIKE ?", "%#{word}%")
+      @bartenders = @bartenders.where("location ILIKE ?", "%#{word}%")
     end
-    @party = Party.new
+    #Filter by Date Availability
+    non_available_ids = Bartender.joins(:parties).where("parties.date = ?", Date.parse(params[:party][:date])).pluck(:id)
+    unless non_available_ids.empty?
+      @bartenders = @bartenders.where("id NOT IN (?)", non_available_ids)
+
+    end
+    if params[:party]
+      @party          = Party.new(party_params)
+      session[:party] = party_params
+    else
+      @party = Party.new(session[:party])
+    end
+
     render :index
   end
 

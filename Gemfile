@@ -9,7 +9,6 @@ gem 'pg'
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'redis'
-gem 'turbolinks', '~> 5.0.0'
 gem 'sass-rails'
 gem 'jquery-rails'
 gem 'uglifier'
@@ -19,10 +18,7 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'omniauth-facebook'
 gem 'faker' # Facebook connect
-
-gem 'simple-form-datepicker'
-gem 'jquery-ui-rails'
-
+gem 'bootstrap-datepicker-rails'
 
 group :development, :test do
   gem 'binding_of_caller'
