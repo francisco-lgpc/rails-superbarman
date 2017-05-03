@@ -10,6 +10,19 @@ require 'open-uri'
 
 RANDOM_COCKTAIL_URL = "http://www.thecocktaildb.com/api/json/v1/1/random.php"
 
+REVIEWS = [
+  'really cool',
+  'nice',
+  'Awesome!!',
+  'Best time of my life',
+  'Very nice time. Neat drinks',
+  'Loved. It.',
+  'Decent',
+  'Ok, I guess',
+  'A lot of energy',
+  'Pretty good'
+]
+
 Party.destroy_all
 Bartender.destroy_all
 User.destroy_all
@@ -38,7 +51,7 @@ User.destroy_all
   b = Bartender.new(args)
   b.cocktails = cocktails
   b.save!
-  p b.errors.full_messages unless b.save!
+  p b.errors.full_messages unless b.save
 
 #Bartender_2
   args = {}
@@ -64,7 +77,7 @@ User.destroy_all
   b = Bartender.new(args)
   b.cocktails = cocktails
   b.save!
-  p b.errors.full_messages unless b.save!
+  p b.errors.full_messages unless b.save
 
 #Bartender_3
   args = {}
@@ -90,7 +103,7 @@ User.destroy_all
   b = Bartender.new(args)
   b.cocktails = cocktails
   b.save!
-  p b.errors.full_messages unless b.save!
+  p b.errors.full_messages unless b.save
 
 #Bartender_4
   args = {}
@@ -117,7 +130,7 @@ User.destroy_all
   b = Bartender.new(args)
   b.cocktails = cocktails
   b.save!
-  p b.errors.full_messages unless b.save!
+  p b.errors.full_messages unless b.save
 
 #Bartender_5
   args = {}
@@ -143,7 +156,7 @@ User.destroy_all
   b = Bartender.new(args)
   b.cocktails = cocktails
   b.save!
-  p b.errors.full_messages unless b.save!
+  p b.errors.full_messages unless b.save
 
 #Bartender_6
   args = {}
@@ -169,7 +182,7 @@ User.destroy_all
   b = Bartender.new(args)
   b.cocktails = cocktails
   b.save!
-  p b.errors.full_messages unless b.save!
+  p b.errors.full_messages unless b.save
 
 #Bartender_7
   args = {}
@@ -196,7 +209,7 @@ User.destroy_all
   b = Bartender.new(args)
   b.cocktails = cocktails
   b.save!
-  p b.errors.full_messages unless b.save!
+  p b.errors.full_messages unless b.save
 
 #Bartender_8
   args = {}
@@ -222,7 +235,7 @@ User.destroy_all
   b = Bartender.new(args)
   b.cocktails = cocktails
   b.save!
-  p b.errors.full_messages unless b.save!
+  p b.errors.full_messages unless b.save
 
 #Bartender_9
   args = {}
@@ -248,7 +261,7 @@ User.destroy_all
   b = Bartender.new(args)
   b.cocktails = cocktails
   b.save!
-  p b.errors.full_messages unless b.save!
+  p b.errors.full_messages unless b.save
 
 #Bartender_10
   args = {}
@@ -275,7 +288,7 @@ User.destroy_all
   b = Bartender.new(args)
   b.cocktails = cocktails
   b.save!
-  p b.errors.full_messages unless b.save!
+  p b.errors.full_messages unless b.save
 
 #Bartender_11
   args = {}
@@ -301,7 +314,7 @@ User.destroy_all
   b = Bartender.new(args)
   b.cocktails = cocktails
   b.save!
-  p b.errors.full_messages unless b.save!
+  p b.errors.full_messages unless b.save
 
 #Bartender_12
   args = {}
@@ -327,7 +340,7 @@ User.destroy_all
   b = Bartender.new(args)
   b.cocktails = cocktails
   b.save!
-  p b.errors.full_messages unless b.save!
+  p b.errors.full_messages unless b.save
 
 #Bartender_13
   args = {}
@@ -353,7 +366,7 @@ User.destroy_all
   b = Bartender.new(args)
   b.cocktails = cocktails
   b.save!
-  p b.errors.full_messages unless b.save!
+  p b.errors.full_messages unless b.save
 
 #Bartender_14
   args = {}
@@ -379,7 +392,7 @@ User.destroy_all
   b = Bartender.new(args)
   b.cocktails = cocktails
   b.save!
-  p b.errors.full_messages unless b.save!
+  p b.errors.full_messages unless b.save
 
 #Bartender_15
   args = {}
@@ -405,7 +418,7 @@ User.destroy_all
   b = Bartender.new(args)
   b.cocktails = cocktails
   b.save!
-  p b.errors.full_messages unless b.save!
+  p b.errors.full_messages unless b.save
 
 #Bartender_16
   args = {}
@@ -431,7 +444,7 @@ User.destroy_all
   b = Bartender.new(args)
   b.cocktails = cocktails
   b.save!
-  p b.errors.full_messages unless b.save!
+  p b.errors.full_messages unless b.save
 
 #Bartender_17
   args = {}
@@ -457,7 +470,7 @@ User.destroy_all
   b = Bartender.new(args)
   b.cocktails = cocktails
   b.save!
-  p b.errors.full_messages unless b.save!
+  p b.errors.full_messages unless b.save
 
 #Bartender_18
   args = {}
@@ -483,7 +496,7 @@ User.destroy_all
   b = Bartender.new(args)
   b.cocktails = cocktails
   b.save!
-  p b.errors.full_messages unless b.save!
+  p b.errors.full_messages unless b.save
 
 #Bartender_19
   args = {}
@@ -509,7 +522,7 @@ User.destroy_all
   b = Bartender.new(args)
   b.cocktails = cocktails
   b.save!
-  p b.errors.full_messages unless b.save!
+  p b.errors.full_messages unless b.save
 
 #Bartender_20
   args = {}
@@ -535,7 +548,7 @@ User.destroy_all
   b = Bartender.new(args)
   b.cocktails = cocktails
   b.save!
-  p b.errors.full_messages unless b.save!
+  p b.errors.full_messages unless b.save
 
 #Bartender_21
   args = {}
@@ -561,7 +574,7 @@ User.destroy_all
   b = Bartender.new(args)
   b.cocktails = cocktails
   b.save!
-  p b.errors.full_messages unless b.save!
+  p b.errors.full_messages unless b.save
 
 #Bartender_22
   args = {}
@@ -587,7 +600,7 @@ User.destroy_all
   b = Bartender.new(args)
   b.cocktails = cocktails
   b.save!
-  p b.errors.full_messages unless b.save!
+  p b.errors.full_messages unless b.save
 
 #Bartender_23
   args = {}
@@ -613,7 +626,7 @@ User.destroy_all
   b = Bartender.new(args)
   b.cocktails = cocktails
   b.save!
-  p b.errors.full_messages unless b.save!
+  p b.errors.full_messages unless b.save
 
 #Bartender_24
   args = {}
@@ -639,7 +652,7 @@ User.destroy_all
   b = Bartender.new(args)
   b.cocktails = cocktails
   b.save!
-  p b.errors.full_messages unless b.save!
+  p b.errors.full_messages unless b.save
 
 #Bartender_25
   args = {}
@@ -665,7 +678,7 @@ User.destroy_all
   b = Bartender.new(args)
   b.cocktails = cocktails
   b.save!
-  p b.errors.full_messages unless b.save!
+  p b.errors.full_messages unless b.save
 
 #Bartender_26
   args = {}
@@ -692,7 +705,7 @@ User.destroy_all
   b = Bartender.new(args)
   b.cocktails = cocktails
   b.save!
-  p b.errors.full_messages unless b.save!
+  p b.errors.full_messages unless b.save
 
 #Bartender_27
   args = {}
@@ -718,7 +731,7 @@ User.destroy_all
   b = Bartender.new(args)
   b.cocktails = cocktails
   b.save!
-  p b.errors.full_messages unless b.save!
+  p b.errors.full_messages unless b.save
 
 #Bartender_28
   args = {}
@@ -744,7 +757,7 @@ User.destroy_all
   b = Bartender.new(args)
   b.cocktails = cocktails
   b.save!
-  p b.errors.full_messages unless b.save!
+  p b.errors.full_messages unless b.save
 
 #Bartender_29
   args = {}
@@ -770,7 +783,7 @@ User.destroy_all
   b = Bartender.new(args)
   b.cocktails = cocktails
   b.save!
-  p b.errors.full_messages unless b.save!
+  p b.errors.full_messages unless b.save
 
 #Bartender_30
   args = {}
@@ -796,17 +809,30 @@ User.destroy_all
   b = Bartender.new(args)
   b.cocktails = cocktails
   b.save!
-  p b.errors.full_messages unless b.save!
+  p b.errors.full_messages unless b.save
 
 
 Bartender.all.each_with_index do |bartender, i|
-  rand(1..3).times do
-    party             = Party.new(theme: 'Party')
+  rand(2..4).times do
+    party             = Party.new(address: bartender.location, theme: Party::TYPES.sample, size: rand(15..60).to_s)
     bartender.parties << party
     n                 = Faker::GameOfThrones.character
-    user              = User.new(first_name: n, email: Faker::Internet.safe_email(n), password: 'youknownothing', password_confirmation: 'youknownothing')
-    user.parties      << party
-    user.save!
+    user              = User.new
+    loop do
+      user          = User.new(first_name: n, email: Faker::Internet.safe_email(n), password: 'youknownothing', password_confirmation: 'youknownothing')
+      user.parties  << party
+      break if user.save
+      p '...'
+    end
+
+    REVIEWS.sample(5).each do |content|
+      r = Review.new(content: content, rating: rand(3..5))
+      r.bartender = bartender
+      r.party     = party
+      r.user      = user
+      r.save!
+    end
+
   end
 
   bartender.parties.each do |party|
