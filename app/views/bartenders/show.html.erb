@@ -15,7 +15,6 @@
         <div class="col-xs-4">
           <%= image_tag @bartender.picture, class: 'avatar-largest', id: "cropped_avatar"%>
         </div>
-        <br>
         <div class="col-xs-6">
            <h1 class= ""> <%= @bartender.title %> </h1>
           <div class="row">
@@ -75,55 +74,41 @@
         </div>
         <div class= "content">
           <% unless @bartender.reviews.map(&:content).all?(&:nil?)  %>
-            <ul class="no-bullets">
-              <% @bartender.reviews.each do |review| %>
-              <li>
-                <% unless review.rating.nil? %>
-                <ul class="list-inline no-bullets">
-                  <% review.rating.times do %>
-                  <li> <i class="fa fa-glass golder" aria-hidden=true> </i></li>
-                  <% end %>
-                  <% (5 - review.rating).times do %>
-                  <li> <i class="fa fa-glass blacker" aria-hidden=true> </i></li>
-                  <% end %>
-                </ul>
-              </li>
-              <li> <%= review.content %> </li>
-              <br><hr><br>
+            <% @bartender.reviews.limit(5).each do |review| %>
+              <%= render partial: 'bartenders/show/review', locals: {review: review} %>
+            <% end %>
+
+            <div class="reviews-expanded-list">
+              <% @bartender.reviews.offset(5).each do |review| %>
+                <%= render partial: 'bartenders/show/review', locals: {review: review} %>
               <% end %>
-              <% end %>
-            </ul>
+            </div>
+
+            <button class="btn btn-expand" id="btn-expand-reviews"> Show more reviews</button>
           <% end %>
 
-
-
-            <%= render 'reviews/new' %>
+          <%= render 'reviews/new' %>
 
         </div>
       </div>
 
     </div>
 
-    <!-- Pricing stamp -->
-    <div class="col-md-3 col-md-offset-1 pricing">
-      <div class="top-header">
+    <!-- RIGHT COLUMN -->
+    <div class="col-md-3 col-md-offset-1">
+      <div class="pricing">
         <h1>For €50</h1>
         <h2>+</h2>
         <h3>€5 per cocktail</h3>
       </div>
+      <div class="booking-basics">
+        <h2> Book Your Bartender</h2>
+        <%= render 'bartenders/show/form' %>
+      </div>
     </div>
-
-    <!-- RIGHT COLUMN -->
-    <div class="col-md-3 col-md-offset-1 booking-basics">
-      <h2> Book Your Bartender</h2>
-      <%= render 'bartenders/show/form' %>
-    </div>
-
   </div>
 
-  <br>
-
-
-
+  </div>
+</div>
 
 
