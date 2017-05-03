@@ -1,7 +1,7 @@
 <%= simple_form_for [@bartender, @party], url: bartender_parties_path, html: { id: 'home-form-show' } do |f| %>
 
   <% #Details about the user %>
-  <div class="col-md-4">
+  <div class="col-xs-12 col-md-4">
     <h4>1. About you</h4>
     <%= f.simple_fields_for :user do |u| %>
       <%= u.input :first_name, label: false, placeholder: 'Daniel', wrapper_html: { class: '' }, input_html: { class: "input form-input-index"} %>
@@ -31,9 +31,7 @@
 
 
   <% #Fixed form to display as a recap of the booking  %>
-   <%= f.input :address, :as => :hidden, :input_html => { :value => @party.address } %>
-    <%= f.input :date, :as => :hidden, label: false, placeholder: '21:00', wrapper_html: { class: '' }, input_html: { class: "input form-input-index"} %>
-  <div class="col-md-4 col-md-offset-4">
+  <div class="col-center summary">
     <h4> All ready for your <%= @party.theme %> party on the <%= @party.date %> </h4>
     <p>
       <ul>
@@ -52,6 +50,8 @@
       </ul>
     </p>
   </div>
+   <%= f.input :address, :as => :hidden, :input_html => { :value => @party.address } %>
+    <%= f.input :date, :as => :hidden, label: false, placeholder: '21:00', wrapper_html: { class: '' }, input_html: { class: "input form-input-index"} %>
 <% end %>
 
 
