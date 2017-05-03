@@ -53,7 +53,7 @@ before_action :set_bartender, only: [:show]
   end
 
   def dashboard
-
+    @bartender = current_bartender
   end
 
   private

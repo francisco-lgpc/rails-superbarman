@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get '/log_in', to: 'pages#sign_in'
   post '/bartenders/search', to: 'bartenders#search'
-  get 'bartenders/:id/dashboard', to: 'bartender#dashboard', as: 'bartender_dashboard'
+  get 'bartenders/:id/dashboard', to: 'bartenders#dashboard', as: 'bartender_dashboard'
 
   get '/bartenders/search', to: 'bartenders#search', as: "bartender_search"
   resources :bartenders, only: [:index, :show] do
