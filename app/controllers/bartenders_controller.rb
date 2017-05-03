@@ -52,6 +52,9 @@ before_action :set_bartender, only: [:show]
     render :index
   end
 
+  def dashboard
+
+  end
 
   private
 
