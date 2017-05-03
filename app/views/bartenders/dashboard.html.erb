@@ -1,0 +1,25 @@
+
+<h1><%= @bartender.title %></h1>
+
+<%= @bartender.name %>
+
+<br><br>
+<ul>
+  <% @bartender.parties.each do |party| %>
+    <li>
+      <div>
+        <%= party.date %>
+        <%= party.theme %>
+        <%= party.size %>
+        <%= party.start_time %>
+        <%= party.party_plan %>
+        <%= party.price %>
+        <ul>
+          <% party.reviews.each do |review| %>
+            <li> <%= review.content %> </li>
+          <% end %>
+        </ul>
+      </div>
+    </li>
+  <% end %>
+</ul>
