@@ -27,7 +27,7 @@ before_action :set_bartender, only: [:show]
 
     #Filter by Address
     location_query = params[:party][:address].split(',').map(&:squish).first
-    unless location_query.empty?
+    unless location_query.nil?
       @bartenders = @bartenders.where("location ILIKE ?", "%#{location_query}%")
     end
 
