@@ -1,0 +1,13 @@
+<h3>About your party</h3>
+<%= simple_form_for [@bartender, @party], url: bartender_parties_path, html: { id: 'home-form-show' } do |f| %>
+
+  <%= f.input :size, label: 'How many people are attending?', collection: {"5 to 29 guests": "5-29", "30 to 59 guests": "30-59", "60 to 90 guests": "60-90"}, prompt: "5 to 20 guests" %>
+
+  <%= f.input :start_time, as: :string, label: 'What time is your party?', placeholder: '21:00', wrapper_html: { class: '' }, input_html: { class: "input form-input-index"} %>
+
+  <%= f.input :message, placeholder: 'Say hello to your bartender and tell him more about your party!', label: "Message " %>
+
+  <%= button_tag type: :submit, class: "btn-search" do %>
+    Confirm and Pay
+  <% end %>
+<% end %>
