@@ -1,0 +1,21 @@
+.list-item-party {
+  background-color: $brown;
+  color: $gold;
+  padding: 10px 10px;
+  border-radius: 4px;
+  margin-bottom: 2px;
+  ul {
+    padding: 10px;
+  }
+  li {
+    background-color: $dropdown-grey;
+    color: $brown;
+    padding: 5px 0 5px 10px;
+    &.first {
+      border-radius: 4px 4px 0 0;
+    }
+    &.last {
+      border-radius: 0 0 4px 4px;
+    }
+  }
+}
