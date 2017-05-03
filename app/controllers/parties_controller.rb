@@ -18,6 +18,8 @@ class PartiesController < ApplicationController
     else
       @party = Party.new(session[:party])
     end
+    @bartender = Bartender.find(params[:bartender_id].to_i)
+    @party.bartender = @bartender
   end
 
   def show
