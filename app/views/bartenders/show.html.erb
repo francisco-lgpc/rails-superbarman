@@ -71,6 +71,25 @@
 
 
 
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-1">
+      <p class= ""> Languages: </p>
+
+      <%# This is how you would add the flags, after adding the image files to assets %>
+      <% @bartender.languages.split.each do |language| %>
+        <%#= image_tag "#{language}.png" %>
+      <% end %>
+
+      <%# if you remove the following line, don't forget to remove lines 1 to 4 of this file, where language array is created %>
+      <p> <%= languages.join(', ') %> </p>
+
+    </div>
+  </div>
+
+
+
+
+
     <% unless @bartender.reviews.map(&:content).all?(&:nil?)  %>
 
       <h3>Reviews:</h3>
@@ -104,7 +123,7 @@
 
 
 
-</div>
+ </div>
 </div>
 
 
