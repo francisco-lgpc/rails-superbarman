@@ -1,6 +1,7 @@
 class PartiesController < ApplicationController
   skip_before_action :authenticate_user!, only: []
 
+
   def create
     if params[:party]
       @party = Party.new(party_params)
@@ -45,7 +46,7 @@ class PartiesController < ApplicationController
   private
 
   def party_params
-    params.require(:party).permit(:date, :theme, :size, :address, :start_time)
+    params.require(:party).permit(:date, :theme, :size, :address, :start_time, :zip_code, :city, :country, :message)
   end
 
   # Use callbacks to share common setup or constraints between actions.

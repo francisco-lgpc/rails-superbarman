@@ -9,7 +9,7 @@ module PartiesHelper
     hour = start_time.hour
     minute = start_time.min.to_s
     minute = '0' + minute if minute.length == 1
-    "#{hour} : #{minute}"
+    "#{hour}:#{minute}"
   end
 
   def pretty_address(address)

@@ -17,6 +17,16 @@
     <%= f.input :start_time, label: "What time is your party?", placeholder: '21:00', wrapper_html: { class: '' }, input_html: { class: "input form-input-index"} %>
 
 
+    <%= f.input :address %>
+    <%= f.input :zip_code %>
+    <%= f.input :city %>
+    <%= f.input :country, priority: [ 'DE' ] %>
+
+    <div class="hidden">
+      <%= f.input :theme, collection: Party::TYPES, label: false, prompt: "Type of Party", input_html: { class: "input form-input-index" } %>
+    </div>
+    <%= f.input :date, :as => :hidden, label: false, placeholder: '21:00', wrapper_html: { class: '' }, input_html: { class: "input form-input-index"} %>
+
     <%= f.input :size, collection: {"5 to 30 guests": "5-29", "30 to 60 guests": "30-59", "60 to 90 guests": "60-90"}, prompt: "5-29", label: "How many people are coming?" %>
 
     <%= f.input :message, placeholder: 'I want a special mojito!', label: "Say hello to your bartender and provide more details about your party!" %>
@@ -39,7 +49,7 @@
           Picked bartender: <%= @party.bartender.name %>
         </li>
         <li>
-          City: <%= @party.address%>
+          City: <%= @party.address %>
         </li>
         <li>
           Total: 50€. Includes 5 free welcome cocktails of your choice.
@@ -50,21 +60,75 @@
       </ul>
     </p>
   </div>
-   <%= f.input :address, :as => :hidden, :input_html => { :value => @party.address } %>
-    <%= f.input :date, :as => :hidden, label: false, placeholder: '21:00', wrapper_html: { class: '' }, input_html: { class: "input form-input-index"} %>
+  <%= f.input :address, :as => :hidden, :input_html => { :value => @party.address } %>
+  <%= f.input :date, :as => :hidden, label: false, placeholder: '21:00', wrapper_html: { class: '' }, input_html: { class: "input form-input-index"} %>
 <% end %>
 
 
 
 
     <script type="text/javascript">
-      function initialize() {
-
-      var input = document.getElementById('party_address');
-      var autocomplete = new google.maps.places.Autocomplete(input);
+     $(document).ready(function() {
+  var flat_address = $('#party_address').get(0);
+  if (flat_address) {
+    var autocomplete = new google.maps.places.Autocomplete(flat_address, { types: ['geocode'] });
+    google.maps.event.addListener(autocomplete, 'place_changed', onPlaceChanged);
+    google.maps.event.addDomListener(flat_address, 'keydown', function(e) {
+      if (e.keyCode == 13) {
+        e.preventDefault(); // Do not submit the form on Enter.
       }
+    });
+  }
+});
 
-      google.maps.event.addDomListener(window, 'load', initialize);
+function onPlaceChanged() {
+  var place = this.getPlace();
+  var components = getAddressComponents(place);
+
+  $('#party_address').trigger('blur').val(components.address);
+  $('#party_zip_code').val(components.zip_code);
+  $('#party_city').val(components.city);
+  if (components.country_code) {
+    $('#party_country').val(components.country_code);
+  }
+}
+
+function getAddressComponents(place) {
+  // If you want lat/lng, you can look at:
+  // - place.geometry.location.lat()
+  // - place.geometry.location.lng()
+
+  var street_number = null;
+  var route = null;
+  var zip_code = null;
+  var city = null;
+  var country_code = null;
+  for (var i in place.address_components) {
+    var component = place.address_components[i];
+    for (var j in component.types) {
+      var type = component.types[j];
+      if (type == 'street_number') {
+        street_number = component.long_name;
+      } else if (type == 'route') {
+        route = component.long_name;
+      } else if (type == 'postal_code') {
+        zip_code = component.long_name;
+      } else if (type == 'locality') {
+        city = component.long_name;
+      } else if (type == 'country') {
+        country_code = component.short_name;
+      }
+    }
+  }
+
+  return {
+    address: street_number == null ? route : (street_number + ' ' + route),
+    zip_code: zip_code,
+    city: city,
+    country_code: country_code
+  };
+}
+
     </script>
 
     <script type="text/javascript">
