@@ -16,7 +16,7 @@ User.destroy_all
 
 #Bartender_1
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
   args[:email]        = "izabeldosantos@superbarman.com"
@@ -24,7 +24,7 @@ User.destroy_all
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
   args[:languages]    = "en pt de"
-  args[:picture]      = "12.jpg"
+  args[:picture]      = "#{rand(1..10)}.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -43,7 +43,7 @@ User.destroy_all
   args[:name]         = "Izabel do Santos"
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
-  args[:email]        = "izabeldosantos@superbarman.com"
+  args[:email]        = Faker::Internet.email
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
@@ -64,15 +64,15 @@ User.destroy_all
 
 #Bartender_3
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
-  args[:email]        = "izabeldosantos@superbarman.com"
+  args[:email]        = Faker::Internet.email
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
   args[:languages]    = "en pt de"
-  args[:picture]      = "12.jpg"
+  args[:picture]      = "#{rand(1..10)}.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -88,15 +88,15 @@ User.destroy_all
 
 #Bartender_4
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
-  args[:email]        = "izabeldosantos@superbarman.com"
+  args[:email]        = Faker::Internet.email
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
   args[:languages]    = "en pt de"
-  args[:picture]      = "12.jpg"
+  args[:picture]      = "#{rand(1..10)}.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -112,15 +112,15 @@ User.destroy_all
 
 #Bartender_5
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
-  args[:email]        = "izabeldosantos@superbarman.com"
+  args[:email]        = Faker::Internet.email
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
   args[:languages]    = "en pt de"
-  args[:picture]      = "12.jpg"
+  args[:picture]      = "#{rand(1..10)}.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -136,15 +136,15 @@ User.destroy_all
 
 #Bartender_6
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
-  args[:email]        = "izabeldosantos@superbarman.com"
+  args[:email]        = Faker::Internet.email
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
   args[:languages]    = "en pt de"
-  args[:picture]      = "12.jpg"
+  args[:picture]      = "#{rand(1..10)}.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -160,15 +160,15 @@ User.destroy_all
 
 #Bartender_7
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
-  args[:email]        = "izabeldosantos@superbarman.com"
+  args[:email]        = Faker::Internet.email
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
   args[:languages]    = "en pt de"
-  args[:picture]      = "12.jpg"
+  args[:picture]      = "#{rand(1..10)}.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -184,15 +184,15 @@ User.destroy_all
 
 #Bartender_8
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
-  args[:email]        = "izabeldosantos@superbarman.com"
+  args[:email]        = Faker::Internet.email
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
   args[:languages]    = "en pt de"
-  args[:picture]      = "12.jpg"
+  args[:picture]      = "#{rand(1..10)}.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -208,15 +208,15 @@ User.destroy_all
 
 #Bartender_9
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
-  args[:email]        = "izabeldosantos@superbarman.com"
+  args[:email]        = Faker::Internet.email
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
   args[:languages]    = "en pt de"
-  args[:picture]      = "12.jpg"
+  args[:picture]      = "#{rand(1..10)}.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -232,15 +232,15 @@ User.destroy_all
 
 #Bartender_10
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
-  args[:email]        = "izabeldosantos@superbarman.com"
+  args[:email]        = Faker::Internet.email
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
   args[:languages]    = "en pt de"
-  args[:picture]      = "12.jpg"
+  args[:picture]      = "#{rand(1..10)}.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -256,15 +256,15 @@ User.destroy_all
 
 #Bartender_11
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
-  args[:email]        = "izabeldosantos@superbarman.com"
+  args[:email]        = Faker::Internet.email
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
   args[:languages]    = "en pt de"
-  args[:picture]      = "12.jpg"
+  args[:picture]      = "#{rand(1..10)}.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -280,15 +280,15 @@ User.destroy_all
 
 #Bartender_12
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
-  args[:email]        = "izabeldosantos@superbarman.com"
+  args[:email]        = Faker::Internet.email
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
   args[:languages]    = "en pt de"
-  args[:picture]      = "12.jpg"
+  args[:picture]      = "#{rand(1..10)}.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -304,15 +304,15 @@ User.destroy_all
 
 #Bartender_13
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
-  args[:email]        = "izabeldosantos@superbarman.com"
+  args[:email]        = Faker::Internet.email
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
   args[:languages]    = "en pt de"
-  args[:picture]      = "12.jpg"
+  args[:picture]      = "#{rand(1..10)}.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -328,15 +328,15 @@ User.destroy_all
 
 #Bartender_14
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
-  args[:email]        = "izabeldosantos@superbarman.com"
+  args[:email]        = Faker::Internet.email
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
   args[:languages]    = "en pt de"
-  args[:picture]      = "12.jpg"
+  args[:picture]      = "#{rand(1..10)}.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -352,15 +352,15 @@ User.destroy_all
 
 #Bartender_15
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
-  args[:email]        = "izabeldosantos@superbarman.com"
+  args[:email]        = Faker::Internet.email
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
   args[:languages]    = "en pt de"
-  args[:picture]      = "12.jpg"
+  args[:picture]      = "#{rand(1..10)}.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -376,15 +376,15 @@ User.destroy_all
 
 #Bartender_16
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
-  args[:email]        = "izabeldosantos@superbarman.com"
+  args[:email]        = Faker::Internet.email
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
   args[:languages]    = "en pt de"
-  args[:picture]      = "12.jpg"
+  args[:picture]      = "#{rand(1..10)}.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -400,15 +400,15 @@ User.destroy_all
 
 #Bartender_17
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
-  args[:email]        = "izabeldosantos@superbarman.com"
+  args[:email]        = Faker::Internet.email
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
   args[:languages]    = "en pt de"
-  args[:picture]      = "12.jpg"
+  args[:picture]      = "#{rand(1..10)}.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -424,15 +424,15 @@ User.destroy_all
 
 #Bartender_18
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
-  args[:email]        = "izabeldosantos@superbarman.com"
+  args[:email]        = Faker::Internet.email
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
   args[:languages]    = "en pt de"
-  args[:picture]      = "12.jpg"
+  args[:picture]      = "#{rand(1..10)}.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -448,15 +448,15 @@ User.destroy_all
 
 #Bartender_19
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
-  args[:email]        = "izabeldosantos@superbarman.com"
+  args[:email]        = Faker::Internet.email
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
   args[:languages]    = "en pt de"
-  args[:picture]      = "12.jpg"
+  args[:picture]      = "#{rand(1..10)}.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -472,15 +472,15 @@ User.destroy_all
 
 #Bartender_20
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
-  args[:email]        = "izabeldosantos@superbarman.com"
+  args[:email]        = Faker::Internet.email
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
   args[:languages]    = "en pt de"
-  args[:picture]      = "12.jpg"
+  args[:picture]      = "#{rand(1..10)}.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -496,15 +496,15 @@ User.destroy_all
 
 #Bartender_21
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
-  args[:email]        = "izabeldosantos@superbarman.com"
+  args[:email]        = Faker::Internet.email
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Amsterdam"
   args[:languages]    = "en pt de"
-  args[:picture]      = "12.jpg"
+  args[:picture]      = "#{rand(1..10)}.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -520,15 +520,15 @@ User.destroy_all
 
 #Bartender_22
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
-  args[:email]        = "izabeldosantos@superbarman.com"
+  args[:email]        = Faker::Internet.email
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Amsterdam"
   args[:languages]    = "en pt de"
-  args[:picture]      = "12.jpg"
+  args[:picture]      = "#{rand(1..10)}.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -544,15 +544,15 @@ User.destroy_all
 
 #Bartender_23
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
-  args[:email]        = "izabeldosantos@superbarman.com"
+  args[:email]        = Faker::Internet.email
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Amsterdam"
   args[:languages]    = "en pt de"
-  args[:picture]      = "12.jpg"
+  args[:picture]      = "#{rand(1..10)}.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -568,15 +568,15 @@ User.destroy_all
 
 #Bartender_24
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
-  args[:email]        = "izabeldosantos@superbarman.com"
+  args[:email]        = Faker::Internet.email
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Amsterdam"
   args[:languages]    = "en pt de"
-  args[:picture]      = "12.jpg"
+  args[:picture]      = "#{rand(1..10)}.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -592,15 +592,15 @@ User.destroy_all
 
 #Bartender_25
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
-  args[:email]        = "izabeldosantos@superbarman.com"
+  args[:email]        = Faker::Internet.email
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Amsterdam"
   args[:languages]    = "en pt de"
-  args[:picture]      = "12.jpg"
+  args[:picture]      = "#{rand(1..10)}.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -616,15 +616,15 @@ User.destroy_all
 
 #Bartender_26
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
-  args[:email]        = "izabeldosantos@superbarman.com"
+  args[:email]        = Faker::Internet.email
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Amsterdam"
   args[:languages]    = "en pt de"
-  args[:picture]      = "12.jpg"
+  args[:picture]      = "#{rand(1..10)}.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -640,15 +640,15 @@ User.destroy_all
 
 #Bartender_27
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
-  args[:email]        = "izabeldosantos@superbarman.com"
+  args[:email]        = Faker::Internet.email
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Amsterdam"
   args[:languages]    = "en pt de"
-  args[:picture]      = "12.jpg"
+  args[:picture]      = "#{rand(1..10)}.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -664,15 +664,15 @@ User.destroy_all
 
 #Bartender_28
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
-  args[:email]        = "izabeldosantos@superbarman.com"
+  args[:email]        = Faker::Internet.email
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Amsterdam"
   args[:languages]    = "en pt de"
-  args[:picture]      = "12.jpg"
+  args[:picture]      = "#{rand(1..10)}.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -688,15 +688,15 @@ User.destroy_all
 
 #Bartender_29
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
-  args[:email]        = "izabeldosantos@superbarman.com"
+  args[:email]        = Faker::Internet.email
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Amsterdam"
   args[:languages]    = "en pt de"
-  args[:picture]      = "12.jpg"
+  args[:picture]      = "#{rand(1..10)}.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -712,15 +712,15 @@ User.destroy_all
 
 #Bartender_30
   args = {}
-  args[:name]         = "Izabel do Santos"
+  args[:name]         = Faker::Name.name
   args[:title]        = "Sexy Caipirinha"
   args[:phone_number] = "+49.680.47.64.90"
-  args[:email]        = "izabeldosantos@superbarman.com"
+  args[:email]        = Faker::Internet.email
   args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Amsterdam"
   args[:languages]    = "en pt de"
-  args[:picture]      = "12.jpg"
+  args[:picture]      = "#{rand(1..10)}.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
