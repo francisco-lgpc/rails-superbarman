@@ -1,12 +1,14 @@
 <div class="show-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.2) 0%, rgba(0,36,61,0.3) 50%), url(<%= image_url 'london2.jpg' %>);"></div>
 
+
+
 <div class="container">
  <div class="wrapper-show">
 
 
   <div class="row">
     <!-- LEFT COLUMN -->
-    <div class="col-xs-8 profile-details">
+    <div class="col-md-8 profile-details">
 
       <!-- PROFILE -->
       <div class="row">
@@ -102,8 +104,17 @@
 
     </div>
 
+    <!-- Pricing stamp -->
+    <div class="col-md-3 col-md-offset-1 pricing">
+      <div class="top-header">
+        <h1>For €50</h1>
+        <h2>+</h2>
+        <h3>€5 per cocktail</h3>
+      </div>
+    </div>
+
     <!-- RIGHT COLUMN -->
-    <div class="col-xs-3 booking-basics">
+    <div class="col-md-3 col-md-offset-1 booking-basics">
       <h2> Book Your Bartender</h2>
       <%= render 'bartenders/show/form' %>
     </div>
