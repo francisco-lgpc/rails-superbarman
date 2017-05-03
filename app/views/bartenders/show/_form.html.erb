@@ -1,5 +1,6 @@
 
 <%= simple_form_for [@bartender, @party], method: :get, url: new_bartender_party_path(bartender_id: @bartender.id), html: { id: 'home-form-show' } do |f| %>
+  <%= f.input :address, as: :hidden, label:"Location", wrapper_html: { class: '' }, input_html: { class: "input form-input-index", id: "location-show" } %>
 
   <%= f.input :date, as: :string, input_html: { class: "datepicker"} %>
 
