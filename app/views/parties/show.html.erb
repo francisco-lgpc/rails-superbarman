@@ -11,8 +11,9 @@
   </div>
   <div class="summary-show">
     <h2><strong><%= @party.bartender.name %></strong> will be in: </h2>
-    <h3><%= @party.address %></h3>
+    <h3><%= pretty_address(@party.address) %></h3>
     <h4>On <strong><%= @party.date %></strong> </h4>
+    <h3>At <%= pretty_time(@party.start_time) %></h3>
     <h4>For your <%= (@party.theme).downcase %> with <%= pretty_size(@party.size) %> guests! </h4>
 
   </div>
