@@ -14,9 +14,8 @@ class PartiesController < ApplicationController
   def new
     if params[:party]
       @party = Party.new(party_params)
-
-      if session[:party][:theme]
-        @party.theme = session[:party][:theme]
+      if session[:party]['theme']
+        @party.theme = session[:party]['theme']
       end
     else
       @party = Party.new(session[:party])
