@@ -12,6 +12,10 @@
 
     <h3>Theme: <%= @party.theme %></h3>
 
+    <%= f.input :address %>
+    <%= f.input :zip_code %>
+    <%= f.input :city %>
+    <%= f.input :country, priority: [ 'DE' ] %>
 
     <div class="hidden">
       <%= f.input :theme, collection: Party::TYPES, label: false, prompt: "Type of Party", input_html: { class: "input form-input-index" } %>

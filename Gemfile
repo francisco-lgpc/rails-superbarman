@@ -19,6 +19,7 @@ gem 'autoprefixer-rails'
 gem 'omniauth-facebook'
 gem 'faker' # Facebook connect
 gem 'bootstrap-datepicker-rails'
+gem 'country_select'
 
 group :development, :test do
   gem 'binding_of_caller'
