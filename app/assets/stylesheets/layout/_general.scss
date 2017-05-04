@@ -19,7 +19,24 @@ ul {
   list-style-type: none;
 }
 
+
+
+// Define style for our placeholders
+// ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+//   color: pink !important;
+// }
+// ::-moz-placeholder { /* Firefox 19+ */
+//   color: pink;
+// }
+// :-ms-input-placeholder { /* IE 10+ */
+//   color: pink;
+// }
+// :-moz-placeholder { /* Firefox 18- */
+//   color: pink;
+// }
+=======
 // This removes the default outline around buttons after clicking.
 button:focus {
   outline: none;
 }
+
