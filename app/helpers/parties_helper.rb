@@ -21,4 +21,9 @@ module PartiesHelper
     "#{price}€"
   end
 
+  def pretty_date(date)
+    p date.to_date
+    date.to_date.to_formatted_s(:short)
+  end
+
 end

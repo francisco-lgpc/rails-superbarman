@@ -4,40 +4,42 @@
 <%= @bartender.name %>
 
 <br><br>
-<ul>
-  <div class='header'>
+<div class='dashboard-wrapper'>
+  <div class='dashboard-header'>
     <div class="row">
       <div class="col-xs-2">Type of Party</div>
-      <div class="col-xs-2">Date</div>
+      <div class="col-xs-2">Time and Date</div>
       <div class="col-xs-2">Number of Guests</div>
-      <div class="col-xs-2">Start Time</div>
       <div class="col-xs-1">Price</div>
     </div>
   </div>
-  <% @bartender.parties.each do |party| %>
-    <li>
-      <div class='list-item-party'>
-        <div class="row">
-          <div class="col-xs-2"><%= party.theme %></div>
-          <div class="col-xs-2"><%= party.date %></div>
-          <div class="col-xs-2"><%= pretty_size(party.size) %></div>
-          <div class="col-xs-2"><%= pretty_time(party.start_time) %></div>
-          <div class="col-xs-1"><%= pretty_price(party.price) %></div>
+  <div class="dashboard-body">
+    <% @bartender.parties.each do |party| %>
+      <div>
+        <div class='dashboard-bar'>
+          <div class="row">
+            <div class="col-xs-2"><%= party.theme %></div>
+            <div class="col-xs-2">
+              <%= pretty_time(party.start_time) %>
+              <%= pretty_date(party.date) %>
+            </div>
+            <div class="col-xs-2"><%= pretty_size(party.size) %></div>
+            <div class="col-xs-1"><%= pretty_price(party.price) %></div>
 
-        </div>
-        <i class="fa fa-caret-down" aria-hidden="true"></i>
-        <br>
-        <div class="party-reviews-wrapper">
-          <h5>Reviews</h5>
-          <ul>
-            <% party.reviews.each_with_index do |review, i| %>
-              <li class="<%= i.zero? ? 'first' : (i + 1 == party.reviews.size ? 'last' : 'std') %>">
-                <%= review.content %>
-              </li>
-            <% end %>
-          </ul>
+          </div>
+          <i class="fa fa-caret-down" aria-hidden="true"></i>
+          <div class="party-reviews-wrapper">
+            <ul>
+              <h5>Reviews</h5>
+              <% party.reviews.each_with_index do |review, i| %>
+                <li class="<%= i.zero? ? 'first' : (i + 1 == party.reviews.size ? 'last' : 'std') %>">
+                  <%= review.content %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
         </div>
       </div>
-    </li>
-  <% end %>
-</ul>
+    <% end %>
+  </div>
+</div>
