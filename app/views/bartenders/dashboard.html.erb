@@ -20,8 +20,8 @@
           <div class="row">
             <div class="col-xs-2"><%= party.theme %></div>
             <div class="col-xs-2">
-              <%= pretty_time(party.start_time) %>
-              <%= pretty_date(party.date) %>
+              <%= pretty_time(party.start_time) %>,
+              <%= party.date.to_s(:long) %>
             </div>
             <div class="col-xs-2"><%= pretty_size(party.size) %></div>
             <div class="col-xs-1"><%= pretty_price(party.price) %></div>
