@@ -13,16 +13,8 @@ class PartiesController < ApplicationController
     @bartender = Bartender.find(params[:bartender_id])
     @party.bartender = @bartender
     @party.user = current_user
-        p @party.date
-      @bartender.parties.each do |party|
-          p party.date
-        if party.date == @party.date
-         redirect_to bartender_path(@bartender)
-        else
-          @party.save!
-          redirect_to bartender_party_path(@bartender, @party)
-        end
-      end
+    @party.save!
+    redirect_to bartender_party_path(@bartender, @party)
   end
 
   def new
