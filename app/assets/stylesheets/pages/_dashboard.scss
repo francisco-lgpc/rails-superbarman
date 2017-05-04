@@ -5,8 +5,13 @@
   padding: 70px 50px;
   background-color: $brown-lightest;
 
-  .dashboard-body {
-
+  .dashboard-header {
+    background-color: $brown;
+    color: $gold;
+    margin: 0;
+    padding: 10px 10px;
+    border-radius: 4px;
+    margin-bottom: 6px;
   }
 
   .dashboard-bar {
@@ -31,12 +36,15 @@
     }
   }
 
-  .dashboard-header {
-    background-color: $brown;
-    color: $gold;
-    margin: 0;
-    padding: 10px 10px;
-    border-radius: 4px;
-    margin-bottom: 6px;
+  .dashboard-body {
+
+  }
+
+  .status-wrapper {
+    display: flex;
+    .icon {
+      background: transparent;
+      border: none;
+    }
   }
 }
