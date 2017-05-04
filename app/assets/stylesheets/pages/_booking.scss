@@ -1,0 +1,82 @@
+.wrapper-prebook{
+    h1{
+      color: $gold;
+      padding-bottom: 50px;
+      text-align: center;
+    }
+  .about-you{
+    padding-bottom: 30px;
+
+    .about-you-block{
+    height: 50px;
+    display: block;
+    width: 100%;
+    background-color: $brown;
+    color: $white;
+    border: none;
+    border-radius: 6px;
+    }
+  }
+
+  .about-your-party{
+    .about-your-party-block{
+      height: 50px;
+      display: block;
+      width: 100%;
+      background-color: $brown;
+      color: $white;
+      border: none;
+      border-radius: 6px;
+      margin: 10px 0px;
+
+    }
+    .about-your-party-time{
+            height: 50px;
+      background-color: $brown;
+      color: $white;
+
+    }
+
+  }
+  .booking-summary{
+  border: 4px solid $gold;
+  padding: 20px 20px;
+    h4{
+      padding: 10px 10px;
+    }
+    ul{
+      padding: 5px 10px;
+    }
+  }
+  .booking-line{
+    border: 1px solid $gold;
+  }
+  .bartender-message{
+    .bartender-message-block{
+    height: 50px;
+    display: block;
+    width: 100%;
+    background-color: $brown;
+    color: $white;
+    border: none;
+    border-radius: 6px;
+    margin: 10px 0px;
+
+    }
+    .btn-booking-confirm{
+    background-color: rgb(234, 183, 86);
+    color: $white;
+    width: 62%;
+    border-radius: 6px;
+    border: none;
+    margin: 10px 50px;
+    font-size: 15px;
+    height: 50px;
+      &:hover{
+        color: $brown;
+      }
+
+    }
+
+  }
+}
