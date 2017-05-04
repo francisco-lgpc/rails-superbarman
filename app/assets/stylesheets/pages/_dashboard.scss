@@ -1,21 +1,50 @@
-.list-item-party {
-  background-color: $brown;
-  color: $gold;
-  padding: 10px 10px;
-  border-radius: 4px;
-  margin-bottom: 2px;
-  ul {
-    padding: 10px;
+
+
+.dashboard-wrapper {
+
+  padding: 70px 50px;
+  background-color: $brown-lightest;
+
+  .dashboard-header {
+    background-color: $brown;
+    color: $gold;
+    margin: 0;
+    padding: 10px 10px;
+    border-radius: 4px;
+    margin-bottom: 6px;
   }
-  li {
-    background-color: $dropdown-grey;
+
+  .dashboard-bar {
+    background-color: $gold;
     color: $brown;
-    padding: 5px 0 5px 10px;
-    &.first {
-      border-radius: 4px 4px 0 0;
+    padding: 10px 10px;
+    border-radius: 4px;
+    margin-bottom: 2px;
+    ul {
+      padding: 10px;
     }
-    &.last {
-      border-radius: 0 0 4px 4px;
+    li {
+      background-color: $gold-lighter;
+      color: $brown;
+      padding: 5px 0 5px 10px;
+      &.first {
+        border-radius: 4px 4px 0 0;
+      }
+      &.last {
+        border-radius: 0 0 4px 4px;
+      }
+    }
+  }
+
+  .dashboard-body {
+
+  }
+
+  .status-wrapper {
+    display: flex;
+    .icon {
+      background: transparent;
+      border: none;
     }
   }
 }

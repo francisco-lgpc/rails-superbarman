@@ -1,6 +1,5 @@
 class PartiesController < ApplicationController
-  skip_before_action :authenticate_user!, only: []
-
+  skip_before_action :authenticate_user!, only: [:bartender_confirm, :bartender_reject]
 
   def create
     if params[:party]
@@ -50,6 +49,20 @@ class PartiesController < ApplicationController
 
   def show
     @party = Party.find(params[:id])
+  end
+
+  def bartender_confirm
+    party = Party.find(params[:id])
+    party.bartender_confirm
+    party.save!
+    redirect_to bartender_dashboard_path(party.bartender)
+  end
+
+  def bartender_reject
+    party = Party.find(params[:id])
+    party.bartender_reject
+    party.save!
+    redirect_to bartender_dashboard_path(party.bartender)
   end
 
   private

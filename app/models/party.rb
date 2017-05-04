@@ -8,5 +8,32 @@ class Party < ApplicationRecord
   has_many :reviews, dependent: :destroy
   validates :theme, inclusion: { in: TYPES }
   accepts_nested_attributes_for :user
+
+  def bartender_confirmed?
+    self.bartender_confirmed
+  end
+
+  def pending_bartender_confirmation?
+    self.pending_bartender_confirmation
+  end
+
+  def payment_confirmed?
+    self.bartender_confirmed
+  end
+
+  def bartender_confirm
+    self.pending_bartender_confirmation  = false
+    self.bartender_confirmed             = true
+  end
+
+  def bartender_reject
+    self.pending_bartender_confirmation  = false
+    self.bartender_confirmed             = false
+  end
+
+  def payment_confirm
+    self.payment_confirmed = true
+  end
+
 end
 

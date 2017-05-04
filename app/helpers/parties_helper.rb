@@ -17,4 +17,8 @@ module PartiesHelper
     "#{address_parts[0]}, #{address_parts[1]}"
   end
 
+  def pretty_price(price)
+    "#{price}€"
+  end
+
 end

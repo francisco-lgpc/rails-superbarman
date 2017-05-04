@@ -33,7 +33,7 @@
   .btn-search{
     background-color: $brown;
     color: white;
-    width: 62%;
+    width: 42%;
     border-radius: 6px;
     border: none;
     margin: 10px;
@@ -74,7 +74,7 @@
 
 .button-message{
   background-color: $brown;
-  color: white;
+  color: $white;
   width: 100%;
   border-radius: 10px;
   border: none;
@@ -87,7 +87,7 @@
 
 .button-favorites{
   background-color: $brown;
-  color: white;
+  color: $white;
   width: 100%;
   border-radius: 10px;
   border: none;
@@ -109,7 +109,7 @@
 
 .button-add-review:hover {
    background-color: $brown;
-  color: white;
+  color: $white;
   width: 40%;
   border-radius: 10px;
   border: none;

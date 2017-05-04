@@ -4,30 +4,68 @@
 <%= @bartender.name %>
 
 <br><br>
-<ul>
-  <% @bartender.parties.each do |party| %>
-    <li>
-      <div class='list-item-party'>
-        <div class="row">
-          <div class="col-xs-1"><%= party.date %></div>
-          <div class="col-xs-1"><%= pretty_size(party.size) %></div>
-          <div class="col-xs-1"><%= pretty_time(party.start_time) %></div>
-          <div class="col-xs-1"><%= party.party_plan %></div>
-          <div class="col-xs-1"><%= party.price %></div>
-        </div>
-        <br>
-        <i class="fa fa-caret-down" aria-hidden="true"></i>
-        <div class="party-reviews-wrapper">
-          <h5>Reviews</h5>
-          <ul>
-            <% party.reviews.each_with_index do |review, i| %>
-              <li class="<%= i.zero? ? 'first' : (i + 1 == party.reviews.size ? 'last' : 'std') %>">
-                <%= review.content %>
-              </li>
-            <% end %>
-          </ul>
+<div class='dashboard-wrapper'>
+  <div class='dashboard-header'>
+    <div class="row">
+      <div class="col-xs-2">Type of Party</div>
+      <div class="col-xs-2">Time and Date</div>
+      <div class="col-xs-2">Address</div>
+      <div class="col-xs-2">Number of Guests</div>
+      <div class="col-xs-2">Price</div>
+      <div class="col-xs-2">Confirmation Status</div>
+    </div>
+  </div>
+  <div class="dashboard-body">
+    <% @bartender.parties.each do |party| %>
+      <div>
+        <div class='dashboard-bar'>
+          <div class="row">
+            <div class="col-xs-2"><%= party.theme %></div>
+            <div class="col-xs-2">
+              <%= pretty_time(party.start_time) %>,
+              <%= party.date.to_s(:long) %>
+            </div>
+            <div class="col-xs-2"><%= pretty_address(party.address) %></div>
+            <div class="col-xs-2"><%= pretty_size(party.size) %></div>
+            <div class="col-xs-2"><%= pretty_price(party.price) %></div>
+            <div class="col-xs-2">
+              <div class="status-wrapper">
+                <% if party.pending_bartender_confirmation? %>
+                  <%= simple_form_for party, url: party_bartender_reject_path(party) do |f| %>
+                    <%= button_tag type: :submit, class: 'icon' do %>
+                      <i class="fa fa-times color-red" aria-hidden="true"></i>
+                    <% end %>
+                  <% end %>
+
+                  <%= simple_form_for party, url: party_bartender_confirm_path(party) do |f| %>
+                    <%= button_tag type: :submit, class: 'icon' do %>
+                      <i class="fa fa-check color-green" aria-hidden="true"></i>
+                    <% end %>
+                  <% end %>
+
+                <% elsif party.bartender_confirmed? %>
+                  <p class='color-green'>Confirmed</p>
+                <% else %>
+                  <p class='color-red'>Rejected</p>
+                <% end %>
+              </div>
+
+            </div>
+
+          </div>
+          <i class="fa fa-caret-down" aria-hidden="true"></i>
+          <div class="party-reviews-wrapper">
+            <ul>
+              <h5>Reviews</h5>
+              <% party.reviews.each_with_index do |review, i| %>
+                <li class="<%= i.zero? ? 'first' : (i + 1 == party.reviews.size ? 'last' : 'std') %>">
+                  <%= review.content %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
         </div>
       </div>
-    </li>
-  <% end %>
-</ul>
+    <% end %>
+  </div>
+</div>
