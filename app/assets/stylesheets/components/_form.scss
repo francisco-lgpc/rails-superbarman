@@ -6,12 +6,25 @@
   // padding-left: 2%;
   border-radius: 10px;
 
+  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: $dark-grey !important;
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+  color: $dark-grey !important;
+  }
+:-ms-input-placeholder { /* IE 10+ */
+  color: $dark-grey !important;
+  }
+:-moz-placeholder { /* Firefox 18- */
+  color: $dark-grey !important;
+  }
+
   .form-control {
     // margin-top: 20px;
     padding: 15px;
     margin-top: 20px;
     width: 62%;
-    color: black;
+    color: $dark-grey;
     margin: auto;
     opacity: 0.9;
     border: none;

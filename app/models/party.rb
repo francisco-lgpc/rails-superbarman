@@ -1,6 +1,7 @@
 class Party < ApplicationRecord
   TYPES = ['Party', 'Birthday', 'Hen/Stag do', 'Leaving do', 'House Warming', 'Wedding']
   SIZES = ['5-29', '30-59', '60-90']
+  CITIES = ['Amsterdam', 'Barcelona', 'Berlin', 'Copenhagen', 'Lisbon', 'London', 'Paris']
   belongs_to :user
   belongs_to :bartender
   has_many :messages, dependent: :destroy
@@ -8,3 +9,4 @@ class Party < ApplicationRecord
   validates :theme, inclusion: { in: TYPES }
   accepts_nested_attributes_for :user
 end
+
