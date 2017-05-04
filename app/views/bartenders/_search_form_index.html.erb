@@ -1,5 +1,6 @@
 <%= simple_form_for @party, url: "/bartenders/search", method: :get do |f| %>
-  <%= f.input :address, label: false, placeholder: 'Location', wrapper_html: { class: '' }, input_html: { class: "input form-input-index" } %>
+  <%= f.input :address, collection: Party::CITIES, label: false, prompt: 'Location', wrapper_html: { class: '' }, input_html: { class: "input form-input-index" } %>
+
 
   <%= f.input :date, label: false, as: :string, input_html: { class: "datepicker" } %>
 
@@ -9,7 +10,7 @@
 
 <% end %>
 
-
+<!-- Autocomplete Google Form (removed)
 <script type="text/javascript">
 
   function initialize() {
@@ -19,4 +20,4 @@
   }
 
   google.maps.event.addDomListener(window, 'load', initialize);
-</script>
+</script> -->
