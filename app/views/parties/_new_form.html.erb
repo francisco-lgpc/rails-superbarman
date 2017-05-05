@@ -37,16 +37,75 @@
 
 
   <div class="col-md-4 col-xs-offset-2 booking-summary">
-    <%= image_tag('london4.jpg', style: "width: 100%;") %>
-    <h2 class="bold"> All ready for your <%= @party.theme %> party <br>  </h2>
+    <%= image_tag('london2.jpg', style: "width: 100%;") %>
+    <div class="bartender-name">
+    Your bartender: <%= @party.bartender.name %>
+    </div>
+    <div class="bartender-title">
+    <%= @party.bartender.title %>
+    </div>
+    <div class="bartender-location">
+    <%= @party.bartender.location %>
+    </div>
+    <div class="bartender-rating">
+       <% @bartender.rating.times do %>
+          <i class="fa fa-glass golder" aria-hidden="true"></i>
+        <% end %>
+        <% (5 - @bartender.rating).times do %>
+          <i class="fa fa-glass blacker" aria-hidden="true"></i>
+        <% end %>
+    </div>
     <hr class="booking-line">
-    <h3> Date: <%= @party.date %></h3>
+    <div class="cocktails">
+      <div class="content">
+        <% @bartender.cocktails.each do |cocktail|  %>
+          <div class="specialities-item">
+            <%= image_tag cocktail.picture, class: 'small-avatar-cocktail' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+
     <hr class="booking-line">
-    <h3>Bartender: <%= @party.bartender.name %></h3>
+
+    <div class="party-date">
+    <%= pretty_date(@party.date) %> - <%= @party.theme %>
+    </div>
+
     <hr class="booking-line">
-    <h3> Total: 50€.</h3>
-    <p> <i>Cocktails will be sold at your party for 5€.</i></p>
+    <div class="booking-billing">
+      <table class="billing">
+        <t class="body">
+          <tr class="price-item">
+              <td class="bartender-service">
+                Bartender service:
+              </td>
+              <td><span></span></td>
+              <td class="price">
+                50€
+              </td>
+            </tr>
+            <tr class="welcome-cocktails">
+              <td class="details">
+             <i>Includes 5 free welcome cocktails of your choice.</i>
+              </td>
+            </tr>
+            <tr>
+              <td class="moreinfo">
+             Cocktails will be sold at 5€ during the event.
+            </td>
+            </tr>
+        </t>
+
+      </table>
+    </div>
+
+
   </div>
+
+
+
 <% end %>
 
 
@@ -124,5 +183,4 @@ function getAddressComponents(place) {
     });
   });
 </script> -->
-
 
