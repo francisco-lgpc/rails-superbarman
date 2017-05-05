@@ -1,22 +1,26 @@
 <div class="container">
-  <div class="party-show-title">
-     <h2> Congratulations! You have just booked your bartender!</h2>
-     <h4>Your booking number is: #<%= @party.bartender_id  %><%= @party.id %><%= @party.user_id%></h4>
-  </div>
-  <div class="background-div">
-    <div class="text-center">
-      <%= image_tag @party.bartender.picture, id:"bt-party-show"%>
-      <h2><%= @party.bartender.name %></h2>
+<div class="wrapper-invite">
+
+    <div class="row">
+      <div class="col-xs-12 col-md-10 col-xs-offset-1 confirmation-invitation">
+        <div class="banner-book" style="background-image: linear-gradient(-225deg, rgba(85,85,85,0.8) 20%, rgba(60,60,60,0.8) 47%), url(<%= image_path 'ba.jpg' %>); ">
+
+         <h2> Congratulations! You've booked <%= @party.bartender.name %></h2>
+         <p><i>Your booking number is: #<%= @party.bartender_id  %><%= @party.id %><%= @party.user_id%></i></p>
+      <!-- <div class="background-div">
+        <div class="text-center">
+          <%= image_tag @party.bartender.picture, id:"bt-party-show"%>
+          <h2><%= @party.bartender.name %></h2>
+        </div>
+        </div> -->
+        <h3><span><%= @party.bartender.name %> will be at <i> <%= pretty_address(@party.address) %></i> at <u><i><%= pretty_time(@party.start_time) %></i></u></span></h3>
+        <!-- <h3>In <%= @party.city %></h3> -->
+        <h4>On <strong><%= @party.date %></strong> </h4>
+        <h4>For your <%= (@party.theme).downcase %> with <%= pretty_size(@party.size) %> guests! </h4>
+
+      </div>
     </div>
   </div>
-  <div class="summary-show">
-    <h2><strong><%= @party.bartender.name %></strong> will be at: </h2>
-    <h3><%= @party.address %></h3>
-    <h3>In <%= @party.city %></h3>
-    <h4>On <strong><%= @party.date %></strong> </h4>
-    <h3>At <%= pretty_time(@party.start_time) %></h3>
-    <h4>For your <%= (@party.theme).downcase %> with <%= pretty_size(@party.size) %> guests! </h4>
-
   </div>
   <br>
   <br>
@@ -31,5 +35,6 @@
     <h5><i class="fa fa-facebook-square" aria-hidden="true"></i> INVITE YOUR FRIENDS ON FACEBOOK!</h5>
   </div>
   <% end %>
+
 
 </div>
