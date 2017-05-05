@@ -22,7 +22,7 @@
           <%= f.input :theme, collection: Party::TYPES, as: :hidden, label: false, prompt: "Type of Party" %>
           <%= f.input :date, :as => :hidden, label: false, placeholder: '21:00'%>
           <%= f.input :size, placeholder: 'Number of guests', label: false, required: true, input_html: { class: "about-your-party-block"} %>
-          <%= f.input_field :agreed, required: true, as: :boolean, boolean_style: :inline %> <span class="labelText">The given number of guests is as accurate as I can provide to ensure a good bartender to guest ratio.</span>
+         <!--  <%#= f.input_field :agreed, required: true, as: :boolean, boolean_style: :inline %> <span class="labelText">The given number of guests is as accurate as I can provide to ensure a good bartender to guest ratio.</span> -->
          </div>
         <div class= "bartender-message">
         <%= f.input :message, placeholder: 'I want a special mojito!', label: "Say hello to your bartender and provide more details about your party!", input_html: { class: "bartender-message-block"} %>
