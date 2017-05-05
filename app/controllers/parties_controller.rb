@@ -13,6 +13,7 @@ class PartiesController < ApplicationController
     @bartender = Bartender.find(params[:bartender_id])
     @party.bartender = @bartender
     @party.user = current_user
+    @party.theme = 'Party' if @party.theme == ''
     @party.save!
     redirect_to bartender_party_path(@bartender, @party)
   end
@@ -29,14 +30,12 @@ class PartiesController < ApplicationController
     @bartender = Bartender.find(params[:bartender_id].to_i)
     @party.bartender = @bartender
     @party.user = current_user
-    p @party.date
-      @bartender.parties.each do |party|
-          p party.date
-        if party.date == @party.date
-          flash[:notice] = "Sorry, #{@bartender.name} has already an event on this date..."
-         redirect_to bartender_path(@bartender)
-        end
+    @bartender.parties.each do |party|
+      if party.date == @party.date
+        flash[:notice] = "Sorry, #{@bartender.name} has already an event on this date..."
+       redirect_to bartender_path(@bartender)
       end
+    end
   end
 
   def show
