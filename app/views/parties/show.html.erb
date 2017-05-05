@@ -11,7 +11,7 @@
   </div>
   <div class="summary-show">
     <h2><strong><%= @party.bartender.name %></strong> will be at: </h2>
-    <h3><%= pretty_address(@party.address) %></h3>
+    <h3><%= @party.address %></h3>
     <h3>In <%= @party.city %></h3>
     <h4>On <strong><%= @party.date %></strong> </h4>
     <h3>At <%= pretty_time(@party.start_time) %></h3>
@@ -20,6 +20,12 @@
   </div>
   <br>
   <br>
+
+  <div class="pending-approval text-center">
+    <h2>All done now! The bartender has been notified and he shall confirm your request as soon as he can!</h2>
+    <h3>You will recieve a text-message when everything is ready to go!</h3>
+  </div>
+
   <%= link_to '#'  do %>
   <div class="add-friends-button text-center">
     <h5><i class="fa fa-facebook-square" aria-hidden="true"></i> INVITE YOUR FRIENDS ON FACEBOOK!</h5>
