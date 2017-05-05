@@ -10,7 +10,6 @@
     <% end %>
 
 
-
    <% #Details about the party  %>
     <h4>2. About your party</h4>
     <%= f.input :start_time, label: "What time is your party?", placeholder: '21:00', wrapper_html: { class: '' }, input_html: { class: "input form-input-index"} %>
@@ -44,8 +43,7 @@
     <hr class="booking-line">
     <h3> Date: <%= @party.date %></h3>
     <hr class="booking-line">
-    <p>Bartender: <%= @party.bartender.name %></p>
-    <p><%= @party.address %></p>
+    <h3>Bartender: <%= @party.bartender.name %></h3>
     <hr class="booking-line">
     <h3> Total: 50€.</h3>
     <p> <i>Cocktails will be sold at your party for 5€.</i></p>
@@ -60,7 +58,7 @@
   if (flat_address) {
     var autocomplete = new google.maps.places.Autocomplete(flat_address, { types: ['geocode'] });
     google.maps.event.addListener(autocomplete, 'place_changed', onPlaceChanged);
-    google.maps.event.addDomListener(flat_address, 'keydown', function(e) {
+    google.maps.event.addDomListener(flat_address, 'click', function(e) {
       if (e.keyCode == 13) {
         e.preventDefault(); // Do not submit the form on Enter.
       }
@@ -118,7 +116,7 @@ function getAddressComponents(place) {
 
     </script>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
   $(document).ready(function(){
     $('.datepicker').datepicker();
     $('.slider-form').slick({
@@ -126,6 +124,6 @@ function getAddressComponents(place) {
       arrows: true
     });
   });
-</script>
+</script> -->
 
 
