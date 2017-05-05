@@ -14,7 +14,7 @@
   background: $red;
 }
 .alert-error {
-    background-color: #f2dede;
+    background-color: $alert-light-pink;
     border-color: #eed3d7;
     color: #b94a48;
     text-align: center;
@@ -22,7 +22,7 @@
  }
 
 .alert-alert {
-    background-color: #f2dede;
+    background-color: $alert-light-pink;
     border-color: #eed3d7;
     color: #b94a48;
     text-align: left;
