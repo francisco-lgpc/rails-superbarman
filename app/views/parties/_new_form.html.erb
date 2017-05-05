@@ -1,5 +1,4 @@
 <%= simple_form_for [@bartender, @party], url: bartender_parties_path, html: { id: 'home-form-show' } do |f| %>
-
   <% #Details about the user %>
   <div class="col-xs-12 col-md-4">
     <h4>1. About you</h4>
@@ -39,30 +38,19 @@
   </div>
 
 
-  <% #Fixed form to display as a recap of the booking  %>
-  <div class="col-center summary">
-    <h4> All ready for your <%= @party.theme %> party on the <%= @party.date %> </h4>
-    <p>
-      <ul>
-        <li>
-          Picked bartender: <%= @party.bartender.name %>
-        </li>
-        <li>
-          City: <%= @party.address %>
-        </li>
-        <li>
-          Total: 50€. Includes 5 free welcome cocktails of your choice.
-        </li>
-        <li>
-          Cocktails will be sold at your party for 5€.
-        </li>
-      </ul>
-    </p>
+  <div class="col-md-4 col-xs-offset-2 booking-summary">
+    <%= image_tag('london4.jpg', style: "width: 100%;") %>
+    <h2 class="bold"> All ready for your <%= @party.theme %> party <br>  </h2>
+    <hr class="booking-line">
+    <h3> Date: <%= @party.date %></h3>
+    <hr class="booking-line">
+    <p>Bartender: <%= @party.bartender.name %></p>
+    <p><%= @party.address %></p>
+    <hr class="booking-line">
+    <h3> Total: 50€.</h3>
+    <p> <i>Cocktails will be sold at your party for 5€.</i></p>
   </div>
-  <%= f.input :address, :as => :hidden, :input_html => { :value => @party.address } %>
-  <%= f.input :date, :as => :hidden, label: false, placeholder: '21:00', wrapper_html: { class: '' }, input_html: { class: "input form-input-index"} %>
 <% end %>
-
 
 
 
@@ -130,8 +118,14 @@ function getAddressComponents(place) {
 
     </script>
 
-    <script type="text/javascript">
-      $(document).ready(function(){
-      $('.datepicker').datepicker();
-      });
-    </script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.datepicker').datepicker();
+    $('.slider-form').slick({
+      dots: true,
+      arrows: true
+    });
+  });
+</script>
+
+

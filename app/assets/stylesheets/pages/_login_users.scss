@@ -1,23 +1,6 @@
 .wrapper-login {
-  button {
-    transition: 0.3s ease;
-    &:hover {
-      opacity: 0.8;
-      color: white;
-    }
-  }
-
-  a {
-
-    transition: 0.3s ease;
-    &:hover {
-      opacity: 0.9;
-      color: white;
-    }
-  }
-
   hr {
-    border: 2px solid grey;
+    border: 2px solid $gold;
   }
 }
 
@@ -49,7 +32,6 @@ form {
   text-align: center;
   hr {
     margin-top: -25px;
-    border: 2px solid grey;
   }
 }
 
@@ -67,9 +49,10 @@ form {
   justify-content: space-between;
   .forget-password {
     margin-top: 10px;
+    color: $brown;
   }
   a:hover {
-    color: $blue !important;
+    color: $gold !important;
     opacity: 0.6;
   }
 

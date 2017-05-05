@@ -29,12 +29,6 @@
     <% if user_signed_in? || bartender_signed_in? %>
 
       <!-- Notification -->
-      <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
-        <div class="badge-container">
-          <i class="fa fa-envelope-o"></i>
-          <div class="badge badge-blue">3</div>
-        </div>
-      <% end %>
 
       <!-- Set picture -->
       <% picture = (user_signed_in? ? current_user.facebook_picture_url : current_bartender.picture) || "http://placehold.it/30x30" %>
