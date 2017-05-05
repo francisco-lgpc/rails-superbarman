@@ -1,7 +1,7 @@
 /* Main class */
 .navbar-wagon {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background-color: $brown;
+  background-color: $black;
   transition: all 0.3s ease;
   display: flex;
   height: 70px;
@@ -154,4 +154,14 @@
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
+}
+
+.wrapper-logo {
+  height: 35px;
+  display: flex;
+  padding: 0;
+}
+
+.brand-name {
+  width: auto;
 }
