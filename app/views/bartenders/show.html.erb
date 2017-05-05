@@ -18,6 +18,15 @@
       <div class="row">
         <div class="col-xs-4">
           <%= image_tag @bartender.picture, class: 'avatar-largest', id: "cropped_avatar"%>
+          <div class="col-xs-6 glasses-show text-center">
+            <% @bartender.rating.times do %>
+              <i class="fa fa-glass golder glass-big text-center" aria-hidden="true"></i>
+            <% end %>
+
+            <% (5 - @bartender.rating).times do %>
+              <i class="fa fa-glass blacker glass-big" aria-hidden="true"></i>
+            <% end %>
+          </div>
         </div>
         <div class="col-xs-6">
            <h1 class= ""> <%= @bartender.title %> </h1>
@@ -28,17 +37,6 @@
               <% @bartender.languages.split.each do |language| %>
                 <%= image_tag "#{language}.png", size: "25x25" %>
               <% end %>
-            </div>
-            <div class="col-xs-6">
-              <p>Rating:
-                <% @bartender.rating.times do %>
-                  <i class="fa fa-glass golder" aria-hidden="true"></i>
-                <% end %>
-
-                <% (5 - @bartender.rating).times do %>
-                  <i class="fa fa-glass blacker" aria-hidden="true"></i>
-                <% end %>
-              </p>
             </div>
           </div>
           <br>
@@ -103,15 +101,17 @@
     </div>
 
     <!-- RIGHT COLUMN -->
-    <div class="col-md-3 col-md-offset-1">
-      <div class="pricing">
-        <h1>€50</h1>
-        <h2>+</h2>
-        <h3>€5 per cocktail</h3>
-      </div>
-      <div class="booking-basics">
-        <h2> Book Your Bartender</h2>
-        <%= render 'bartenders/show/form' %>
+    <div class="col-md-3 col-md-offset-1 xs-hidden">
+      <div class="slide-column" data-spy="affix" data-offset-top="413">
+        <div class="pricing">
+          <h1>€50</h1>
+          <h2>+</h2>
+          <h3>€5 per cocktail</h3>
+        </div>
+        <div class="booking-basics">
+          <h2> Book Your Bartender</h2>
+          <%= render 'bartenders/show/form' %>
+        </div>
       </div>
     </div>
   </div>

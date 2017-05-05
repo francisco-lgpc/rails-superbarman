@@ -1,5 +1,4 @@
 <%= simple_form_for [@bartender, @party], url: bartender_parties_path, html: { id: 'home-form-show' } do |f| %>
-
   <div class="col-md-6">
     <div class="slider-form">
         <div class="about-you">
@@ -14,19 +13,14 @@
         <div class="about-your-party">
           <h3>2. About your party</h3>
           <%= f.input :start_time, label: "What time is your party?", placeholder: '21:00', wrapper_html: { class: '' }, input_html: { class: "about-your-party-time"} %>
-
-
           <%= f.input :address, placeholder: 'Address', label: false, input_html: { class: "about-your-party-block"} %>
           <%= f.input :zip_code, placeholder: 'Zip code', label: false, input_html: { class: "about-your-party-block"}  %>
           <%= f.input :city, placeholder: 'City', label: false, input_html: { class: "about-your-party-block"}  %>
           <%= f.input :country, placeholder: 'Country', label: false, priority: [ 'DE' ], input_html: { class: "about-your-party-block"}  %>
           <%= f.input :address, :as => :hidden, :input_html => { :value => @party.address } %>
           <%= f.input :date, :as => :hidden, label: false, placeholder: '21:00', wrapper_html: { class: '' }, input_html: { class: "input form-input-index"} %>
-
           <%= f.input :theme, collection: Party::TYPES, as: :hidden, label: false, prompt: "Type of Party" %>
-
           <%= f.input :date, :as => :hidden, label: false, placeholder: '21:00'%>
-
           <%= f.input :size, collection: {"5 to 30 guests": "5-29", "30 to 60 guests": "30-59", "60 to 90 guests": "60-90"}, prompt: "How many people are coming?", label: false, input_html: { class: "about-your-party-block"} %>
          </div>
         <div class= "bartender-message">
@@ -40,24 +34,67 @@
         </div>
     </div>
   </div>
-
-
   <div class="col-md-4 col-xs-offset-2 booking-summary">
-    <%= image_tag('london4.jpg', style: "width: 100%;") %>
-    <h2 class="bold"> All ready for your <%= @party.theme %> party <br>  </h2>
+    <%= image_tag('london2.jpg', style: "width: 100%;") %>
+    <div class="bartender-name">
+    Your bartender: <%= @party.bartender.name %>
+    </div>
+    <div class="bartender-title">
+    <%= @party.bartender.title %>
+    </div>
+    <div class="bartender-location">
+    <%= @party.bartender.location %>
+    </div>
+    <div class="bartender-rating">
+       <% @bartender.rating.times do %>
+          <i class="fa fa-glass golder" aria-hidden="true"></i>
+        <% end %>
+        <% (5 - @bartender.rating).times do %>
+          <i class="fa fa-glass blacker" aria-hidden="true"></i>
+        <% end %>
+    </div>
     <hr class="booking-line">
-    <h3> Date: <%= @party.date %></h3>
+    <div class="cocktails">
+      <div class="content">
+        <% @bartender.cocktails.each do |cocktail|  %>
+          <div class="specialities-item">
+            <%= image_tag cocktail.picture, class: 'small-avatar-cocktail' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
     <hr class="booking-line">
-    <p>Bartender: <%= @party.bartender.name %></p>
-    <p><%= @party.address %></p>
+    <div class="party-date">
+    <%= pretty_date(@party.date) %> - <%= @party.theme %>
+    </div>
     <hr class="booking-line">
-    <h3> Total: 50€.</h3>
-    <p> <i>Cocktails will be sold at your party for 5€.</i></p>
+    <div class="booking-billing">
+      <table class="billing">
+        <t class="body">
+          <tr class="price-item">
+              <td class="bartender-service">
+                Bartender service:
+              </td>
+              <td><span></span></td>
+              <td class="price">
+                50€
+              </td>
+            </tr>
+            <tr class="welcome-cocktails">
+              <td class="details">
+             <i>Includes 5 free welcome cocktails of your choice.</i>
+              </td>
+            </tr>
+            <tr>
+              <td class="moreinfo">
+             Cocktails will be sold at 5€ during the event.
+            </td>
+            </tr>
+        </t>
+      </table>
+    </div>
   </div>
 <% end %>
-
-
-
     <script type="text/javascript">
      $(document).ready(function() {
   var flat_address = $('#party_address').get(0);
@@ -71,11 +108,9 @@
     });
   }
 });
-
 function onPlaceChanged() {
   var place = this.getPlace();
   var components = getAddressComponents(place);
-
   $('#party_address').trigger('blur').val(components.address);
   $('#party_zip_code').val(components.zip_code);
   $('#party_city').val(components.city);
@@ -83,12 +118,10 @@ function onPlaceChanged() {
     $('#party_country').val(components.country_code);
   }
 }
-
 function getAddressComponents(place) {
   // If you want lat/lng, you can look at:
   // - place.geometry.location.lat()
   // - place.geometry.location.lng()
-
   var street_number = null;
   var route = null;
   var zip_code = null;
@@ -111,7 +144,6 @@ function getAddressComponents(place) {
       }
     }
   }
-
   return {
     address: street_number == null ? route : (street_number + ' ' + route),
     zip_code: zip_code,
@@ -119,10 +151,8 @@ function getAddressComponents(place) {
     country_code: country_code
   };
 }
-
     </script>
-
-<script type="text/javascript">
+<!-- <script type="text/javascript">
   $(document).ready(function(){
     $('.datepicker').datepicker();
     $('.slider-form').slick({
@@ -131,5 +161,4 @@ function getAddressComponents(place) {
     });
   });
 </script>
-
-
+ -->

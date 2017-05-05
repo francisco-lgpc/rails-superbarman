@@ -40,5 +40,8 @@
 .color-green {
   color: $green;
 }
+.grayscale {
+  filter: grayscale(100%);
+}
 
 
