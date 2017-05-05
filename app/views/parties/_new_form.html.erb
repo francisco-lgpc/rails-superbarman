@@ -26,7 +26,6 @@
       <%= f.input :theme, collection: Party::TYPES, label: false, prompt: "Type of Party", input_html: { class: "input form-input-index" } %>
     </div>
     <%= f.input :date, :as => :hidden, label: false, placeholder: '21:00', wrapper_html: { class: '' }, input_html: { class: "input form-input-index"} %>
-
     <%= f.input :size, collection: {"5 to 30 guests": "5-29", "30 to 60 guests": "30-59", "60 to 90 guests": "60-90"}, prompt: "5-29", label: "How many people are coming?" %>
 
     <%= f.input :message, placeholder: 'I want a special mojito!', label: "Say hello to your bartender and provide more details about your party!" %>
