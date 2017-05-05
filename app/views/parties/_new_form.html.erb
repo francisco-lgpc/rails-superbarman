@@ -44,9 +44,35 @@
 
   <div class="col-md-4 col-xs-offset-2 booking-summary">
     <%= image_tag('london4.jpg', style: "width: 100%;") %>
-    <h2 class="bold"> All ready for your <%= @party.theme %> party <br>  </h2>
+    <div class="bartender-name">
+    Your bartender: <%= @party.bartender.name %>
+    </div>
+    <div class="bartender-title">
+    <%= @party.bartender.title %>
+    </div>
+    <div class="bartender-rating">
+       <% @bartender.rating.times do %>
+          <i class="fa fa-glass golder" aria-hidden="true"></i>
+        <% end %>
+    </div>
     <hr class="booking-line">
-    <h3> Date: <%= @party.date %></h3>
+    <div class="specialities">
+      <% @bartender.cocktails.each do |cocktail|  %>
+        <div class="specialities-item">
+          <%= image_tag cocktail.picture, class: 'avatar-cocktail' %>
+        </div>
+    </div>
+      <% end %>
+
+
+    <hr class="booking-line">
+    <div class="party-date">
+      <%= @party.date %>
+    </div>
+
+
+
+
     <hr class="booking-line">
     <p>Bartender: <%= @party.bartender.name %></p>
     <p><%= @party.address %></p>
