@@ -12,11 +12,10 @@
             <h2><%= @party.bartender.name %></h2>
           </div>
           </div> -->
-          <h3><span><%= @party.bartender.name %> will be at <i> <%= pretty_address(@party.address) %></i> at <u><i><%= pretty_time(@party.start_time) %></i></u></span></h3>
+          <h3><span><%= @party.bartender.name %> will be at <i> <%= pretty_address(@party.address) %></i> at <i><%= pretty_time(@party.start_time) %></i></span></h3>
           <!-- <h3>In <%= @party.city %></h3> -->
-          <h4>On <strong><%= @party.date %></strong> </h4>
+          <h4>On <strong><%= @party.date.to_s(:long) %></strong> </h4>
           <h4>For your <%= (@party.theme).downcase %> with <%= @party.size %> guests! </h4>
-
         </div>
       </div>
     </div>
