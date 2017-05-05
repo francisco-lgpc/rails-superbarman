@@ -1,15 +1,13 @@
 .card-wrapper {
+
 }
-
-
 .card {
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   color: white;
   position: relative;
   margin: 15px 0;
-  height: 300px;
-
+  height: 175px;
 }
 .card-user {
   position: absolute;
@@ -33,13 +31,7 @@
   font-size: 24px;
 }
 .card-description p {
-  font-size: 17px;
-  @media (max-width: 1100px) {
-    font-size: 15px
-  }
-  @media (max-width: 900px) {
-    font-size: 13px
-  }
+  font-size: 13px;
   text-align: justify;
 }
 .card-link {
