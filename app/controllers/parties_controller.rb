@@ -60,7 +60,7 @@ class PartiesController < ApplicationController
   private
 
   def party_params
-    params.require(:party).permit(:date, :theme, :size, :address, :start_time, :zip_code, :city, :country, :message)
+    params.require(:party).permit(:agreed, :date, :theme, :size, :address, :start_time, :zip_code, :city, :country, :message)
   end
 
   # Use callbacks to share common setup or constraints between actions.

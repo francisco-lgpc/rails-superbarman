@@ -1,43 +1,37 @@
 <%= simple_form_for [@bartender, @party], url: bartender_parties_path, html: { id: 'home-form-show' } do |f| %>
+  <% #Details about the user %>
+  <div class="col-xs-12 col-md-4">
+    <h4>1. About you</h4>
+    <%= f.simple_fields_for :user do |u| %>
+      <%= u.input :first_name, label: false, placeholder: 'Daniel', wrapper_html: { class: '' }, input_html: { class: "input form-input-index"} %>
+     <%= u.input :last_name, label: false, placeholder: 'Huertas', wrapper_html: { class: '' }, input_html: { class: "input form-input-index"} %>
+     <%= u.input :email, label: false, disabled: true,  wrapper_html: { class: '' }, input_html: { class: "input form-input-index"} %>
+     <%= u.input :phone_number, label: false, placeholder: '+49.123.456.789', wrapper_html: { class: '' }, input_html: { class: "input form-input-index"} %>
+    <% end %>
 
-  <div class="col-md-6">
-    <div class="slider-form">
-        <div class="about-you">
-          <h3>1. About you</h3>
-          <%= f.simple_fields_for :user do |u| %>
-            <%= u.input :first_name, label: false, placeholder: 'Name', wrapper_html: { class: '' }, input_html: { class: "about-you-block"} %>
-           <%= u.input :last_name, label: false, placeholder: 'Surname', wrapper_html: { class: '' }, input_html: { class: "about-you-block"} %>
-           <%= u.input :email, label: false, disabled: true,  wrapper_html: { class: '' }, input_html: { class: "about-you-block"} %>
-           <%= u.input :phone_number, label: false, placeholder: 'Contact Number', wrapper_html: { class: '' }, input_html: { class: "about-you-block"} %>
-          <% end %>
-        </div>
-        <div class="about-your-party">
-          <h3>2. About your party</h3>
-          <%= f.input :start_time, label: "What time is your party?", placeholder: '21:00', wrapper_html: { class: '' }, input_html: { class: "about-your-party-time"} %>
+   <% #Details about the party  %>
+    <h4>2. About your party</h4>
+    <%= f.input :start_time, label: "What time is your party?", placeholder: '21:00', wrapper_html: { class: '' }, input_html: { class: "input form-input-index"} %>
 
 
-          <%= f.input :address, placeholder: 'Address', label: false, input_html: { class: "about-your-party-block"} %>
-          <%= f.input :zip_code, placeholder: 'Zip code', label: false, input_html: { class: "about-your-party-block"}  %>
-          <%= f.input :city, placeholder: 'City', label: false, input_html: { class: "about-your-party-block"}  %>
-          <%= f.input :country, placeholder: 'Country', label: false, priority: [ 'DE' ], input_html: { class: "about-your-party-block"}  %>
-          <%= f.input :address, :as => :hidden, :input_html => { :value => @party.address } %>
-          <%= f.input :date, :as => :hidden, label: false, placeholder: '21:00', wrapper_html: { class: '' }, input_html: { class: "input form-input-index"} %>
+    <%= f.input :address %>
+    <%= f.input :zip_code %>
+    <%= f.input :city %>
+    <%= f.input :country, priority: [ 'DE' ] %>
 
-          <%= f.input :theme, collection: Party::TYPES, as: :hidden, label: false, prompt: "Type of Party" %>
+    <div class="hidden">
+      <%= f.input :theme, collection: Party::TYPES, label: false, prompt: "Type of Party", input_html: { class: "input form-input-index" } %>
+    </div>
+    <%= f.input :date, :as => :hidden, label: false, placeholder: '21:00', wrapper_html: { class: '' }, input_html: { class: "input form-input-index"} %>
+    <%= f.input :size, collection: {"5 to 30 guests": "5-29", "30 to 60 guests": "30-59", "60 to 90 guests": "60-90"}, prompt: "5-29", label: "How many people are coming?" %>
 
-          <%= f.input :date, :as => :hidden, label: false, placeholder: '21:00'%>
+    <%= f.input :message, placeholder: 'I want a special mojito!', label: "Say hello to your bartender and provide more details about your party!" %>
 
-          <%= f.input :size, collection: {"5 to 30 guests": "5-29", "30 to 60 guests": "30-59", "60 to 90 guests": "60-90"}, prompt: "How many people are coming?", label: false, input_html: { class: "about-your-party-block"} %>
-         </div>
-        <div class= "bartender-message">
-        <%= f.input :message, placeholder: 'I want a special mojito!', label: "Say hello to your bartender and provide more details about your party!", input_html: { class: "bartender-message-block"} %>
-        <% #Insert Address auto-complete form here %>
-        <div class="text-center">
-          <%= button_tag type: :submit, class: "btn-booking-confirm" do %>
-            Confirm and Pay
-          <% end %>
-        </div>
-        </div>
+    <% #Insert Address auto-complete form here %>
+    <div class="">
+      <%= button_tag type: :submit, class: "btn-search" do %>
+        Confirm and Pay
+      <% end %>
     </div>
   </div>
 
@@ -74,10 +68,10 @@
 
 
     <hr class="booking-line">
+
     <div class="party-date">
     <%= pretty_date(@party.date) %> - <%= @party.theme %>
     </div>
-
 
     <hr class="booking-line">
     <div class="booking-billing">
@@ -122,7 +116,7 @@
   if (flat_address) {
     var autocomplete = new google.maps.places.Autocomplete(flat_address, { types: ['geocode'] });
     google.maps.event.addListener(autocomplete, 'place_changed', onPlaceChanged);
-    google.maps.event.addDomListener(flat_address, 'keydown', function(e) {
+    google.maps.event.addDomListener(flat_address, 'click', function(e) {
       if (e.keyCode == 13) {
         e.preventDefault(); // Do not submit the form on Enter.
       }
@@ -188,6 +182,5 @@ function getAddressComponents(place) {
       arrows: true
     });
   });
-</script>
- -->
+</script> -->
 
