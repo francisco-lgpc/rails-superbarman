@@ -3,6 +3,6 @@ module ReviewsHelper
     day = created_at.day
     month = created_at.month
     year = created_at.year
-    "#{day} #{month} #{year}"
+    "#{day}/#{month}/#{year}"
   end
 end
