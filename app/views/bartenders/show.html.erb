@@ -101,15 +101,17 @@
     </div>
 
     <!-- RIGHT COLUMN -->
-    <div class="col-md-3 col-md-offset-1">
-      <div class="pricing">
-        <h1>€50</h1>
-        <h2>+</h2>
-        <h3>€5 per cocktail</h3>
-      </div>
-      <div class="booking-basics">
-        <h2> Book Your Bartender</h2>
-        <%= render 'bartenders/show/form' %>
+    <div class="col-md-3 col-md-offset-1 xs-hidden">
+      <div class="slide-column" data-spy="affix" data-offset-top="413">
+        <div class="pricing">
+          <h1>€50</h1>
+          <h2>+</h2>
+          <h3>€5 per cocktail</h3>
+        </div>
+        <div class="booking-basics">
+          <h2> Book Your Bartender</h2>
+          <%= render 'bartenders/show/form' %>
+        </div>
       </div>
     </div>
   </div>
