@@ -1,5 +1,6 @@
 /* Main class */
 .navbar-wagon {
+
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   background-color: $black;
   transition: all 0.3s ease;
@@ -8,6 +9,10 @@
   padding: 0px 30px;
   align-items: center;
   justify-content: space-between;
+
+  background: linear-gradient(
+    180deg, $brown-lighter, $brown-light, $brown, $brown, $brown, $brown-light, $brown-lighter
+  );
 }
 
 .menu-left{
@@ -48,7 +53,14 @@
 .navbar-wagon-item {
   flex: 0 1 auto;
   cursor: pointer;
-  padding: 0 20px;
+}
+
+.frame {
+  width: 77px;
+  display: block;
+  padding: 2px 0;
+  transition: .2s ease;
+  margin: auto;
 }
 
 /* Navbar standard link */
@@ -56,22 +68,21 @@
   color: white;
   font-size: 14px;
   opacity: 0.9;
+  width: 100px;
+  p {
+    transition: 0.1s ease;
+  }
+  &:hover {
+    .frame {
+      width: 85px;
+    }
+    font-size: 15px;
+  }
 }
 .navbar-wagon-link:hover {
   color: $gold;
   text-decoration: none;
 }
-
-/* Navbar how it works*/
-.how-it-works{
-  flex: 0 0 auto;
-  padding: 0 20px;
-}
-
-.parties{
-  padding: 0 20px;
-}
-
 
 /* Navbar right button */
 .navbar-wagon-button {
