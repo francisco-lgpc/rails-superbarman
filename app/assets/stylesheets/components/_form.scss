@@ -7,16 +7,17 @@
   border-radius: 10px;
 
   ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: $dark-grey !important;
-  }
-  ::-moz-placeholder { /* Firefox 19+ */
-  color: $dark-grey !important;
-  }
-:-ms-input-placeholder { /* IE 10+ */
-  color: $dark-grey !important;
-  }
-:-moz-placeholder { /* Firefox 18- */
-  color: $dark-grey !important;
+    padding-left: 4px;
+    color: $dark-grey !important;
+    }
+    ::-moz-placeholder { /* Firefox 19+ */
+    color: $dark-grey !important;
+    }
+    :-ms-input-placeholder { /* IE 10+ */
+    color: $dark-grey !important;
+    }
+    :-moz-placeholder { /* Firefox 18- */
+    color: $dark-grey !important;
   }
 
   .form-control {
