@@ -1,5 +1,9 @@
 /* Main class */
+$brown-light: #353030;
+
+
 .navbar-wagon {
+
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   background-color: $black;
   transition: all 0.3s ease;
@@ -8,6 +12,22 @@
   padding: 0px 30px;
   align-items: center;
   justify-content: space-between;
+
+  background: linear-gradient(
+    180deg, $brown-lighter, $brown-light, $brown, $brown, $brown, $brown-light, $brown-lighter
+  );
+
+
+/*
+  background-position: 50%;
+  background-repeat: repeat-y;
+  background-size: 1px auto;
+
+
+  border: 1px solid #ccc;
+  height: 300px;
+  width: 90%;
+*/
 }
 
 .menu-left{
@@ -49,6 +69,12 @@
   flex: 0 1 auto;
   cursor: pointer;
   padding: 0 20px;
+}
+
+.frame {
+  width: 77px;
+  display: block;
+  padding: 2px 0;
 }
 
 /* Navbar standard link */
