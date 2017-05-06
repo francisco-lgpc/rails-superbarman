@@ -68,13 +68,14 @@ $brown-light: #353030;
 .navbar-wagon-item {
   flex: 0 1 auto;
   cursor: pointer;
-  padding: 0 20px;
 }
 
 .frame {
   width: 77px;
   display: block;
   padding: 2px 0;
+  transition: .2s ease;
+  margin: auto;
 }
 
 /* Navbar standard link */
@@ -82,22 +83,21 @@ $brown-light: #353030;
   color: white;
   font-size: 14px;
   opacity: 0.9;
+  width: 100px;
+  p {
+    transition: 0.1s ease;
+  }
+  &:hover {
+    .frame {
+      width: 85px;
+    }
+    font-size: 15px;
+  }
 }
 .navbar-wagon-link:hover {
   color: $gold;
   text-decoration: none;
 }
-
-/* Navbar how it works*/
-.how-it-works{
-  flex: 0 0 auto;
-  padding: 0 20px;
-}
-
-.parties{
-  padding: 0 20px;
-}
-
 
 /* Navbar right button */
 .navbar-wagon-button {
