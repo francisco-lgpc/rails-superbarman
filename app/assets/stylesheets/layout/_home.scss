@@ -71,7 +71,7 @@ iframe {
   height: 450px;
   margin-left: -200px;
   .card-category {
-    left: 350px;
+    left: 380px;
     top: 110px;  }
   .card-user {
     color: $gold;
@@ -80,19 +80,19 @@ iframe {
     top: 125px;
   }
   .upper_frame {
-    width: 400px;
+    width: 450px;
     position: absolute;
-    top: 0;
+    top: 40px;
     margin-left:-150px;
   }
   .lower_frame {
-    width: 400px;
+    width: 450px;
     position: absolute;
-    bottom: 0;
+    bottom: 40px;
     margin-left:-150px;
   }
   .card-description {
-    left: 220px;
+    left: 250px;
     bottom: 100px;
     width: 340px;
   }
