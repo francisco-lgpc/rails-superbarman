@@ -16,7 +16,7 @@
     </div>
   </div>
   <div class="dashboard-body">
-    <% @bartender.parties.each do |party| %>
+    <% @bartender.parties.order(:date).each do |party| %>
       <div>
         <div class='dashboard-bar'>
           <div class="row">
