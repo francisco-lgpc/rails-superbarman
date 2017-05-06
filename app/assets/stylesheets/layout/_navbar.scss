@@ -1,7 +1,4 @@
 /* Main class */
-$brown-light: #353030;
-
-
 .navbar-wagon {
 
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
@@ -16,18 +13,6 @@ $brown-light: #353030;
   background: linear-gradient(
     180deg, $brown-lighter, $brown-light, $brown, $brown, $brown, $brown-light, $brown-lighter
   );
-
-
-/*
-  background-position: 50%;
-  background-repeat: repeat-y;
-  background-size: 1px auto;
-
-
-  border: 1px solid #ccc;
-  height: 300px;
-  width: 90%;
-*/
 }
 
 .menu-left{
