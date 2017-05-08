@@ -17,7 +17,7 @@ before_action :set_party
     currency:     @party.price.currency
   )
 
-  @party.update(payment: charge.to_json, payment_status: 'true')
+  @party.update(payment: charge.to_json, payment_confirmed: 'true')
   redirect_to party_path(@party)
 
 rescue Stripe::CardError => e
@@ -28,6 +28,6 @@ rescue Stripe::CardError => e
 private
 
   def set_party
-    @party = Party.where(payment_status: 'false').find(params[:party_id])
+    @party = Party.where(payment_confirmed: 'false').find(params[:party_id])
   end
 end

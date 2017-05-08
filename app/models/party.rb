@@ -9,7 +9,7 @@ class Party < ApplicationRecord
   validates :theme, inclusion: { in: TYPES }
   accepts_nested_attributes_for :user
   monetize :price_cents
-  before_save :set_price, :set_payment_status
+  before_save :set_price, :set_payment_confirmed
 
   def bartender_confirmed?
     self.bartender_confirmed
@@ -43,8 +43,8 @@ def set_price
   self.price = Money.new(5000, 'EUR')
 end
 
-def set_payment_status
-  self.payment_status
+def set_payment_confirmed
+  self.payment_confirmed
 end
 
 end

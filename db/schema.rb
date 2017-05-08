@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170508171524) do
+ActiveRecord::Schema.define(version: 20170508212644) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -88,7 +88,7 @@ ActiveRecord::Schema.define(version: 20170508171524) do
     t.boolean  "agreed",                         default: false
     t.integer  "price_cents",                    default: 0,     null: false
     t.json     "payment"
-    t.boolean  "payment_status",                 default: false
+    t.boolean  "payment_confirmed",              default: false
     t.index ["bartender_id"], name: "index_parties_on_bartender_id", using: :btree
     t.index ["user_id"], name: "index_parties_on_user_id", using: :btree
   end
