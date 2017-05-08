@@ -17,4 +17,5 @@ class Bartender < ApplicationRecord
 
   has_many :reviews
   has_many :cocktails, dependent: :destroy
+
 end

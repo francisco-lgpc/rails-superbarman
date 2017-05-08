@@ -1,3 +1,6 @@
+
+<% if false %>
+
 <div class="container">
   <div class="wrapper-invite">
     <div class="row">
@@ -34,3 +37,70 @@
   </div>
   <% end %>
 </div>
+
+<% end %>
+
+
+<div class="wrapper-status-bar">
+  <div class="container">
+    <div class="row">
+      <div class="status-bar">
+        <div>
+          <div class="text-center status-bar-item">
+            <%= image_tag "counterclockwise-rotation.png", size: "40x40" %>
+
+          </div>
+        </div>
+        <div>
+          <div class="text-center status-bar-item status-bar-item-active">
+            <%= image_tag "bart1.jpg", size: "40x40" %>
+          </div>
+        </div>
+        <div>
+          <div class="text-center status-bar-item">
+            <%= image_tag "cocktail2.png", size: "40x40" %>
+          </div>
+        </div>
+        <div>
+          <div class="text-center status-bar-item">
+            <i class="fa fa-check" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% if @party.pending_bartender_confirmation? %>
+  <% tab_num = 0 %>
+  <h2> Wating for bartender confirmation </h2>
+<% elsif @party.bartender_confirmed? %>
+  <% tab_num = 1 %>
+  <h2> Congratulations! You've booked <%= @party.bartender.name %></h2>
+  <p><i>Your booking number is: #<%= @party.bartender_id  %><%= @party.id %><%= @party.user_id%></i></p>
+<% else %>
+  <% tab_num = 2 %>
+
+<% end %>
+
+<%= tab_num %>
+<script>
+  $(document).ready(function() {
+    window.setInterval(function(){
+      <% if Party.find(@party.id).pending_bartender_confirmation? %>
+        <% tab_num = 0 %>
+      <% elsif Party.find(@party.id).bartender_confirmed? %>
+        <% tab_num = 1 %>
+      <% else %>
+        <% tab_num = 2 %>
+      <% end %>
+      console.log('test')
+      $('.status-bar-item').removeClass('status-bar-item-active')
+      $('.status-bar-item').eq(<%= tab_num %>).addClass('status-bar-item-active')
+    }, 5000);
+  });
+
+</script>
+
+
+
