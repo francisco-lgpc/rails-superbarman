@@ -10,7 +10,7 @@ class PartiesController < ApplicationController
     else
       @party = Party.new(session[:party])
     end
-    @bartender = Bartender.find(params[:bartender_id])
+    @bartender = Bartender.find(params[:party]['bartender'].to_i)
     @party.bartender = @bartender
     @party.user = current_user
     @party.theme = 'Party' if @party.theme == ''
@@ -19,8 +19,7 @@ class PartiesController < ApplicationController
     # Commented out so as to not waste all our credit
     # @party.send_text_to_bartender
 
-    redirect_to bartender_party_path(@bartender, @party)
-
+    redirect_to new_party_payment_path(@party)
   end
 
   def new
@@ -32,7 +31,7 @@ class PartiesController < ApplicationController
     else
       @party = Party.new(session[:party])
     end
-    @bartender = Bartender.find(params[:bartender_id].to_i)
+    @bartender = Bartender.find(params[:party]['bartender'].to_i)
     @party.bartender = @bartender
     @party.user = current_user
     @bartender.parties.each do |party|

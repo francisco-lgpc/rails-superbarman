@@ -1,0 +1,23 @@
+.has-success .control-label {
+  color: #4caf50;
+  border-width: 3px;
+}
+.has-success .form-control {
+  border-color: #4caf50;
+  border-width: 3px;
+
+}
+.has-success .form-control:focus {
+  border-color: #388e3c;
+}
+.has-error .control-label {
+  color: #ff5252;
+  border-width: 3px;
+}
+.has-error .form-control {
+  border-color: #ff5252;
+  border-width: 3px;
+}
+.has-error .form-control:focus {
+  border-color: #DD4747;
+}

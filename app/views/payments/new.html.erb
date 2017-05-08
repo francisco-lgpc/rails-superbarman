@@ -1,0 +1,18 @@
+<%= form_tag party_payments_path(@party) do %>
+<!--   <article>
+    <label class="amount">
+      <span>Amount: <%#= humanized_money_with_symbol(@party.price) %></span>
+    </label>
+  </article>
+ -->
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+    data-name= "<%= "#{@party.bartender.name}" %>"
+    data-email="<%= current_user.email %>"
+    data-description="<%= "#{@party.theme} - #{@party.date}"  %>"
+    data-amount="<%= @party.price_cents %>"
+    data-currency="<%= @party.price.currency %>"></script>
+<% end %>
+
+

@@ -1,33 +1,53 @@
-<div class="container">
+<div class="index-background">
+  <div class="container">
   <div class="row">
+
     <%= render 'search_form_index' %>
   </div>
 
   <div class="row">
     <% @bartenders.each_with_index do |bartender, i| %>
-      <%= link_to bartender_path(bartender, party: params[:party]) do %>
-        <div class="col-xs-12 col-sm-6 col-lg-4">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path (bartender.picture) %>);">
-            <div class="card-category">
-              <%= bartender.title %>
+    <div class="col-xs-12 col-sm-6 col-lg-4">
+      <div class="card-container">
+        <%= link_to bartender_path(bartender, party: params[:party]), class: 'card' do %>
+          <div class="card-body">
+            <div class="card-image" style="background-image: url(<%= image_path (bartender.picture) %>);">
             </div>
-            <div class="card-description">
-              <p>
-                <%= bartender.name %> <br>
+            <div class="card-back">
+              <% bartender.cocktails.each do |cocktail|  %>
+                <div class="card-back-item">
+                  <%= image_tag cocktail.picture, class: 'smaller-avatar-cocktail' %>
+                  <div><%= cocktail.name %></div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="card-footer-flex">
+              <div class="card-footer-name">
+               <strong> <%= bartender.name %></strong>
+              </div>
+
+                <div class="card-footer-reviews">
+                  <i class="fa fa-comment"></i></i><%= bartender.reviews.count %>
+                </div>
+              </div>
+
+              <div class="card-footer-rating">
                 <% bartender.rating.times do %>
                 <i class="fa fa-glass" aria-hidden="true"></i>
                 <% end %>
-              </p>
-            </div>
+              </div>
+
+
+
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
+    </div>
     <% end %>
+    </div>
   </div>
 </div>
-
-
-
-
 
 
