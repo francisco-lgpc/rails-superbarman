@@ -21,6 +21,7 @@ gem 'faker' # Facebook connect
 gem 'bootstrap-datepicker-rails'
 gem 'country_select'
 gem 'jquery-easing-rails'
+gem 'twilio-ruby'
 
 group :development, :test do
   gem 'binding_of_caller'

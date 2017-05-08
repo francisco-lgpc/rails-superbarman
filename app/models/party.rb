@@ -35,5 +35,20 @@ class Party < ApplicationRecord
     self.payment_confirmed = true
   end
 
+  def send_text_to_bartender
+    account_sid = ENV['TWILIO_ACCOUNT_SID']
+    auth_token = ENV['TWILIO_AUTH_TOKEN']
+
+    client = Twilio::REST::Client.new account_sid, auth_token
+    name = self.user.last_name == '' ? self.user.first_name : "#{self.user.first_name} #{self.user.last_name}"
+    msg = self.message == '' ? '' : "\nPersonal message:\n#{self.message}"
+
+    client.account.messages.create({
+      from: '+4915735982115',
+      to:   self.bartender.phone_number,
+      body: "#{name} has booked a #{self.theme} scheduled for #{self.date.to_s(:long)} #{msg}"
+    })
+  end
+
 end
 

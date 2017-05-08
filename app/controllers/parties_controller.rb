@@ -15,7 +15,12 @@ class PartiesController < ApplicationController
     @party.user = current_user
     @party.theme = 'Party' if @party.theme == ''
     @party.save!
+
+    # Commented out so as to not waste all our credit
+    # @party.send_text_to_bartender
+
     redirect_to bartender_party_path(@bartender, @party)
+
   end
 
   def new
