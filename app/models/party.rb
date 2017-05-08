@@ -8,6 +8,7 @@ class Party < ApplicationRecord
   has_many :reviews, dependent: :destroy
   validates :theme, inclusion: { in: TYPES }
   accepts_nested_attributes_for :user
+  monetize :price_cents
 
   def bartender_confirmed?
     self.bartender_confirmed
@@ -34,6 +35,7 @@ class Party < ApplicationRecord
   def payment_confirm
     self.payment_confirmed = true
   end
+
 
 end
 

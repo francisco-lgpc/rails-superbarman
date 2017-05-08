@@ -1,5 +1,5 @@
 class AddPriceToParties < ActiveRecord::Migration[5.0]
   def change
-    add_column :parties, :price, :integer
+    add_monetize :parties, :price, currency: { present: false }
   end
 end
