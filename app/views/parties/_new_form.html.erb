@@ -4,19 +4,19 @@
         <div class="about-you">
           <h3>1. About you</h3>
           <%= f.simple_fields_for :user do |u| %>
-            <%= u.input :first_name, label: false, placeholder: 'Name', wrapper_html: { class: '' }, input_html: { class: "about-you-block"} %>
-           <%= u.input :last_name, label: false, placeholder: 'Surname', wrapper_html: { class: '' }, input_html: { class: "about-you-block"} %>
-           <%= u.input :email, label: false, disabled: true,  wrapper_html: { class: '' }, input_html: { class: "about-you-block"} %>
-           <%= u.input :phone_number, label: false, placeholder: 'Contact Number', wrapper_html: { class: '' }, input_html: { class: "about-you-block"} %>
+            <%= u.input :first_name, label: false, required: true, placeholder: 'Name', wrapper_html: { class: '' }, input_html: { class: "about-you-block"} %>
+           <%= u.input :last_name, label: false, required: true, placeholder: 'Surname', wrapper_html: { class: '' }, input_html: { class: "about-you-block"} %>
+           <%= u.input :email, label: false, disabled: true, required: true, wrapper_html: { class: '' }, input_html: { class: "about-you-block"} %>
+           <%= u.input :phone_number, label: false, required: true, placeholder: 'Contact Number', wrapper_html: { class: '' }, input_html: { class: "about-you-block"} %>
           <% end %>
         </div>
         <div class="about-your-party">
           <h3>2. About your party</h3>
-          <%= f.input :start_time, label: "What time is your party?", placeholder: '21:00', wrapper_html: { class: '' }, input_html: { class: "about-your-party-time"} %>
-          <%= f.input :address, placeholder: 'Address', label: false, input_html: { class: "about-your-party-block"} %>
-          <%= f.input :zip_code, placeholder: 'Zip code', label: false, input_html: { class: "about-your-party-block"}  %>
-          <%= f.input :city, placeholder: 'City', label: false, input_html: { class: "about-your-party-block"}  %>
-          <%= f.input :country, placeholder: 'Country', label: false, priority: [ 'DE' ], input_html: { class: "about-your-party-block"}  %>
+          <%= f.input :start_time, label: "What time is your party?", required: true, placeholder: '21:00', wrapper_html: { class: '' }, input_html: { class: "about-your-party-time"} %>
+          <%= f.input :address, placeholder: 'Address', required: true, label: false, input_html: { class: "about-your-party-block"} %>
+          <%= f.input :zip_code, placeholder: 'Zip code', required: true, label: false, input_html: { class: "about-your-party-block"}  %>
+          <%= f.input :city, placeholder: 'City', label: false, required: true, input_html: { class: "about-your-party-block"}  %>
+          <%= f.input :country, placeholder: 'Country', label: false, required: true, priority: [ 'DE' ], input_html: { class: "about-your-party-block"}  %>
           <%= f.input :address, :as => :hidden, :input_html => { :value => @party.address } %>
           <%= f.input :date, :as => :hidden, label: false, placeholder: '21:00', wrapper_html: { class: '' }, input_html: { class: "input form-input-index"} %>
           <%= f.input :theme, collection: Party::TYPES, as: :hidden, label: false, prompt: "Type of Party" %>
@@ -35,67 +35,70 @@
         </div>
     </div>
   </div>
-  <div class="col-md-4 col-xs-offset-2 booking-summary">
-    <%= image_tag('london2.jpg', style: "width: 100%;") %>
-    <div class="bartender-name">
-    Your bartender: <%= @party.bartender.name %>
-    </div>
-    <div class="bartender-title">
-    <%= @party.bartender.title %>
-    </div>
-    <div class="bartender-location">
-    <%= @party.bartender.location %>
-    </div>
-    <div class="bartender-rating">
-       <% @bartender.rating.times do %>
-          <i class="fa fa-glass golder" aria-hidden="true"></i>
-        <% end %>
-        <% (5 - @bartender.rating).times do %>
-          <i class="fa fa-glass blacker" aria-hidden="true"></i>
-        <% end %>
-    </div>
-    <hr class="booking-line">
-    <div class="cocktails">
-      <div class="content">
-        <% @bartender.cocktails.each do |cocktail|  %>
-          <div class="specialities-item">
-            <%= image_tag cocktail.picture, class: 'small-avatar-cocktail' %>
-          </div>
-        <% end %>
+  <div class="col-md-4 col-xs-offset-2">
+    <div class="summary-wrapper booking-summary" data-spy="affix" data-offset-top="180" data-offset-bottom="476">
+      <%= image_tag('london2.jpg', style: "width: 100%;") %>
+      <div class="bartender-name">
+      Your bartender: <%= @party.bartender.name %>
       </div>
-    </div>
-    <hr class="booking-line">
-    <div class="party-date">
-    <%= pretty_date(@party.date) %> - <%= @party.theme %>
-    </div>
-    <hr class="booking-line">
-    <div class="booking-billing">
-      <table class="billing">
-        <t class="body">
-          <tr class="price-item">
-              <td class="bartender-service">
-                Bartender service:
+      <div class="bartender-title">
+      <%= @party.bartender.title %>
+      </div>
+      <div class="bartender-location">
+      <%= @party.bartender.location %>
+      </div>
+      <div class="bartender-rating">
+         <% @bartender.rating.times do %>
+            <i class="fa fa-glass golder" aria-hidden="true"></i>
+          <% end %>
+          <% (5 - @bartender.rating).times do %>
+            <i class="fa fa-glass blacker" aria-hidden="true"></i>
+          <% end %>
+      </div>
+      <hr class="booking-line">
+      <div class="cocktails">
+        <div class="content">
+          <% @bartender.cocktails.each do |cocktail|  %>
+            <div class="specialities-item">
+              <%= image_tag cocktail.picture, class: 'small-avatar-cocktail' %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <hr class="booking-line">
+      <div class="party-date">
+      <%= pretty_date(@party.date) %> - <%= @party.theme %>
+      </div>
+      <hr class="booking-line">
+      <div class="booking-billing">
+        <table class="billing">
+          <t class="body">
+            <tr class="price-item">
+                <td class="bartender-service">
+                  Bartender service:
+                </td>
+                <td><span></span></td>
+                <td class="price">
+                  50€
+                </td>
+              </tr>
+              <tr class="welcome-cocktails">
+                <td class="details">
+               <i>Includes 5 free welcome cocktails of your choice.</i>
+                </td>
+              </tr>
+              <tr>
+                <td class="moreinfo">
+               Cocktails will be sold at 5€ during the event.
               </td>
-              <td><span></span></td>
-              <td class="price">
-                50€
-              </td>
-            </tr>
-            <tr class="welcome-cocktails">
-              <td class="details">
-             <i>Includes 5 free welcome cocktails of your choice.</i>
-              </td>
-            </tr>
-            <tr>
-              <td class="moreinfo">
-             Cocktails will be sold at 5€ during the event.
-            </td>
-            </tr>
-        </t>
-      </table>
+              </tr>
+          </t>
+        </table>
+      </div>
     </div>
   </div>
 <% end %>
+
     <script type="text/javascript">
      $(document).ready(function() {
   var flat_address = $('#party_address').get(0);
@@ -153,6 +156,109 @@ function getAddressComponents(place) {
   };
 }
     </script>
+
+<script>
+
+  var EVENTS = 'focusout keyup change';
+  var EMAIL_PATTERN =/^([^\.@]+)(\.([^@]+))?@([^@]+)\.([^@]+)$/;
+  var ZIP_CODE_PATTERN = /^\d{4,5}$/;
+  var MOBILE_PHONE_PATTERN = /^\d{8,12}$/;
+  var NAME_PATTERN = /^([a-z]){2,}$/;
+
+
+  function checkIsFilled(input, add_class) {
+  var filled = false;
+  if ($(input).attr('type') == "checkbox") {
+    filled = $(input).is(':checked');
+  } else if ($(input).is(':focus')) {
+    filled = true;
+  } else {
+    filled = $(input).val().length > 0;
+  }
+  if (add_class) {
+    addClass(input, filled);
+  }
+  return filled;
+}
+function checkZipCode(input) {
+  var zip_code = $(input).val();
+  addClass(input, zip_code.match(ZIP_CODE_PATTERN));
+}
+function checkEmail(input) {
+  var email = $(input).val();
+  addClass(input, email.match(EMAIL_PATTERN));
+}
+function checkMobilePhone(input) {
+  var mobile_phone = $(input).val();
+  addClass(input, mobile_phone.match(MOBILE_PHONE_PATTERN));
+}
+function checkFirstName(input) {
+  var first_name = $(input).val();
+  addClass(input, first_name.match(NAME_PATTERN));
+}
+function checkLastName(input) {
+  var last_name = $(input).val();
+  addClass(input, last_name.match(NAME_PATTERN));
+}
+function addClass(input, remove) {
+  var button = $('button[type=submit]');
+
+  var form_group = $(input).parents('.form-group');
+  if (remove) {
+    form_group.removeClass('has-error');
+    if ($(input).val().length > 0) {
+
+      form_group.addClass('has-success');
+    }
+  } else {
+
+    form_group.addClass('has-error').removeClass('has-success');
+  }
+   activateButton();
+}
+
+function activateButton() {
+  var button = $('button[type=submit]');
+  if ($('.form-group.has-error').length >= 1) {
+    var enable = false;
+        button.attr('disabled', 'disabled').html('Please fill all fields');
+      return;
+  }
+  else {
+      button.removeAttr('disabled').html('Submit');
+       return;
+    }
+}
+function onReady() {
+  $('form input, form textarea').on(EVENTS, function(e) {
+    if (e.target.id != 'zip_code' &&
+        e.target.id != 'email' &&
+        e.target.id != 'mobile_phone' &&
+        e.target.id != 'first_name' &&
+        e.target.id != 'last_name')
+    {
+      checkIsFilled(e.target, true);
+    }
+  });
+  $('#party_zip_code').on(EVENTS, function(e) {
+    checkZipCode(e.target);
+    console.log("hey George");
+  });
+  $('#email').on(EVENTS, function(e) {
+    checkEmail(e.target);
+  });
+  $('#party_user_attributes_phone_number').on(EVENTS, function(e) {
+    checkMobilePhone(e.target);
+  });
+  $('#party_user_attributes_first_name').on(EVENTS, function(e) {
+    checkFirstName(e.target);
+  });
+  $('#party_user_attributes_last_name').on(EVENTS, function(e) {
+    checkLastName(e.target);
+  });
+}
+$(document).ready(onReady);
+</script>
 <!-- <script type="text/javascript">
   $(document).ready(function(){
     $('.datepicker').datepicker();
