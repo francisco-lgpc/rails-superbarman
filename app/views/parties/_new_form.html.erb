@@ -35,67 +35,70 @@
         </div>
     </div>
   </div>
-  <div class="col-md-4 col-xs-offset-2 booking-summary">
-    <%= image_tag('london2.jpg', style: "width: 100%;") %>
-    <div class="bartender-name">
-    Your bartender: <%= @party.bartender.name %>
-    </div>
-    <div class="bartender-title">
-    <%= @party.bartender.title %>
-    </div>
-    <div class="bartender-location">
-    <%= @party.bartender.location %>
-    </div>
-    <div class="bartender-rating">
-       <% @bartender.rating.times do %>
-          <i class="fa fa-glass golder" aria-hidden="true"></i>
-        <% end %>
-        <% (5 - @bartender.rating).times do %>
-          <i class="fa fa-glass blacker" aria-hidden="true"></i>
-        <% end %>
-    </div>
-    <hr class="booking-line">
-    <div class="cocktails">
-      <div class="content">
-        <% @bartender.cocktails.each do |cocktail|  %>
-          <div class="specialities-item">
-            <%= image_tag cocktail.picture, class: 'small-avatar-cocktail' %>
-          </div>
-        <% end %>
+  <div class="col-md-4 col-xs-offset-2">
+    <div class="summary-wrapper booking-summary" data-spy="affix" data-offset-top="180" data-offset-bottom="476">
+      <%= image_tag('london2.jpg', style: "width: 100%;") %>
+      <div class="bartender-name">
+      Your bartender: <%= @party.bartender.name %>
       </div>
-    </div>
-    <hr class="booking-line">
-    <div class="party-date">
-    <%= pretty_date(@party.date) %> - <%= @party.theme %>
-    </div>
-    <hr class="booking-line">
-    <div class="booking-billing">
-      <table class="billing">
-        <t class="body">
-          <tr class="price-item">
-              <td class="bartender-service">
-                Bartender service:
+      <div class="bartender-title">
+      <%= @party.bartender.title %>
+      </div>
+      <div class="bartender-location">
+      <%= @party.bartender.location %>
+      </div>
+      <div class="bartender-rating">
+         <% @bartender.rating.times do %>
+            <i class="fa fa-glass golder" aria-hidden="true"></i>
+          <% end %>
+          <% (5 - @bartender.rating).times do %>
+            <i class="fa fa-glass blacker" aria-hidden="true"></i>
+          <% end %>
+      </div>
+      <hr class="booking-line">
+      <div class="cocktails">
+        <div class="content">
+          <% @bartender.cocktails.each do |cocktail|  %>
+            <div class="specialities-item">
+              <%= image_tag cocktail.picture, class: 'small-avatar-cocktail' %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <hr class="booking-line">
+      <div class="party-date">
+      <%= pretty_date(@party.date) %> - <%= @party.theme %>
+      </div>
+      <hr class="booking-line">
+      <div class="booking-billing">
+        <table class="billing">
+          <t class="body">
+            <tr class="price-item">
+                <td class="bartender-service">
+                  Bartender service:
+                </td>
+                <td><span></span></td>
+                <td class="price">
+                  50€
+                </td>
+              </tr>
+              <tr class="welcome-cocktails">
+                <td class="details">
+               <i>Includes 5 free welcome cocktails of your choice.</i>
+                </td>
+              </tr>
+              <tr>
+                <td class="moreinfo">
+               Cocktails will be sold at 5€ during the event.
               </td>
-              <td><span></span></td>
-              <td class="price">
-                50€
-              </td>
-            </tr>
-            <tr class="welcome-cocktails">
-              <td class="details">
-             <i>Includes 5 free welcome cocktails of your choice.</i>
-              </td>
-            </tr>
-            <tr>
-              <td class="moreinfo">
-             Cocktails will be sold at 5€ during the event.
-            </td>
-            </tr>
-        </t>
-      </table>
+              </tr>
+          </t>
+        </table>
+      </div>
     </div>
   </div>
 <% end %>
+
     <script type="text/javascript">
      $(document).ready(function() {
   var flat_address = $('#party_address').get(0);
