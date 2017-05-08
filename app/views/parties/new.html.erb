@@ -9,6 +9,12 @@
   </div>
 
   <div class="wrapper-book">
+    <%= form_tag parties_path do %>
+      <%= hidden_field_tag 'party_id', @party.id %>
+      <%= submit_tag 'Purchase', class: 'btn-booking-confirm' %>
+    <% end %>
+
+
 
   </div>
 

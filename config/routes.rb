@@ -15,7 +15,9 @@ Rails.application.routes.draw do
     resources :reviews, only: [:new, :create, :update]
   end
 
-  resources :parties, only: [:show, :create, :new]
+  resources :parties, only: [:show, :create, :new] do
+    resources :payments, only: [:new, :create]
+end
 
   patch 'parties/:id/confirm', to: 'parties#bartender_confirm', as: 'party_bartender_confirm'
   patch 'parties/:id/reject', to: 'parties#bartender_reject', as: 'party_bartender_reject'

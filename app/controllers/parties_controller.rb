@@ -15,7 +15,7 @@ class PartiesController < ApplicationController
     @party.user = current_user
     @party.theme = 'Party' if @party.theme == ''
     @party.save!
-    redirect_to @party
+    redirect_to new_party_payment_path(@party)
   end
 
   def new
