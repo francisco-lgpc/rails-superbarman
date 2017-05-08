@@ -8,6 +8,9 @@ class Party < ApplicationRecord
   has_many :reviews, dependent: :destroy
   validates :theme, inclusion: { in: TYPES }
   accepts_nested_attributes_for :user
+  before_save :set_sku, :set_price
+  monetize :price_cents
+  # validates :sku, uniqueness: true
 
   def bartender_confirmed?
     self.bartender_confirmed
@@ -34,6 +37,17 @@ class Party < ApplicationRecord
   def payment_confirm
     self.payment_confirmed = true
   end
+
+private
+
+  def set_sku
+    self.sku = "#{self.bartender.name}#{self.date}#{self.start_time}-#{self.id}" if self.sku.nil?
+  end
+
+  def set_price
+    self.price = 50
+  end
+
 
 end
 

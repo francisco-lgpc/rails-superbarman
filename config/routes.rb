@@ -11,10 +11,11 @@ Rails.application.routes.draw do
   get 'bartenders/:id/dashboard', to: 'bartenders#dashboard', as: 'bartender_dashboard'
 
   get '/bartenders/search', to: 'bartenders#search', as: "bartender_search"
-  resources :bartenders, only: [:index, :show] do
+    resources :bartenders, only: [:index, :show]
     resources :reviews, only: [:new, :create, :update]
-    resources :parties, only: [:show, :create, :new]
-  end
+    resources :parties, only: [:show, :create, :new] do
+      resources :payments, only: [:new, :create]
+    end
 
   patch 'parties/:id/confirm', to: 'parties#bartender_confirm', as: 'party_bartender_confirm'
   patch 'parties/:id/reject', to: 'parties#bartender_reject', as: 'party_bartender_reject'

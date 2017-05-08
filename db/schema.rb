@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170505095915) do
+ActiveRecord::Schema.define(version: 20170508122306) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,15 @@ ActiveRecord::Schema.define(version: 20170505095915) do
     t.index ["user_id"], name: "index_messages_on_user_id", using: :btree
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.string   "state"
+    t.string   "party_sku"
+    t.integer  "amount_cents", default: 0, null: false
+    t.json     "payment"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
   create_table "parties", force: :cascade do |t|
     t.string   "address"
     t.date     "date"
@@ -69,16 +78,16 @@ ActiveRecord::Schema.define(version: 20170505095915) do
     t.datetime "created_at",                                     null: false
     t.datetime "updated_at",                                     null: false
     t.boolean  "bartender_confirmed"
-    t.boolean  "payment_confirmed"
     t.time     "start_time"
     t.string   "party_plan"
-    t.integer  "price"
     t.text     "message"
     t.string   "zip_code"
     t.string   "city"
     t.string   "country"
     t.boolean  "pending_bartender_confirmation", default: true
     t.boolean  "agreed",                         default: false
+    t.string   "sku"
+    t.integer  "price_cents",                    default: 0,     null: false
     t.index ["bartender_id"], name: "index_parties_on_bartender_id", using: :btree
     t.index ["user_id"], name: "index_parties_on_user_id", using: :btree
   end

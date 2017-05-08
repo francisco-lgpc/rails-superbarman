@@ -1,4 +1,4 @@
-<%= simple_form_for [@bartender, @party], url: bartender_parties_path, html: { id: 'home-form-show' } do |f| %>
+<%= simple_form_for @party, method: :post, html: { id: 'home-form-show' } do |f| %>
   <div class="col-md-6">
     <div class="slider-form">
         <div class="about-you">
@@ -21,6 +21,8 @@
           <%= f.input :date, :as => :hidden, label: false, placeholder: '21:00', wrapper_html: { class: '' }, input_html: { class: "input form-input-index"} %>
           <%= f.input :theme, collection: Party::TYPES, as: :hidden, label: false, prompt: "Type of Party" %>
           <%= f.input :date, :as => :hidden, label: false, placeholder: '21:00'%>
+          <%= f.input :bartender, :as => :hidden, :input_html => { :value => @bartender.id } %>
+
           <%= f.input :size, placeholder: 'Number of guests', label: false, required: true, input_html: { class: "about-your-party-block"} %>
          <!--  <%#= f.input_field :agreed, required: true, as: :boolean, boolean_style: :inline %> <span class="labelText">The given number of guests is as accurate as I can provide to ensure a good bartender to guest ratio.</span> -->
          </div>
