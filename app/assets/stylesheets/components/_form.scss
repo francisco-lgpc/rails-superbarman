@@ -5,6 +5,11 @@
   // padding-right: 2%;
   // padding-left: 2%;
   border-radius: 10px;
+  option {
+    background: none;
+    -webkit-appearance : none;
+    -moz-appearance : none
+  }
 
   ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     padding-left: 4px;
