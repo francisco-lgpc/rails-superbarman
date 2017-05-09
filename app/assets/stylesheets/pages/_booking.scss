@@ -37,6 +37,7 @@
   width: 379.98px;
   border: 4px solid $gold;
   padding: 20px 20px;
+  padding-bottom: 0px;
     h4{
       padding: 10px 10px;
     }
@@ -69,6 +70,7 @@
       padding: 10px 0px;
       border-top: none;
       font-size: 16px;
+      padding-bottom: 0px;
     }
     .table {
     max-width: 100%;
@@ -150,7 +152,7 @@
 }
 
 .summary-wrapper.affix{
-  top: 20px;
+  top: 18px;
   width: 379.98px;
   position: fixed;
 }
