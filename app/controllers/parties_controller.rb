@@ -14,12 +14,27 @@ class PartiesController < ApplicationController
     @party.bartender = @bartender
     @party.user = current_user
     @party.theme = 'Party' if @party.theme == ''
-    @party.save!
+    # @party.save!
+
+
+    if @party.save
+      respond_to do |format|
+        format.html { redirect_to new_party_payment_path(@party) }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
+    else
+      respond_to do |format|
+        format.html { render 'party/new' }
+        format.js  # <-- idem
+      end
+    end
+
+
 
     # Commented out so as to not waste all our credit
     # @party.send_text_to_bartender
 
-    redirect_to new_party_payment_path(@party)
+    # redirect_to new_party_payment_path(@party)
   end
 
   def new

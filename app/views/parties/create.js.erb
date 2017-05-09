@@ -1,0 +1,23 @@
+<% if @party.errors.any? %>
+  // Render new review form with errors
+<% else %>
+  // Generate the btn. But hide it.
+  var btn_payment_html = $("<h1>Test</h1>").hide();
+  // Add it to the DOM, at the end of the existing reviews. It's still hidden.
+  $('#home-form-show').append(btn_payment_html);
+  // Show the btn with an animation!
+  btn_payment_html.slideDown();
+  // Reset the form
+  $('#home-form-show').html("<h1>Test</h1>");
+<% end %>
+
+
+
+  // Generate the btn. But hide it.
+    // var btn_payment_html = $("<%= j render 'reviews/show', party: @party %>").hide();
+  // Add it to the DOM, at the end of the existing reviews. It's still hidden.
+    // $('#home-form-show').append(btn_payment_html);
+  // Show the btn with an animation!
+    // btn_payment_html.slideDown();
+  // Reset the form
+    // $('#home-form-show').html("<%= j render 'new_form', party: @party %>");
