@@ -1,9 +1,5 @@
 .wrapper-prebook{
-    h1{
-      color: $gold;
-      padding-bottom: 50px;
-      text-align: center;
-    }
+
   .about-you{
     padding-bottom: 30px;
 
@@ -118,6 +114,8 @@
   }
 }
 
+
+
   }
   .booking-line{
     border: 1px solid $gold;
@@ -163,3 +161,19 @@
   position: fixed;
 }
 
+#party-new-header{
+      h1{
+      margin: 0px 0px 10vh 0px;
+      color: $gold;
+      padding-bottom: 10px;
+      padding-top: 5px;
+      text-align: center;
+      margin-top: 0px;
+      font-size: 27px;
+      width: 100%;
+    box-shadow: 0px 0.7px 0px #8a6d3b;
+
+    }
+    background-color: $brown;
+    width: 100%;
+}
