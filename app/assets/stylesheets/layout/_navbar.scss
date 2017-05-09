@@ -77,6 +77,9 @@
     }
     font-size: 15px;
   }
+  &:visited{
+    color: white;
+  }
 }
 .navbar-wagon-link:hover {
   color: $gold;
