@@ -1,5 +1,5 @@
 <%= simple_form_for @party, url: "/bartenders/search", method: :get do |f| %>
-  <%= f.input :address, collection: Party::CITIES, label: false, prompt: 'Where?', wrapper_html: { class: '' }, input_html: { class: "input form-input-index" } %>
+  <%= f.input :city, collection: Party::CITIES, label: false, prompt: 'Where?', wrapper_html: { class: '' }, input_html: { class: "input form-input-index" } %>
 
 
   <%= f.input :date, label: false, placeholder: 'When?', as: :string, input_html: { class: "datepicker" } %>

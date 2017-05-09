@@ -61,7 +61,7 @@ before_action :set_bartender, only: [:show]
   end
 
   def party_params
-    params.require(:party).permit(:address, :date, :theme, :size)
+    params.require(:party).permit(:address, :city, :date, :theme, :size)
   end
 
 end
