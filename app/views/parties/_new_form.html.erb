@@ -71,6 +71,9 @@
       </div>
       <hr class="booking-line">
       <div class="party-date">
+      <% if @party.theme == "" %>
+      <% @party.theme = "Party" %>
+      <% end %>
       <%= pretty_date(@party.date) %> - <%= @party.theme %>
       </div>
       <hr class="booking-line">
