@@ -1,40 +1,19 @@
-.ui-datepicker{
-  width: 216px;
-  height: auto;
-  margin: 5px auto;
-  font: 9pt Arial, sans-serif;
-  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
-  -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+.datepicker-orient-bottom{
   background-color: $brown;
   color: $white;
-
 }
-
-.ui-datepicker-header{
-  margin: 10px 0 10px 10px;
-  position: relative;
+.datepicker table th.prev:hover,
+.datepicker table th.next:hover,
+.datepicker table th.dow:hover,
+.datepicker table tr td.day:hover,
+.datepicker table td.old.day:hover,
+.datepicker table th.datepicker-switch:hover, {
+  background-color: $gold;
 }
-
-.ui-datepicker-next{
-  position: absolute;
-  margin-left: 10px;
-}
-
-.ui-datepicker-title{
-  position: absolute;
-  right: 5px;
-  top: 3px;
-}
-
-.ui-datepicker a {
-  text-decoration: none;
-  color: $white;
-  &:hover{
-  color: $gold;
+.datepicker table tr td span:hover, .datepicker table tr td span.focused  {
+  background-color: $gold;
+  &:focused {
+  background-color: $gold;
   }
 }
-.ui-datepicker table {
-  width: 100%;
-  margin-left: 10px;
-}
+
