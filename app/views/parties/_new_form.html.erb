@@ -41,7 +41,7 @@
     <div class="summary-wrapper booking-summary" data-spy="affix" data-offset-top="180" data-offset-bottom="450">
       <%= image_tag('london2.jpg', style: "width: 100%;") %>
       <div class="bartender-name">
-      Your bartender: <%= @party.bartender.name %>
+      Your bartender: <strong><%= @party.bartender.name %></strong>
       </div>
       <div class="bartender-title">
       <%= @party.bartender.title %>
@@ -62,7 +62,7 @@
         <div class="content">
           <% @bartender.cocktails.each do |cocktail|  %>
             <div class="specialities-item">
-              <%= image_tag cocktail.picture, class: 'small-avatar-cocktail' %>
+              <%= image_tag cocktail.picture, class: 'small-avatar-cocktail-new' %>
             </div>
           <% end %>
         </div>
