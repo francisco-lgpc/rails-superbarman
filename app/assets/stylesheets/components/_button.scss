@@ -40,6 +40,12 @@ $btn-vertical-padding: 10px;
   i {
     padding: 0 60px 0 20px;
   }
+    &:hover {
+    color: $gold !important;
+  }
+    &:visited{
+    color: white;
+    }
 }
 
 .btn-login {
@@ -62,7 +68,7 @@ $btn-vertical-padding: 10px;
   height: $btn-height;
   padding: $btn-vertical-padding 10px;
   line-height: calc(#{$btn-height} - #{$btn-vertical-padding * 2});
-  color: $brown;
+  color: $brown !important;
   display: block;
   width: 30%;
   border: 2px solid $brown;
