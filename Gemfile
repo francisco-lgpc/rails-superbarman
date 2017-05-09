@@ -24,6 +24,7 @@ gem 'bootstrap-datepicker-rails'
 gem 'country_select'
 gem 'jquery-easing-rails'
 gem 'twilio-ruby'
+gem 'pusher'
 
 group :development, :test do
   gem 'binding_of_caller'
