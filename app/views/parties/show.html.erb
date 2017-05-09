@@ -1,4 +1,4 @@
-
+ <% content_for :title, "Payment confirmed - Booking number #{@party.bartender_id}#{@party.id}#{@party.user_id}" %>
 <% if false %>
 
 <div class="container">
@@ -46,13 +46,12 @@
     <div class="row">
       <div class="status-bar">
         <div>
-          <div class="text-center status-bar-item">
+          <div class="text-center status-bar-item <%= 'status-bar-item-active' if @party.pending_bartender_confirmation? %>">
             <%= image_tag "counterclockwise-rotation.png", size: "40x40" %>
-
           </div>
         </div>
         <div>
-          <div class="text-center status-bar-item status-bar-item-active">
+          <div class="text-center status-bar-item <%= 'status-bar-item-active' if @party.bartender_confirmed? %>">
             <%= image_tag "bart1.jpg", size: "40x40" %>
           </div>
         </div>
@@ -71,69 +70,94 @@
   </div>
 </div>
 
-<% if @party.pending_bartender_confirmation? %>
-  <% tab_num = 0 %>
-  <h2> Wating for bartender confirmation </h2>
-<% elsif @party.bartender_confirmed? %>
-  <% tab_num = 1 %>
-  <div class="container">
-    <div class="wrapper-invite">
-      <div class="row">
-        <div class="col-xs-12 col-md-10 col-xs-offset-1 confirmation-invitation">
-          <div class="banner-book" style="background-image: linear-gradient(-225deg, rgba(85,85,85,0.8) 20%, rgba(60,60,60,0.8) 47%), url(<%= image_path 'ba.jpg' %>); ">
+<div class="wrapper-party-show-body">
+  <div id="pending-bartender-confirmation" class="<%= 'hidden' unless @party.pending_bartender_confirmation? %>">
+    <h2> Wating for bartender confirmation </h2>
+  </div>
 
-            <h2> Congratulations! You've booked <%= @party.bartender.name %></h2>
-            <p><i>Your booking number is: #<%= @party.bartender_id  %><%= @party.id %><%= @party.user_id%></i></p>
-            <!-- <div class="background-div">
-            <div class="text-center">
-              <%= image_tag @party.bartender.picture, id:"bt-party-show"%>
-              <h2><%= @party.bartender.name %></h2>
+  <div id="bartender-confirmed" class="<%= 'hidden' unless @party.bartender_confirmed? %>">
+    <div class="container">
+      <div class="wrapper-invite">
+        <div class="row">
+          <div class="col-xs-12 col-md-10 col-xs-offset-1 confirmation-invitation">
+            <div class="banner-book" style="background-image: linear-gradient(-225deg, rgba(85,85,85,0.8) 20%, rgba(60,60,60,0.8) 47%), url(<%= image_path 'ba.jpg' %>); ">
+
+              <h2> Congratulations! You've booked <%= @party.bartender.name %></h2>
+              <p><i>Your booking number is: #<%= @party.bartender_id  %><%= @party.id %><%= @party.user_id%></i></p>
+              <!-- <div class="background-div">
+              <div class="text-center">
+                <%= image_tag @party.bartender.picture, id:"bt-party-show"%>
+                <h2><%= @party.bartender.name %></h2>
+              </div>
+              </div> -->
+              <h3><span><%= @party.bartender.name %> will be at <i> <%= pretty_address(@party.address) %></i> at <i><%= pretty_time(@party.start_time) %></i></span></h3>
+              <!-- <h3>In <%= @party.city %></h3> -->
+              <h4>On <strong><%= @party.date.to_s(:long) %></strong> </h4>
+              <h4>For your <%= (@party.theme).downcase %> with <%= @party.size %> guests! </h4>
             </div>
-            </div> -->
-            <h3><span><%= @party.bartender.name %> will be at <i> <%= pretty_address(@party.address) %></i> at <i><%= pretty_time(@party.start_time) %></i></span></h3>
-            <!-- <h3>In <%= @party.city %></h3> -->
-            <h4>On <strong><%= @party.date.to_s(:long) %></strong> </h4>
-            <h4>For your <%= (@party.theme).downcase %> with <%= @party.size %> guests! </h4>
           </div>
         </div>
       </div>
-    </div>
-    <br>
-    <br>
+      <br>
+      <br>
 
-    <div class="pending-approval text-center hidden">
-      <h2>All done now! The bartender has been notified and he shall confirm your request as soon as he can!</h2>
-      <h3>You will recieve a text-message when everything is ready to go!</h3>
-    </div>
-
-    <%= link_to '#'  do %>
-    <div class="add-friends-button text-center">
-      <h5><i class="fa fa-facebook-square" aria-hidden="true"></i> INVITE YOUR FRIENDS ON FACEBOOK!</h5>
-    </div>
-    <% end %>
-  </div>
-<% else %>
-  <% tab_num = 2 %>
-
-<% end %>
-
-<%= tab_num %>
-<script>
-  $(document).ready(function() {
-    window.setInterval(function(){
-      <% if Party.find(@party.id).pending_bartender_confirmation? %>
-        <% tab_num = 0 %>
-      <% elsif Party.find(@party.id).bartender_confirmed? %>
-        <% tab_num = 1 %>
-      <% else %>
-        <% tab_num = 2 %>
+      <%= link_to '#'  do %>
+      <div class="add-friends-button text-center">
+        <h5><i class="fa fa-facebook-square" aria-hidden="true"></i> INVITE YOUR FRIENDS ON FACEBOOK!</h5>
+      </div>
       <% end %>
-      console.log('test')
-      $('.status-bar-item').removeClass('status-bar-item-active')
-      $('.status-bar-item').eq(<%= tab_num %>).addClass('status-bar-item-active')
-    }, 5000);
-  });
+    </div>
 
+  </div>
+
+  <div id="party-started" class="hidden">
+    <% # TBD %>
+  </div>
+
+  <div id="party-finished" class="hidden">
+    <% # TBD %>
+  </div>
+
+</div>
+
+<script src="https://js.pusher.com/4.0/pusher.min.js"></script>
+
+<script>
+  function changeActiveTabTo(i) {
+    $('.status-bar-item').removeClass('status-bar-item-active');
+    $('.status-bar-item').eq(i).addClass('status-bar-item-active');
+
+    $('.wrapper-party-show-body').children().addClass('hidden');
+    $('.wrapper-party-show-body').children().eq(i).removeClass('hidden');
+  }
+
+  $(document).ready(function() {
+    <% if @party.pending_bartender_confirmation? %>
+      changeActiveTabTo(0);
+    <% elsif @party.bartender_confirmed? %>
+      changeActiveTabTo(1);
+    <% elsif true # We will add some logic later %>
+      changeActiveTabTo(2);
+    <% elsif true # We will add some logic later %>
+      changeActiveTabTo(3);
+    <% end %>
+
+    // Enable pusher logging - don't include this in production
+    Pusher.logToConsole = true;
+
+    var pusher = new Pusher("<%= j ENV['PUSHER_KEY'] %>", {
+      cluster: 'eu',
+      encrypted: true
+    });
+
+    var channel = pusher.subscribe('bartender-confirmation-channel');
+    channel.bind('bartender-confirm', function(data) {
+      if(data.message === 'confirmed') {
+        changeActiveTabTo(1);
+        <% @party.pending_bartender_confirmation = false %>
+      }
+    });
+  });
 </script>
 
 
