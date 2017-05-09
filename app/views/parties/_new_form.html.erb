@@ -17,7 +17,6 @@
           <%= f.input :zip_code, placeholder: 'Zip code', required: true, label: false, input_html: { class: "about-your-party-block"}  %>
           <%= f.input :city, placeholder: 'City', label: false, required: true, input_html: { class: "about-your-party-block"}  %>
           <%= f.input :country, placeholder: 'Country', label: false, required: true, priority: [ 'DE' ], input_html: { class: "about-your-party-block"}  %>
-          <%= f.input :address, :as => :hidden, :input_html => { :value => @party.address } %>
           <%= f.input :date, :as => :hidden, label: false, placeholder: '21:00', wrapper_html: { class: '' }, input_html: { class: "input form-input-index"} %>
           <%= f.input :theme, collection: Party::TYPES, as: :hidden, label: false, prompt: "Type of Party" %>
           <%= f.input :date, :as => :hidden, label: false, placeholder: '21:00'%>
