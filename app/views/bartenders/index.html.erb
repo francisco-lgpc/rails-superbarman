@@ -1,4 +1,4 @@
- <% content_for :title, "Top bartenders in #{@party.address}" %>
+ <% content_for :title, "Top bartenders in #{@party.city}" %>
 <div class="index-background">
   <div class="container">
   <div class="row">
@@ -26,19 +26,26 @@
           <div class="card-footer">
             <div class="card-footer-flex">
               <div class="card-footer-name">
-               <strong> <%= bartender.name %></strong>
+               <strong> <%= "#{bartender.title} - #{bartender.name}" %></strong>
               </div>
 
                 <div class="card-footer-reviews">
-                  <i class="fa fa-comment"></i></i><%= bartender.reviews.count %>
+                  <i class="fa fa-comment blacker"></i></i><%= bartender.reviews.count %>
                 </div>
               </div>
 
               <div class="card-footer-rating">
                 <% bartender.rating.times do %>
-                <i class="fa fa-glass" aria-hidden="true"></i>
+                  <i class="fa fa-glass golder" aria-hidden="true"></i>
+                <% end %>
+                <% (5 - bartender.rating).times do %>
+                  <i class="fa fa-glass blacker" aria-hidden="true"></i>
                 <% end %>
               </div>
+
+
+
+
 
 
 
