@@ -198,7 +198,14 @@
 }
 
 .slide-column.affix{
-  top: 20px;
+  top: 16px;
   width: 262.5px;
   position: fixed;
 }
+
+.slide-column.affix-bottom{
+  bottom: auto;
+  width: 262.5px;
+  position: fixed;
+}
+
