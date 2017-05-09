@@ -26,6 +26,9 @@ class Party < ApplicationRecord
   def bartender_confirm
     self.pending_bartender_confirmation  = false
     self.bartender_confirmed             = true
+    Pusher.trigger('bartender-confirmation-channel', 'bartender-confirm', {
+      message: 'confirmed'
+    })
   end
 
   def bartender_reject
