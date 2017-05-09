@@ -30,14 +30,14 @@ User.destroy_all
 
 #Bartender_1
   args = {}
-  args[:name]         = Faker::Name.name
-  args[:title]        = "Partyguru"
-  args[:phone_number] = "+49.680.47.64.90"
-  args[:email]        = "izabeldosantos1@superbarman.com"
-  args[:bio]          = "Hi all! My name is Izabel and I come from Brazil. Graduated from the Bartender School of New York, I've been living in Berlin for the last 5 years.\nMy goal: bring the flavors of Rio de Janeiro's markets to your house party! Lime, chacaca and love! Tchau Tchau!"
+  args[:name]         = "Carla Hierro"
+  args[:title]        = "Super C"
+  args[:phone_number] = "+49 680 47 64 90"
+  args[:email]        = "carlah@superbarman.com"
+  args[:bio]          = "I've been a professional bartender for the past 6 years. I've worked under some of the most talented names in the business, serving at the best clubs Europe has to offer.\nThere are not many cities that can party harder then Berlin,\nI do not like to specialize in specific types of cocktails because I love to make them all! If you want the best cocktails of any mix,\nI'm your go to girl!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
-  args[:languages]    = "en pt de"
+  args[:languages]    = "en de es"
   args[:picture]      = "12.jpg"
   args[:password]     = "secret"
   args[:password_confirmation] = "secret"
@@ -56,15 +56,15 @@ User.destroy_all
 
 #Bartender_2
   args = {}
-  args[:name]         = Faker::Name.name
-  args[:title]        = "Partyguru"
+  args[:name]         = "Gianstelvio Radesic"
+  args[:title]        = "Mad Scientist"
   args[:phone_number] = "+49.680.47.64.90"
-  args[:email]        = Faker::Internet.email
-  args[:bio]          = "I graduated from the European Bartender School in 2014, in Puerto Rico. I recently moved back to Amsterdam, honning my skills in caribbean cocktails.\nThe caribbean allows a rich blend of exotic flavors that refreshes the soul.\nIf you feel like getting lost in paradise, I'm the bartender for you!"
+  args[:email]        = "mianstelvior@superbarman.com"
+  args[:bio]          = "After graduating from the International Cooking School in Bologna, I pursued my passion in experiementing with cocktails, making them more intricate and flavoursome then ever.\nIf you're willing to have cocktails that have never been heard of before,\nI'm the only one to make that happen"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
-  args[:languages]    = "en pt de"
-  args[:picture]      = "12.jpg"
+  args[:languages]    = "en de fr"
+  args[:picture]      = "7.jpg"
   args[:password]     = "secret"
   args[:password_confirmation] = "secret"
 
@@ -82,15 +82,15 @@ User.destroy_all
 
 #Bartender_3
   args = {}
-  args[:name]         = Faker::Name.name
-  args[:title]        = "Partyguru"
+  args[:name]         = "Marc Müller"
+  args[:title]        = "Chinchilla Mulla"
   args[:phone_number] = "+49.680.47.64.90"
-  args[:email]        = Faker::Internet.email
-  args[:bio]          = "I graduated from the European Bartender School in 2014, in Puerto Rico. I recently moved back to Amsterdam, honning my skills in caribbean cocktails.\nThe caribbean allows a rich blend of exotic flavors that refreshes the soul.\nIf you feel like getting lost in paradise, I'm the bartender for you!"
+  args[:email]        = "marcm@superbarman.com"
+  args[:bio]          = "I graduated from the European Bartender School in 2014, in Puerto Rico. I recently moved back to Berlin, honning my skills in caribbean cocktails.\nThe caribbean allows a rich blend of exotic flavors that refreshes the soul.\nIf you feel like getting lost in paradise, I'm the bartender for you!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
-  args[:languages]    = "en pt de"
-  args[:picture]      = "#{rand(1..10)}.jpg"
+  args[:languages]    = "de en pt"
+  args[:picture]      = "2.jpg"
   args[:password]     = "secret"
   args[:password_confirmation] = "secret"
 
@@ -108,15 +108,13 @@ User.destroy_all
 
 #Bartender_4
   args = {}
-  args[:name]         = Faker::Name.name
-  args[:title]        = "Partyguru"
+  args[:name]         = "Michael Orange"
+  args[:title]        = "Uncle Mike"
   args[:phone_number] = "+49.680.47.64.90"
-  args[:email]        = Faker::Internet.email
-  args[:bio]          = "I graduated from the European Bartender School in 2014, in Puerto Rico. I recently moved back to Amsterdam, honning my skills in caribbean cocktails.\nThe caribbean allows a rich blend of exotic flavors that refreshes the soul.\nIf you feel like getting lost in paradise, I'm the bartender for you!"
-  args[:rating]       = rand(3..5)
-  args[:location]     = "Berlin"
-  args[:languages]    = "en pt de"
-  args[:picture]      = "#{rand(1..10)}.jpg"
+  args[:email]        = "michaelo@superbarman.com"
+  args[:bio]          = "I graduated from the European Bartender School in 2016, in Berlin. Hometown boy who knows the local preferences, I can mix up Mexicana's to Belinerlufts on special request!\n I love meeting locals and starting up a party!"
+  args[:languages]    = "de en"
+  args[:picture]      = "6.jpg"
   args[:picture]      = "12.jpg"
   args[:password]     = "secret"
   args[:password_confirmation] = "secret"
@@ -135,15 +133,14 @@ User.destroy_all
 
 #Bartender_5
   args = {}
-  args[:name]         = Faker::Name.name
-  args[:title]        = "Partyguru"
+  args[:name]         = "Bailey Thompson"
+  args[:title]        = "Speedy B"
   args[:phone_number] = "+49.680.47.64.90"
-  args[:email]        = Faker::Internet.email
-  args[:bio]          = "I graduated from the European Bartender School in 2014, in Puerto Rico. I recently moved back to Amsterdam, honning my skills in caribbean cocktails.\nThe caribbean allows a rich blend of exotic flavors that refreshes the soul.\nIf you feel like getting lost in paradise, I'm the bartender for you!"
-  args[:rating]       = rand(3..5)
+  args[:email]        = "baileyt@superbarman.com"
+  args[:bio]          = "American girl originating from New York. I've been bartending on cruise ships for 2 years.\nMy nickname originated from serving vast amounts of guests whilst maintain my high standards of cocktails.\n If you never want your guests to wait you know who to book!"
   args[:location]     = "Berlin"
   args[:languages]    = "en pt de"
-  args[:picture]      = "#{rand(1..10)}.jpg"
+  args[:picture]      = "5.jpg"
   args[:password]     = "secret"
   args[:password_confirmation] = "secret"
 
@@ -164,7 +161,7 @@ User.destroy_all
   args[:name]         = Faker::Name.name
   args[:title]        = "Partyguru"
   args[:phone_number] = "+49.680.47.64.90"
-  args[:email]        = Faker::Internet.email
+  args[:email]        = "@superbarman.com"
   args[:bio]          = "I graduated from the European Bartender School in 2014, in Puerto Rico. I recently moved back to Amsterdam, honning my skills in caribbean cocktails.\nThe caribbean allows a rich blend of exotic flavors that refreshes the soul.\nIf you feel like getting lost in paradise, I'm the bartender for you!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
@@ -190,7 +187,7 @@ User.destroy_all
   args[:name]         = Faker::Name.name
   args[:title]        = "Partyguru"
   args[:phone_number] = "+49.680.47.64.90"
-  args[:email]        = Faker::Internet.email
+  args[:email]        = "@superbarman.com"
   args[:bio]          = "I graduated from the European Bartender School in 2014, in Puerto Rico. I recently moved back to Amsterdam, honning my skills in caribbean cocktails.\nThe caribbean allows a rich blend of exotic flavors that refreshes the soul.\nIf you feel like getting lost in paradise, I'm the bartender for you!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
@@ -217,7 +214,7 @@ User.destroy_all
   args[:name]         = Faker::Name.name
   args[:title]        = "Partyguru"
   args[:phone_number] = "+49.680.47.64.90"
-  args[:email]        = Faker::Internet.email
+  args[:email]        = "@superbarman.com"
   args[:bio]          = "I graduated from the European Bartender School in 2014, in Puerto Rico. I recently moved back to Amsterdam, honning my skills in caribbean cocktails.\nThe caribbean allows a rich blend of exotic flavors that refreshes the soul.\nIf you feel like getting lost in paradise, I'm the bartender for you!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
@@ -243,7 +240,7 @@ User.destroy_all
   args[:name]         = Faker::Name.name
   args[:title]        = "Partyguru"
   args[:phone_number] = "+49.680.47.64.90"
-  args[:email]        = Faker::Internet.email
+  args[:email]        = "@superbarman.com"
   args[:bio]          = "I graduated from the European Bartender School in 2014, in Puerto Rico. I recently moved back to Amsterdam, honning my skills in caribbean cocktails.\nThe caribbean allows a rich blend of exotic flavors that refreshes the soul.\nIf you feel like getting lost in paradise, I'm the bartender for you!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
@@ -269,7 +266,7 @@ User.destroy_all
   args[:name]         = Faker::Name.name
   args[:title]        = "Partyguru"
   args[:phone_number] = "+49.680.47.64.90"
-  args[:email]        = Faker::Internet.email
+  args[:email]        = "@superbarman.com"
   args[:bio]          = "I graduated from the European Bartender School in 2014, in Puerto Rico. I recently moved back to Amsterdam, honning my skills in caribbean cocktails.\nThe caribbean allows a rich blend of exotic flavors that refreshes the soul.\nIf you feel like getting lost in paradise, I'm the bartender for you!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
@@ -296,7 +293,7 @@ User.destroy_all
   args[:name]         = Faker::Name.name
   args[:title]        = "Partyguru"
   args[:phone_number] = "+49.680.47.64.90"
-  args[:email]        = Faker::Internet.email
+  args[:email]        = "@superbarman.com"
   args[:bio]          = "I graduated from the European Bartender School in 2014, in Puerto Rico. I recently moved back to Amsterdam, honning my skills in caribbean cocktails.\nThe caribbean allows a rich blend of exotic flavors that refreshes the soul.\nIf you feel like getting lost in paradise, I'm the bartender for you!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
@@ -322,7 +319,7 @@ User.destroy_all
   args[:name]         = Faker::Name.name
   args[:title]        = "Partyguru"
   args[:phone_number] = "+49.680.47.64.90"
-  args[:email]        = Faker::Internet.email
+  args[:email]        = "@superbarman.com"
   args[:bio]          = "I graduated from the European Bartender School in 2014, in Puerto Rico. I recently moved back to Amsterdam, honning my skills in caribbean cocktails.\nThe caribbean allows a rich blend of exotic flavors that refreshes the soul.\nIf you feel like getting lost in paradise, I'm the bartender for you!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
