@@ -20,30 +20,30 @@
   color: $gold;
   }
 }
-.video-home{
-  margin: 60px;
+// .video-home{
+//   margin: 60px;
 
 
-  h2{
-  text-align: center;
-  font-family: $base-font;
-  color:$gold;
-  padding: 0px 20px 50px 20px;
-  margin-top: 0;
-  margin-bottom: 0;
-  }
-  h4{
-  text-align: center;
-  font-size: 20px;
-  font-family: $base-font;
-  color:$gold;
-  padding: 0px 20px 50px 20px;
-  margin-top: 0;
-  margin-bottom: 0;
-  }
+//   h2{
+//   text-align: center;
+//   font-family: $base-font;
+//   color:$gold;
+//   padding: 0px 20px 50px 20px;
+//   margin-top: 0;
+//   margin-bottom: 0;
+//   }
+//   h4{
+//   text-align: center;
+//   font-size: 20px;
+//   font-family: $base-font;
+//   color:$gold;
+//   padding: 0px 20px 50px 20px;
+//   margin-top: 0;
+//   margin-bottom: 0;
+//   }
 
 
-}
+// }
 .home-line {
   border-top: 1px solid $gold;
    margin-left: 20%;
@@ -51,9 +51,33 @@
    margin-top: 80px;
 }
 
-.alex-bio {
-  font-size: 22px;
+.meet-alex {
+  .card-container .card {
+    transform: rotate(-2deg);
+  }
+    h2{
+    text-align: center;
+    font-family: $base-font;
+    color:$gold;
+    padding: 0px 20px 50px 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+    }
+    h3{
+    text-align: center;
+    font-size: 25px;
+    font-family: $base-font;
+    color:$gold;
+    padding: 0px 20px 50px 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+    }
 }
+
+
+// .alex-bio {
+//   font-size: 22px;
+// }
 #iframe-card {
   height: 300px;
   min-width: 540px;
@@ -65,48 +89,48 @@ iframe {
   height: 100%;
 }
 
-#bartender-profile-home {
-  color: $brown-lighter;
-  text-shadow: none;
-  height: 450px;
-  margin-left: -200px;
-  .card-category {
-    left: 380px;
-    top: 110px;  }
-  .card-user {
-    color: $gold;
-    font-size: 30px;
-    right: 130px;
-    top: 125px;
-  }
-  .upper_frame {
-    width: 450px;
-    position: absolute;
-    top: 40px;
-    margin-left:-150px;
-  }
-  .lower_frame {
-    width: 450px;
-    position: absolute;
-    bottom: 40px;
-    margin-left:-150px;
-  }
-  .card-description {
-    left: 250px;
-    bottom: 100px;
-    width: 340px;
-  }
-  .card-description p {
-    font-size: 17px;
-    @media (max-width: 1100px) {
-      font-size: 15px
-    }
-    @media (max-width: 900px) {
-      font-size: 13px
-    }
-    text-align: justify;
-  }
-}
+// #bartender-profile-home {
+//   color: $brown-lighter;
+//   text-shadow: none;
+//   height: 450px;
+//   margin-left: -200px;
+//   .card-category {
+//     left: 380px;
+//     top: 110px;  }
+//   .card-user {
+//     color: $gold;
+//     font-size: 30px;
+//     right: 130px;
+//     top: 125px;
+//   }
+//   .upper_frame {
+//     width: 450px;
+//     position: absolute;
+//     top: 40px;
+//     margin-left:-150px;
+//   }
+//   .lower_frame {
+//     width: 450px;
+//     position: absolute;
+//     bottom: 40px;
+//     margin-left:-150px;
+//   }
+//   .card-description {
+//     left: 250px;
+//     bottom: 100px;
+//     width: 340px;
+//   }
+//   .card-description p {
+//     font-size: 17px;
+//     @media (max-width: 1100px) {
+//       font-size: 15px
+//     }
+//     @media (max-width: 900px) {
+//       font-size: 13px
+//     }
+//     text-align: justify;
+//   }
+// }
 
 
 
