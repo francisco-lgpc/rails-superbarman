@@ -13,6 +13,7 @@
               <div class="card-body">
                 <div class="card-image" style="background-image: url(<%= image_path (bartender.picture) %>);"></div>
                 <div class="card-back">
+                   <%= bartender.title %>
                   <% bartender.cocktails.each do |cocktail|  %>
                   <div class="card-back-item">
                     <%= image_tag cocktail.picture, class: 'smaller-avatar-cocktail' %>
@@ -24,21 +25,20 @@
               <div class="card-footer">
                 <div class="card-footer-flex">
                   <div class="card-footer-name">
-                    <strong> <%= "#{bartender.title} - #{bartender.name}" %></strong>
+                    <strong> <%= "#{bartender.name}" %></strong>
                   </div>
 
                   <div class="card-footer-reviews">
                     <i class="fa fa-comment blacker"></i><%= bartender.reviews.count %>
                   </div>
-
-                  <div class="card-footer-rating">
-                    <% bartender.rating.times do %>
-                    <i class="fa fa-glass golder" aria-hidden="true"></i>
-                    <% end %>
-                    <% (5 - bartender.rating).times do %>
-                    <i class="fa fa-glass blacker" aria-hidden="true"></i>
-                    <% end %>
-                  </div>
+                </div>
+                <div class="card-footer-rating">
+                  <% bartender.rating.times do %>
+                  <i class="fa fa-glass golder" aria-hidden="true"></i>
+                  <% end %>
+                  <% (5 - bartender.rating).times do %>
+                  <i class="fa fa-glass blacker" aria-hidden="true"></i>
+                  <% end %>
                 </div>
               </div>
             <% end %>
