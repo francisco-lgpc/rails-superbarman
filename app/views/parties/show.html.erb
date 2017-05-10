@@ -51,21 +51,25 @@
         <div>
           <div class="text-center status-bar-item <%= 'status-bar-item-active' if @party.pending_bartender_confirmation? %>">
             <%= image_tag "counterclockwise-rotation.png", size: "40x40" %>
+            <p>Confirmation Pending</p>
           </div>
         </div>
         <div>
           <div class="text-center status-bar-item <%= 'status-bar-item-active' if @party.bartender_confirmed? %>">
             <%= image_tag "bart1.jpg", size: "40x40" %>
+            <p>Party Confirmed</p>
           </div>
         </div>
         <div>
           <div class="text-center status-bar-item">
             <%= image_tag "cocktail2.png", size: "40x40" %>
+            <p>Get your party started!</p>
           </div>
         </div>
         <div>
           <div class="text-center status-bar-item">
             <i class="fa fa-check" aria-hidden="true"></i>
+            <p>Rate your Party</p>
           </div>
         </div>
       </div>
@@ -74,8 +78,19 @@
 </div>
 
 <div class="wrapper-party-show-body">
-  <div id="pending-bartender-confirmation" class="<%= 'hidden' unless @party.pending_bartender_confirmation? %>">
-    <h2> Wating for bartender confirmation </h2>
+  <div class="pending-container">
+    <div class="pending-card">
+      <div class="banner-pending" style="background-image: linear-gradient(-225deg, rgba(85,85,85,0.9) 20%, rgba(60,60,60,0.8) 47%), url(<%= image_path 'pending1.jpg' %>); ">
+        <div id="pending-bartender-confirmation" class="<%= 'hidden' unless @party.pending_bartender_confirmation? %>">
+          <h2> Thanks for booking your <%= @party.theme %>! </h2>
+          <h4> We have sent your request to <i><%= @party.bartender.name %></i></h4>
+          <h4>You will receive a response within the next <strong>24hr!</strong></h4>
+       </div>
+      </div>
+      <div class="pending-footer">
+        <h2>The moment before memories are made</h2>
+      </div>
+    </div>
   </div>
 
   <div id="bartender-confirmed" class="<%= 'hidden' unless @party.bartender_confirmed? %>">
