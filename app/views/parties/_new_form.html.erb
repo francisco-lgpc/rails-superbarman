@@ -44,7 +44,7 @@
   </div>
   <div class="col-md-4 col-xs-offset-2">
     <div class="summary-wrapper booking-summary" data-spy="affix" data-offset-top="158" data-offset-bottom="450">
-      <%= image_tag('london2.jpg', style: "width: 100%;") %>
+      <%= image_tag(@party.bartender.picture, style: "width: 100%;") %>
       <div class="bartender-name">
       Your bartender: <strong><%= @party.bartender.name %></strong>
       </div>
