@@ -12,11 +12,14 @@
         </div>
         <div class="about-your-party">
           <h3>2. About your party</h3>
-          <%= f.input :start_time, label: "What time is your party?", required: true, placeholder: '21:00', wrapper_html: { class: '' }, input_html: { class: "about-your-party-time"} %>
-          <%= f.input :address, placeholder: 'Address', required: true, label: false, input_html: { class: "about-your-party-block"} %>
+          <div class="wrapper-date-time">
+            <%= f.input :start_time, label: "At what time is your party?",as: :string, required: true, placeholder: '21:00',  input_html: { class: "about-your-party-time"} %>
+              <%= f.input :date, label: false, disabled: true, as: :string, input_html: { class: "about-your-party-block"}%>
+          </div>
+          <%= f.input :address, label: "Where is your party?", placeholder: 'Address', required: true, input_html: { class: "about-your-party-block"} %>
           <%= f.input :zip_code, placeholder: 'Zip code', required: true, label: false, input_html: { class: "about-your-party-block"}  %>
           <%= f.input :city, placeholder: 'City', label: false, required: true, input_html: { class: "about-your-party-block"}  %>
-          <%= f.input :country, placeholder: 'Country', label: false, required: true, priority: [ 'DE' ], input_html: { class: "about-your-party-block"}  %>
+          <%= f.input :country, prompt: 'Germany', label: false, required: true, priority: [ 'DE' ], input_html: { class: "about-your-party-block"}  %>
           <%= f.input :date, :as => :hidden, label: false, placeholder: '21:00', wrapper_html: { class: '' }, input_html: { class: "input form-input-index"} %>
           <%= f.input :theme, collection: Party::TYPES, as: :hidden, label: false, prompt: "Type of Party" %>
 
@@ -106,6 +109,10 @@
   </div>
 <% end %>
 
+<script type="text/javascript">
+            $('.about-your-party-time').timepicker(
+              'setTime', '9:00 PM');
+        </script>
     <script type="text/javascript">
      $(document).ready(function() {
   var flat_address = $('#party_address').get(0);

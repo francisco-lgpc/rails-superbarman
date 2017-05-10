@@ -1,3 +1,8 @@
+<% content_for :meta_title, "#{@bartender.title} - #{@bartender.name}" %>
+<% content_for :meta_description, "#{@bartender.bio}" %>
+<% content_for :meta_image, "#{image_url @bartender.picture}" %>
+
+
 <% if flash[:notice] %>
     <div class="alert-error"><%= flash[:notice] %></div>
   <% end %>
@@ -28,6 +33,9 @@
             <% (5 - @bartender.rating).times do %>
               <i class="fa fa-glass blacker glass-big" aria-hidden="true"></i>
             <% end %>
+            <div>
+              <a href="" id="comments">Comments (<%= @bartender.reviews.count %>)</a>
+            </div>
           </div>
         </div>
         <div class="col-xs-6">
@@ -79,7 +87,7 @@
 
 
       <!-- REVIEWS -->
-      <div class="profile-block reviews">
+      <div class="profile-block reviews" id="review">
         <div class= "header">
           <h2>Comments</h2>
         </div>
@@ -124,4 +132,10 @@
   </div>
 </div>
 
+<script>
+  $('#comments').click(function(e){
+    e.preventDefault();
+  $('#review')[0].scrollIntoView(true);
+  });
+</script>
 
