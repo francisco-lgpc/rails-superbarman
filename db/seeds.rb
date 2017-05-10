@@ -1,5 +1,4 @@
 require 'open-uri'
-
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -8,6 +7,27 @@ require 'open-uri'
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+GITHUB_PIC_URL = 'https://avatars.githubusercontent.com/'
+SIZE_OPTION = '?size=200'
+GITHUB_ACCOUNTS = [
+  'espinosaalex',
+  'daniel-huertas',
+  'francisco-lgpc',
+  'FForstbach',
+  'GordonEuller',
+  'izabellima',
+  'dinosaurjoe',
+  'Lauvries',
+  'MikeShiel',
+  'wabi69sabi',
+  'patrick-scheuchzer',
+  'Lupiane',
+  'RobinKamp',
+  'sarahbethwillis',
+  'letired',
+  'luytes'
+]
 
 RANDOM_COCKTAIL_URL = "http://www.thecocktaildb.com/api/json/v1/1/random.php"
 
@@ -810,24 +830,37 @@ User.destroy_all
   p b.errors.full_messages unless b.save
 
 
+
+users = GITHUB_ACCOUNTS.map do |account|
+  picture_url = GITHUB_PIC_URL + account + SIZE_OPTION
+  n = ''
+  loop do
+    names = []
+    n = Faker::GameOfThrones.character
+
+    break unless names.map(&:name).include?(n)
+    names << n
+  end
+  User.new(first_name: n, email: Faker::Internet.safe_email(n), password: 'youknownothing', password_confirmation: 'youknownothing', facebook_picture_url: picture_url )
+end
+
+
+
 Bartender.all.each_with_index do |bartender, i|
-  rand(4..7).times do
+  num_parties = rand(4..7)
+  bartender_users = users.sample(num_parties)
+
+  bartender_users.each do |bartender_user|
     party             = Party.new(address: Faker::Address.street_address + ', ' + bartender.location, theme: Party::TYPES.sample, size: Party::SIZES.sample, start_time: Time.now)
     bartender.parties << party
-    n                 = Faker::GameOfThrones.character
-    user              = User.new
-    loop do
-      user          = User.new(first_name: n, email: Faker::Internet.safe_email(n), password: 'youknownothing', password_confirmation: 'youknownothing')
-      user.parties  << party
-      break if user.save
-      p '...'
-    end
+    bartender_user.parties  << party
+    bartender_user.save!
 
     REVIEWS.sample(1).each do |content|
       r = Review.new(content: content, rating: rand(3..5))
       r.bartender = bartender
       r.party     = party
-      r.user      = user
+      r.user      = bartender_user
       r.save!
     end
 
@@ -839,6 +872,4 @@ Bartender.all.each_with_index do |bartender, i|
   end
 end
 p "Everything OK!"
-
-
 
