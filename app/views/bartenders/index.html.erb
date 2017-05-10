@@ -13,7 +13,7 @@
               <div class="card-body">
                 <div class="card-image" style="background-image: url(<%= image_path (bartender.picture) %>);"></div>
                 <div class="card-back">
-                   <%= bartender.title %>
+                  <strong><u><%= bartender.title %></u></strong>
                   <% bartender.cocktails.each do |cocktail|  %>
                   <div class="card-back-item">
                     <%= image_tag cocktail.picture, class: 'smaller-avatar-cocktail' %>
