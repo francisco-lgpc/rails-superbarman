@@ -9,4 +9,7 @@ class ApplicationController < ActionController::Base
     return request.env['omniauth.origin'] || stored_location_for(resource) || root_path if user_signed_in?
     return bartender_dashboard_path(current_bartender) || current_bartender || root_path if bartender_signed_in?
   end
+  def default_url_options
+    { host: ENV["HOST"] || "localhost:3000" }
+  end
 end
