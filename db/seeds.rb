@@ -41,6 +41,7 @@ User.destroy_all
   args[:picture]      = "12.jpg"
   args[:password]     = "secret"
   args[:password_confirmation] = "secret"
+  args[:bannerpicture] = "banner1.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -67,6 +68,7 @@ User.destroy_all
   args[:picture]      = "7.jpg"
   args[:password]     = "secret"
   args[:password_confirmation] = "secret"
+  args[:bannerpicture] = "banner2.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -93,6 +95,7 @@ User.destroy_all
   args[:picture]      = "2.jpg"
   args[:password]     = "secret"
   args[:password_confirmation] = "secret"
+  args[:bannerpicture] = "banner3.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -118,6 +121,7 @@ User.destroy_all
   args[:picture]      = "12.jpg"
   args[:password]     = "secret"
   args[:password_confirmation] = "secret"
+  args[:bannerpicture] = "banner4.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -143,6 +147,7 @@ User.destroy_all
   args[:picture]      = "5.jpg"
   args[:password]     = "secret"
   args[:password_confirmation] = "secret"
+  args[:bannerpicture] = "banner5.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -169,6 +174,7 @@ User.destroy_all
   args[:picture]      = "#{rand(1..10)}.jpg"
   args[:password]     = "secret"
   args[:password_confirmation] = "secret"
+  args[:bannerpicture] = "banner6.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -195,6 +201,7 @@ User.destroy_all
   args[:picture]      = "#{rand(1..10)}.jpg"
   args[:password]     = "secret"
   args[:password_confirmation] = "secret"
+  args[:bannerpicture] = "banner7.jpg"
 
 
   cocktails = (1..5).map do |i|
@@ -222,6 +229,7 @@ User.destroy_all
   args[:picture]      = "#{rand(1..10)}.jpg"
   args[:password]     = "secret"
   args[:password_confirmation] = "secret"
+  args[:bannerpicture] = "banner8.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -248,6 +256,7 @@ User.destroy_all
   args[:picture]      = "#{rand(1..10)}.jpg"
   args[:password]     = "secret"
   args[:password_confirmation] = "secret"
+  args[:bannerpicture] = "banner9.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -274,6 +283,7 @@ User.destroy_all
   args[:picture]      = "#{rand(1..10)}.jpg"
   args[:password]     = "secret"
   args[:password_confirmation] = "secret"
+  args[:bannerpicture] = "banner10.jpg"
 
 
   cocktails = (1..5).map do |i|
@@ -301,6 +311,7 @@ User.destroy_all
   args[:picture]      = "#{rand(1..10)}.jpg"
   args[:password]     = "secret"
   args[:password_confirmation] = "secret"
+  args[:bannerpicture] = "banner1.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -327,6 +338,7 @@ User.destroy_all
   args[:picture]      = "#{rand(1..10)}.jpg"
   args[:password]     = "secret"
   args[:password_confirmation] = "secret"
+  args[:bannerpicture] = "banner2.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -353,6 +365,7 @@ User.destroy_all
   args[:picture]      = "#{rand(1..10)}.jpg"
   args[:password]     = "secret"
   args[:password_confirmation] = "secret"
+  args[:bannerpicture] = "banner3.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -379,6 +392,7 @@ User.destroy_all
   args[:picture]      = "#{rand(1..10)}.jpg"
   args[:password]     = "secret"
   args[:password_confirmation] = "secret"
+  args[:bannerpicture] = "banner4.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -405,6 +419,7 @@ User.destroy_all
   args[:picture]      = "#{rand(1..10)}.jpg"
   args[:password]     = "secret"
   args[:password_confirmation] = "secret"
+  args[:bannerpicture] = "banner5.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -431,6 +446,7 @@ User.destroy_all
   args[:picture]      = "#{rand(1..10)}.jpg"
   args[:password]     = "secret"
   args[:password_confirmation] = "secret"
+  args[:bannerpicture] = "banner6.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -457,6 +473,7 @@ User.destroy_all
   args[:picture]      = "#{rand(1..10)}.jpg"
   args[:password]     = "secret"
   args[:password_confirmation] = "secret"
+  args[:bannerpicture] = "banner7.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -483,6 +500,7 @@ User.destroy_all
   args[:picture]      = "#{rand(1..10)}.jpg"
   args[:password]     = "secret"
   args[:password_confirmation] = "secret"
+  args[:bannerpicture] = "banner8.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -509,6 +527,7 @@ User.destroy_all
   args[:picture]      = "#{rand(1..10)}.jpg"
   args[:password]     = "secret"
   args[:password_confirmation] = "secret"
+  args[:bannerpicture] = "banner9.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -535,6 +554,7 @@ User.destroy_all
   args[:picture]      = "#{rand(1..10)}.jpg"
   args[:password]     = "secret"
   args[:password_confirmation] = "secret"
+  args[:bannerpicture] = "banner10.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -561,6 +581,7 @@ User.destroy_all
   args[:picture]      = "#{rand(1..10)}.jpg"
   args[:password]     = "secret"
   args[:password_confirmation] = "secret"
+  args[:bannerpicture] = "banner1.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -587,6 +608,7 @@ User.destroy_all
   args[:picture]      = "#{rand(1..10)}.jpg"
   args[:password]     = "secret"
   args[:password_confirmation] = "secret"
+  args[:bannerpicture] = "banner2.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -613,6 +635,7 @@ User.destroy_all
   args[:picture]      = "#{rand(1..10)}.jpg"
   args[:password]     = "secret"
   args[:password_confirmation] = "secret"
+  args[:bannerpicture] = "banner3.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -625,6 +648,7 @@ User.destroy_all
   b.cocktails = cocktails
   b.save!
   p b.errors.full_messages unless b.save
+
 
 #Bartender_24
   args = {}
@@ -639,6 +663,7 @@ User.destroy_all
   args[:picture]      = "#{rand(1..10)}.jpg"
   args[:password]     = "secret"
   args[:password_confirmation] = "secret"
+  args[:bannerpicture] = "banner4.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -665,6 +690,7 @@ User.destroy_all
   args[:picture]      = "#{rand(1..10)}.jpg"
   args[:password]     = "secret"
   args[:password_confirmation] = "secret"
+  args[:bannerpicture] = "banner5.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -691,6 +717,7 @@ User.destroy_all
   args[:picture]      = "#{rand(1..10)}.jpg"
   args[:password]     = "secret"
   args[:password_confirmation] = "secret"
+  args[:bannerpicture] = "banner6.jpg"
 
 
   cocktails = (1..5).map do |i|
@@ -718,6 +745,7 @@ User.destroy_all
   args[:picture]      = "#{rand(1..10)}.jpg"
   args[:password]     = "secret"
   args[:password_confirmation] = "secret"
+  args[:bannerpicture] = "banner7.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -744,6 +772,7 @@ User.destroy_all
   args[:picture]      = "#{rand(1..10)}.jpg"
   args[:password]     = "secret"
   args[:password_confirmation] = "secret"
+  args[:bannerpicture] = "banner8.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -770,6 +799,7 @@ User.destroy_all
   args[:picture]      = "#{rand(1..10)}.jpg"
   args[:password]     = "secret"
   args[:password_confirmation] = "secret"
+  args[:bannerpicture] = "banner9.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
@@ -796,6 +826,7 @@ User.destroy_all
   args[:picture]      = "#{rand(1..10)}.jpg"
   args[:password]     = "secret"
   args[:password_confirmation] = "secret"
+  args[:bannerpicture] = "banner10.jpg"
 
   cocktails = (1..5).map do |i|
     cocktail_json = open(RANDOM_COCKTAIL_URL).read
