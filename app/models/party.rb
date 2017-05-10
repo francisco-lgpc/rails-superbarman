@@ -51,7 +51,27 @@ class Party < ApplicationRecord
     client.account.messages.create({
       from: '+4915735982115',
       to:   self.bartender.phone_number,
-      body: "#{name} has booked a #{self.theme} scheduled for #{self.date.to_s(:long)} #{msg}"
+      body: "#{name} has booked a #{self.theme} scheduled for #{self.date.to_s(:long)}, in #{self.address}#{msg}"
+    })
+  end
+
+  def send_text_to_user
+    account_sid = ENV['TWILIO_ACCOUNT_SID']
+    auth_token = ENV['TWILIO_AUTH_TOKEN']
+
+    client = Twilio::REST::Client.new account_sid, auth_token
+    title = self.bartender.title
+    bartender_name = self.bartender.name
+    user_name = self.user.last_name == '' ? self.user.first_name : "#{self.user.first_name} #{self.user.last_name}"
+
+    body = "Hello #{user_name},\n" \
+           "Congratulations for booking your #{self.theme} through Superbarman!\n" \
+           "You have booked #{title}, for #{self.date.to_s(:long)}, in #{self.address}."
+
+    client.account.messages.create({
+      from: '+4915735982115',
+      to:   self.user.phone_number,
+      body: body
     })
   end
 

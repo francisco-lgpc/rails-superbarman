@@ -19,6 +19,9 @@ before_action :set_party
 
     @party.update(payment: charge.to_json, payment_confirmed: 'true')
 
+    # Commented out so as to not waste all our credit
+    # @party.send_text_to_bartender
+
   rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to new_party_payment_path(@party)

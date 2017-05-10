@@ -1,13 +1,3 @@
-console.log('test');
-$('.btn-booking-confirm').hide();
-
-<%# if @party.errors.any? %>
-  // Render new review form with errors
-<%# else %>
-
-<%# end %>
-
-
 var handler = StripeCheckout.configure({
   key: "<%= j Rails.configuration.stripe[:publishable_key] %>",
   image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
@@ -26,18 +16,3 @@ var handler = StripeCheckout.configure({
 });
 
 handler.open();
-
-
-<% if false %>
-
-
-  // Generate the btn. But hide it.
-    // var btn_payment_html = $("<%= j render 'reviews/show', party: @party %>").hide();
-  // Add it to the DOM, at the end of the existing reviews. It's still hidden.
-    // $('#home-form-show').append(btn_payment_html);
-  // Show the btn with an animation!
-    // btn_payment_html.slideDown();
-  // Reset the form
-    // $('#home-form-show').html("<%= j render 'new_form', party: @party %>");
-
-<% end %>
