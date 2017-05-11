@@ -916,7 +916,24 @@ end
 
 # Hard code rating for "Pierre Cousteau"
 b = Bartender.find_by_name("Pierre Cousteau")
-b.rating = 5
+
+FIVE_STAR_REVIEWS = [
+  'Awesome Party! Really nice guy.',
+  'Best bartender I have ever seen',
+  'Definitely worth it.',
+  'If you want quality and style, this is your man',
+  'Super cool!',
+  'Wow.',
+  'As close as you can get to perfect'
+]
+
+b.reviews.each_with_index do |r, i|
+  r.content = FIVE_STAR_REVIEWS[i] if i < 7
+  r.rating  = 4
+  r.rating  = 5 if i < 7
+  r.save!
+end
+
 b.save!
 
 p "Everything OK!"
