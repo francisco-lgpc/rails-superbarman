@@ -45,8 +45,8 @@
   }
 
   .btn-search:hover{
+    transition: opacity .3s ease;
     opacity: 0.8;
-
   }
 }
 
