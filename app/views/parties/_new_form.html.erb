@@ -79,31 +79,12 @@
       <% end %>
       <%= pretty_date(@party.date) %> - <%= @party.theme %>
       </div>
-      <hr class="booking-line">
-      <div class="booking-billing">
-        <table class="billing">
-          <t class="body">
-            <tr class="price-item">
-                <td class="bartender-service">
-                  Bartender service:
-                </td>
-                <td><span></span></td>
-                <td class="price">
-                  50€
-                </td>
-              </tr>
-              <tr class="welcome-cocktails">
-                <td class="details">
-               <i>Includes 5 free welcome cocktails of your choice.</i>
-                </td>
-              </tr>
-              <tr>
-                <td class="moreinfo">
-               Cocktails will be sold at 5€ during the event.
-              </td>
-              </tr>
-          </t>
-        </table>
+      <br>
+      <div class="booking-billing" class="pricing">
+        <h3>  Bartender service: 50€</h3>
+        <p><i>Includes 5 free welcome cocktails of your choice.</i></p>
+        <br>
+        <h6>Cocktails will be sold at 5€ during the event. </h6>
       </div>
     </div>
   </div>
