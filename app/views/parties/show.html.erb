@@ -1,48 +1,4 @@
-
 <% content_for :title, "Payment confirmed - Booking number #{@party.bartender_id}#{@party.id}#{@party.user_id}" %>
-
-
-<% if false %>
-
-<div class="container">
-  <div class="wrapper-invite">
-    <div class="row">
-      <div class="col-xs-12 col-md-10 col-xs-offset-1 confirmation-invitation">
-        <div class="banner-book" style="background-image: linear-gradient(-225deg, rgba(85,85,85,0.8) 20%, rgba(60,60,60,0.8) 47%), url(<%= image_path 'ba.jpg' %>); ">
-
-          <h2> Congratulations! You've booked <%= @party.bartender.name %></h2>
-          <p><i>Your booking number is: #<%= @party.bartender_id  %><%= @party.id %><%= @party.user_id%></i></p>
-          <!-- <div class="background-div">
-          <div class="text-center">
-            <%= image_tag @party.bartender.picture, id:"bt-party-show"%>
-            <h2><%= @party.bartender.name %></h2>
-          </div>
-          </div> -->
-          <h3><span><%= @party.bartender.name %> will be at <i> <%= pretty_address(@party.address) %></i> at <i><%= pretty_time(@party.start_time) %></i></span></h3>
-          <!-- <h3>In <%= @party.city %></h3> -->
-          <h4>On <strong><%= @party.date.to_s(:long) %></strong> </h4>
-          <h4>For your <%= (@party.theme).downcase %> with <%= @party.size %> guests! </h4>
-        </div>
-      </div>
-    </div>
-  </div>
-  <br>
-  <br>
-
-  <div class="pending-approval text-center hidden">
-    <h2>All done now! The bartender has been notified and he shall confirm your request as soon as he can!</h2>
-    <h3>You will recieve a text-message when everything is ready to go!</h3>
-  </div>
-
-  <%= link_to '#'  do %>
-  <div class="add-friends-button text-center">
-    <h5><i class="fa fa-facebook-square" aria-hidden="true"></i> INVITE YOUR FRIENDS ON FACEBOOK!</h5>
-  </div>
-  <% end %>
-</div>
-
-<% end %>
-
 
 <div class="wrapper-status-bar">
   <div class="container">
@@ -78,27 +34,28 @@
 </div>
 
 <div class="wrapper-party-show-body">
-  <div class="pending-container">
-    <div class="pending-card">
-      <div class="banner-pending" style="background-image: linear-gradient(-225deg, rgba(85,85,85,0.9) 20%, rgba(60,60,60,0.8) 47%), url(<%= image_path 'pending1.jpg' %>); ">
-        <div id="pending-bartender-confirmation" class="<%= 'hidden' unless @party.pending_bartender_confirmation? %>">
+
+  <div id="pending-bartender-confirmation" class="<%= 'hidden' unless @party.pending_bartender_confirmation? %>">
+    <div class="pending-container">
+      <div class="pending-card">
+
+        <div class="banner-pending" style="background-image: linear-gradient(-225deg, rgba(85,85,85,0.9) 20%, rgba(60,60,60,0.8) 47%), url(<%= image_path 'pending1.jpg' %>); ">
           <h2> Thanks for booking your <%= @party.theme %>! </h2>
           <h4> We have sent your request to <i><%= @party.bartender.name %></i></h4>
           <h4>You will receive a response within the next <strong>24hr!</strong></h4>
-       </div>
-      </div>
-      <div class="pending-footer">
-        <h2>The moment before memories are made</h2>
+        </div>
+        <div class="pending-footer">
+          <h2>The moment before memories are made</h2>
+        </div>
       </div>
     </div>
   </div>
 
   <div id="bartender-confirmed" class="<%= 'hidden' unless @party.bartender_confirmed? %>">
-    <div class="container">
-      <div class="wrapper-invite">
+    <div class="confirm-container">
+      <div class="confirm-card">
         <div class="row">
-          <div class="col-xs-12 col-md-10 col-xs-offset-1 confirmation-invitation">
-            <div class="banner-book" style="background-image: linear-gradient(-225deg, rgba(85,85,85,0.8) 20%, rgba(60,60,60,0.8) 47%), url(<%= image_path 'ba.jpg' %>); ">
+            <div class="banner-book" style="background-image: linear-gradient(-225deg, rgba(85,85,85,0.9) 20%, rgba(60,60,60,0.8) 47%), url(<%= image_path 'ba.jpg' %>); ">
 
               <h2> Congratulations! You've booked <%= @party.bartender.name %></h2>
               <p><i>Your booking number is: #<%= @party.bartender_id  %><%= @party.id %><%= @party.user_id%></i></p>
@@ -108,11 +65,13 @@
                 <h2><%= @party.bartender.name %></h2>
               </div>
               </div> -->
-              <h3><span><%= @party.bartender.name %> will be at <i> <%= pretty_address(@party.address) %></i> at <i><%= pretty_time(@party.start_time) %></i></span></h3>
+              <h4><span><%= @party.bartender.name %> will be at <i> <%= pretty_address(@party.address) %></i> at <i><%= pretty_time(@party.start_time) %></i></span></h4>
               <!-- <h3>In <%= @party.city %></h3> -->
               <h4>On <strong><%= @party.date.to_s(:long) %></strong> </h4>
               <h4>For your <%= (@party.theme).downcase %> with <%= @party.size %> guests! </h4>
             </div>
+            <div class="confirm-footer">
+              <h2>Let's get the party started</h2>
           </div>
         </div>
       </div>
