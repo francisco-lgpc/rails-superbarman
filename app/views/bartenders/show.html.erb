@@ -1,4 +1,4 @@
-<%= yield(:navbar_transparent) %>
+<%= content_for :navbar_transparent, "navbar-transparent" %>
 
 <% content_for :meta_title, "#{@bartender.title} - #{@bartender.name}" %>
 <% content_for :meta_description, "#{@bartender.bio}" %>

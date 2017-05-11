@@ -23,7 +23,7 @@
 
   .form-control {
     // margin-top: 20px;
-border: $pink solid 0.4px;
+    border: none;
     padding: 15px;
     margin-top: 20px;
     width: 62%;
@@ -45,7 +45,8 @@ border: $pink solid 0.4px;
   }
 
   .btn-search:hover{
-    color: $black;
+    color: black;
+
   }
 }
 
