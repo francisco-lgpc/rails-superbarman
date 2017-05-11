@@ -4,8 +4,8 @@
 
 
 <% if flash[:notice] %>
-    <div class="alert-error"><%= flash[:notice] %></div>
-  <% end %>
+  <div class="alert-error"><%= flash[:notice] %></div>
+<% end %>
 
   <% content_for :title, "#{@bartender.name} - #{@bartender.title}" %>
 
