@@ -878,7 +878,7 @@ end
 
 
 Bartender.all.each_with_index do |bartender, i|
-  num_parties = rand(4..7)
+  num_parties = rand(8..12)
   bartender_users = users.sample(num_parties)
 
   bartender_users.each do |bartender_user|
@@ -888,7 +888,7 @@ Bartender.all.each_with_index do |bartender, i|
     bartender_user.save!
 
     REVIEWS.sample(1).each do |content|
-      r = Review.new(content: content, rating: rand(3..5))
+      r = Review.new(content: content, rating: rand(2..5))
       r.bartender = bartender
       r.party     = party
       r.user      = bartender_user
@@ -902,5 +902,17 @@ Bartender.all.each_with_index do |bartender, i|
     party.save!
   end
 end
+
+# assign real phone_numbers
+User.all.each do |u|
+  u.phone_number = ENV['USER_PHONE']
+  u.save!
+end
+
+Bartender.all.each do |b|
+  b.phone_number = ENV['BARTENDER_PHONE']
+  b.save!
+end
+
 p "Everything OK!"
 
