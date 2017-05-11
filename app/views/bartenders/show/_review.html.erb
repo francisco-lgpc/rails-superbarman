@@ -1,7 +1,10 @@
 <% unless review.created_at.nil?  %>
   <div class="reviews-item">
-    <div> <%= review.created_at.strftime('%D') %> </div>
-    <div>
+
+    <%= image_tag review.user.facebook_picture_url, class: 'avatar-large' %>
+    <div class="review-item-body">
+      <div> <%= review.created_at.strftime('%D') %> </div>
+
       <% unless review.rating.nil? %>
         <ul class="list-inline no-bullets">
           <% review.rating.times do %>
@@ -13,7 +16,7 @@
           <% end %>
         </ul>
       <% end %>
+      <div> <%= review.content %> </div>
     </div>
-    <div> <%= review.content %> </div>
   </div>
 <% end %>
