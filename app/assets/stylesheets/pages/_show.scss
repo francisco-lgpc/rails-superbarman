@@ -61,10 +61,11 @@
 }
 
 .pricing{
-  background-color: $gold;
+  background-color: rgba(169,146,103, 0.8);
   color: $white;
   text-align: center;
   padding: 30px;
+
 
 
   h1{
@@ -94,14 +95,14 @@
     height: 50px;
     display: block;
     width: 100%;
-    background-color: $brown;
-    color: $white;
-    border:none;
+    background-color: white;
+    color: #5c5555;
+    border: none;
     border-radius: 6px;
   }
 
   .btn-book{
-    background-color: $brown;
+    background-color: $pink;
     color: $white;
     width: 100%;
     border-radius: 6px;
@@ -109,7 +110,7 @@
     font-size: 15px;
     height: 50px;
     &:hover{
-      color: $gold;
+      color: #5c5555;
     }
   }
 }
