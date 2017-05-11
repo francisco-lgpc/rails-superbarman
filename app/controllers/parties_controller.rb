@@ -54,8 +54,7 @@ class PartiesController < ApplicationController
     party.bartender_confirm
     party.save!
 
-    # Commented out so as to not waste all our credit
-    # party.send_text_to_user
+    party.send_text_to_user
 
     redirect_to bartender_dashboard_path(party.bartender)
   end
