@@ -39,7 +39,7 @@
     <div class="pending-container">
       <div class="pending-card">
 
-        <div class="banner-pending" style="background-image: linear-gradient(-225deg, rgba(85,85,85,0.9) 20%, rgba(60,60,60,0.8) 47%), url(<%= image_path 'pending1.jpg' %>); ">
+        <div class="banner-pending" style="background-image: linear-gradient(-225deg, rgba(85,85,85,0.9) 20%, rgba(60,60,60,0.8) 47%), url(<%= image_path 'ba.jpg' %>); ">
           <h2> Thanks for booking your <%= @party.theme %>! </h2>
           <h4> We have sent your request to <i><%= @party.bartender.name %></i></h4>
           <h4>You will receive a response within the next <strong>24hr!</strong></h4>
@@ -55,7 +55,7 @@
     <div class="confirm-container">
       <div class="confirm-card">
         <div class="row">
-            <div class="banner-book" style="background-image: linear-gradient(-225deg, rgba(85,85,85,0.9) 20%, rgba(60,60,60,0.8) 47%), url(<%= image_path 'ba.jpg' %>); ">
+            <div class="banner-book" style="background-image: linear-gradient(-225deg, rgba(85,85,85,0.9) 20%, rgba(60,60,60,0.8) 47%), url(<%= image_path 'pending1.jpg' %>); ">
 
               <h2> Congratulations! You've booked <%= @party.bartender.name %></h2>
               <p><i>Your booking number is: #<%= @party.bartender_id  %><%= @party.id %><%= @party.user_id%></i></p>
