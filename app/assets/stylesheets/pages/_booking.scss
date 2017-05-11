@@ -148,7 +148,9 @@
     margin: 10px 0px;
 
     }
+
     .btn-booking-confirm{
+    border: none;
     background-color: $pink;
     color: $white;
     width: 62%;
@@ -157,7 +159,7 @@
     font-size: 15px;
     height: 50px;
       &:hover{
-        color: black;
+        opacity: 0.8;
       }
 
     }
