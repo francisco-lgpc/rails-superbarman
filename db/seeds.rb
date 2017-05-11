@@ -266,7 +266,7 @@ User.destroy_all
 #Bartender_9
   args = {}
   args[:name]         = "Eric Valentine"
-  args[:title]        = "Deadpool"
+  args[:title]        = "Lover Boy"
   args[:phone_number] = "+49.680.47.64.90"
   args[:email]        = "ericv@superbarman.com"
   args[:bio]          = "I graduated from the European Bartender School in 2014, in Puerto Rico. I recently moved back to Amsterdam, honning my skills in caribbean cocktails.\nThe caribbean allows a rich blend of exotic flavors that refreshes the soul.\nIf you feel like getting lost in paradise, I'm the bartender for you!"
@@ -299,7 +299,7 @@ User.destroy_all
   args[:bio]          = "I graduated from the European Bartender School in 2014, in Puerto Rico. I recently moved back to Amsterdam, honning my skills in caribbean cocktails.\nThe caribbean allows a rich blend of exotic flavors that refreshes the soul.\nIf you feel like getting lost in paradise, I'm the bartender for you!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
-  args[:languages]    = "en pt de"
+  args[:languages]    = "en fr de"
   args[:picture]      = "26.jpg"
   args[:password]     = "secret"
   args[:password_confirmation] = "secret"
@@ -327,7 +327,7 @@ User.destroy_all
   args[:bio]          = "I graduated from the European Bartender School in 2014, in Puerto Rico. I recently moved back to Amsterdam, honning my skills in caribbean cocktails.\nThe caribbean allows a rich blend of exotic flavors that refreshes the soul.\nIf you feel like getting lost in paradise, I'm the bartender for you!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
-  args[:languages]    = "en pt de"
+  args[:languages]    = "en nl de"
   args[:picture]      = "8.jpg"
   args[:password]     = "secret"
   args[:password_confirmation] = "secret"
@@ -354,7 +354,7 @@ User.destroy_all
   args[:bio]          = "I graduated from the European Bartender School in 2014, in Puerto Rico. I recently moved back to Amsterdam, honning my skills in caribbean cocktails.\nThe caribbean allows a rich blend of exotic flavors that refreshes the soul.\nIf you feel like getting lost in paradise, I'm the bartender for you!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
-  args[:languages]    = "en pt de"
+  args[:languages]    = "nl en de"
   args[:picture]      = "22.jpg"
   args[:password]     = "secret"
   args[:password_confirmation] = "secret"
@@ -381,7 +381,7 @@ User.destroy_all
   args[:bio]          = "I graduated from the European Bartender School in 2014, in Puerto Rico. I recently moved back to Amsterdam, honning my skills in caribbean cocktails.\nThe caribbean allows a rich blend of exotic flavors that refreshes the soul.\nIf you feel like getting lost in paradise, I'm the bartender for you!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
-  args[:languages]    = "en pt de"
+  args[:languages]    = "en de fr"
   args[:picture]      = "23.jpg"
   args[:password]     = "secret"
   args[:password_confirmation] = "secret"
@@ -408,7 +408,7 @@ User.destroy_all
   args[:bio]          = "I graduated from the European Bartender School in 2014, in Puerto Rico. I recently moved back to Amsterdam, honning my skills in caribbean cocktails.\nThe caribbean allows a rich blend of exotic flavors that refreshes the soul.\nIf you feel like getting lost in paradise, I'm the bartender for you!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
-  args[:languages]    = "en pt de"
+  args[:languages]    = "pt en de"
   args[:picture]      = "20.jpg"
   args[:password]     = "secret"
   args[:password_confirmation] = "secret"
@@ -435,7 +435,7 @@ User.destroy_all
   args[:bio]          = "I graduated from the European Bartender School in 2014, in Puerto Rico. I recently moved back to Amsterdam, honning my skills in caribbean cocktails.\nThe caribbean allows a rich blend of exotic flavors that refreshes the soul.\nIf you feel like getting lost in paradise, I'm the bartender for you!"
   args[:rating]       = rand(3..5)
   args[:location]     = "Berlin"
-  args[:languages]    = "en pt de"
+  args[:languages]    = "fr en de"
   args[:picture]      = "17.jpg"
   args[:password]     = "secret"
   args[:password_confirmation] = "secret"
@@ -913,6 +913,11 @@ Bartender.all.each do |b|
   b.phone_number = ENV['BARTENDER_PHONE']
   b.save!
 end
+
+# Hard code rating for "Pierre Cousteau"
+b = Bartender.find_by_name("Pierre Cousteau")
+b.rating = 5
+b.save!
 
 p "Everything OK!"
 
