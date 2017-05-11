@@ -10,6 +10,11 @@
   align-items: center;
   justify-content: space-between;
 
+  a:focus {
+    color: white;
+    outline: none;
+  }
+
   // background: linear-gradient(
   //   180deg, $brown-lighter, $brown-light, $brown, $brown, $brown, $brown-light, $brown-lighter
   // );
