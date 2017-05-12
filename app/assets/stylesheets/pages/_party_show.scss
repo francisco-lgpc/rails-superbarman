@@ -79,6 +79,16 @@
   }
 }
 
+#bartender-logo-large{
+  position: absolute;
+  top: 450px;
+  right: 160px;
+  height: 332px;
+  @media only screen and (max-width: 1500px) {
+    right: 30px;
+  }
+}
+
 .pending-container{
 
 
