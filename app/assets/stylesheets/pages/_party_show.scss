@@ -52,11 +52,13 @@
   margin: 0 auto;
   .status-bar {
     margin: auto;
-    display: flex
+    display: flex;
+    align-items: flex-start;
   }
   .status-bar-item {
+    opacity: 0.7;
     font-size: 30px;
-    background-color: $brown-lightest;
+    background-color: lighten($brown-lightest, 20);
     color: $brown;
     width: 300px;
     margin-left: 10px;
@@ -65,6 +67,7 @@
     box-shadow: 1px 5px 10px $dropdown-grey;
   }
   .status-bar-item-active {
+    opacity: 1;
     background-color: $gold;
     color: $brown;
     width: 310px;
@@ -73,6 +76,16 @@
   p{
     font-size: 15px;
     margin-top: 5px;
+  }
+}
+
+#bartender-logo-large{
+  position: absolute;
+  top: 450px;
+  right: 160px;
+  height: 332px;
+  @media only screen and (max-width: 1500px) {
+    right: 30px;
   }
 }
 
