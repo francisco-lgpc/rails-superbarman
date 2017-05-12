@@ -4,29 +4,21 @@
   <div class="container">
     <div class="row">
       <div class="status-bar">
-        <div>
-          <div class="text-center status-bar-item <%= 'status-bar-item-active' if @party.pending_bartender_confirmation? %>">
-            <%= image_tag "counterclockwise-rotation.png", size: "40x40" %>
-            <p>Confirmation Pending</p>
-          </div>
+        <div class="text-center status-bar-item <%= 'status-bar-item-active' if @party.pending_bartender_confirmation? %>">
+          <%= image_tag "counterclockwise-rotation.png", size: "40x40" %>
+          <p>Confirmation Pending</p>
         </div>
-        <div>
-          <div class="text-center status-bar-item <%= 'status-bar-item-active' if @party.bartender_confirmed? %>">
-            <%= image_tag "bart1.jpg", size: "40x40" %>
-            <p>Party Confirmed</p>
-          </div>
+        <div class="text-center status-bar-item <%= 'status-bar-item-active' if @party.bartender_confirmed? %>">
+          <%= image_tag "bart1.jpg", size: "40x40" %>
+          <p>Party Confirmed</p>
         </div>
-        <div>
-          <div class="text-center status-bar-item">
-            <%= image_tag "cocktail2.png", size: "40x40" %>
-            <p>Get your party started!</p>
-          </div>
+        <div class="text-center status-bar-item">
+          <%= image_tag "cocktail2.png", size: "40x40" %>
+          <p>Get your party started!</p>
         </div>
-        <div>
-          <div class="text-center status-bar-item">
-            <i class="fa fa-check" aria-hidden="true"></i>
-            <p>Rate your Party</p>
-          </div>
+        <div class="text-center status-bar-item">
+          <i class="fa fa-check" aria-hidden="true"></i>
+          <p>Rate your Bartender</p>
         </div>
       </div>
     </div>
